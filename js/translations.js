@@ -28,6 +28,11 @@ const translations = {
         frontend: "Frontend",
         integration: "Integration",
         softSkills: "Soft Skills",
+        softSkills1: "Problem Solving",
+        softSkills2: "Team Collaboration",
+        softSkills3: "Agile Methodologies",
+        softSkills4: "Time Management",
+        softSkills5: "Continuous Learning",
         
         // Experience Section
         workExperience: "Work Experience",
@@ -142,6 +147,12 @@ const translations = {
         frontend: "Frontend",
         integration: "Integração",
         softSkills: "Soft Skills",
+        softSkills1: "Resolução de Problemas",
+        softSkills2: "Colaboração em Equipe",
+        softSkills3: "Metodologias Ágeis",
+        softSkills4: "Gestão de Tempo",
+        softSkills5: "Aprendizado Contínuo",
+   
         
         // Experience Section
         workExperience: "Experiência Profissional",
