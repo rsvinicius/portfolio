@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-04-10
+### Changed
+- Refactored website structure to use component-based loading
+- Removed inline HTML from `index.html` and added dynamic loading in `script.js`
+
 ## [1.2.0] - 2025-04-03
 ### Added
 - Internationalization (i18n) support with English and Portuguese languages
