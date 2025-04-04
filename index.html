@@ -31,12 +31,13 @@
                 <a href="#" class="text-xl font-bold text-blue-900">VR<span class="text-blue-600">.</span></a>
                 
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-sm font-medium hover:text-blue-600 transition-colors">About</a>
-                    <a href="#skills" class="text-sm font-medium hover:text-blue-600 transition-colors">Skills</a>
-                    <a href="#experience" class="text-sm font-medium hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="text-sm font-medium hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#education" class="text-sm font-medium hover:text-blue-600 transition-colors">Education</a>
-                    <a href="#contact" class="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="#about" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="about">About</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="skills">Skills</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="experience">Experience</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="projects">Projects</a>
+                    <a href="#education" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="education">Education</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="contact">Contact</a>
+                    <button id="language-toggle" class="text-sm font-medium hover:text-blue-600 transition-colors">PT</button>
                     <button id="theme-toggle" class="text-sm font-medium hover:text-blue-600 transition-colors">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:inline"></i>
@@ -45,11 +46,12 @@
                 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center space-x-4">
-                    <button id="mobile-theme-toggle" class="text-gray-800 focus:outline-none">
+                    <button id="mobile-language-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none">PT</button>
+                    <button id="mobile-theme-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:inline"></i>
                     </button>
-                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -59,12 +61,12 @@
             
             <!-- Mobile menu, hidden by default -->
             <div id="mobile-menu" class="hidden md:hidden mt-2 py-2 space-y-2">
-                <a href="#about" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">About</a>
-                <a href="#skills" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Skills</a>
-                <a href="#experience" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Experience</a>
-                <a href="#projects" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Projects</a>
-                <a href="#education" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Education</a>
-                <a href="#contact" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Contact</a>
+                <a href="#about" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="about">About</a>
+                <a href="#skills" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="skills">Skills</a>
+                <a href="#experience" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="experience">Experience</a>
+                <a href="#projects" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="projects">Projects</a>
+                <a href="#education" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="education">Education</a>
+                <a href="#contact" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="contact">Contact</a>
             </div>
         </div>
     </header>
@@ -76,12 +78,12 @@
                 <img src="assets/profile-photo.jpeg" alt="Vinicius Rodrigues" class="w-full h-full object-cover">
             </div>
             <h1 class="text-4xl sm:text-5xl font-bold text-blue-900 dark:text-blue-300 text-center tracking-tight">Vinicius Rodrigues</h1>
-            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mt-2 text-center">Software Developer</p>
-            <p class="text-center max-w-xl mt-6 text-gray-700 dark:text-gray-300">Specialized in building reliable, scalable applications with Java, Spring Boot and microservices architecture</p>
+            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mt-2 text-center" data-i18n="role">Software Developer</p>
+            <p class="text-center max-w-xl mt-6 text-gray-700 dark:text-gray-300" data-i18n="specialization">Specialized in building reliable, scalable applications with Java, Spring Boot and microservices architecture</p>
             
             <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition-colors shadow-md">Get in Touch</a>
-                <a href="#projects" class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-md font-medium transition-colors shadow-md">View Projects</a>
+                <a href="#contact" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition-colors shadow-md" data-i18n="getInTouch">Get in Touch</a>
+                <a href="#projects" class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-md font-medium transition-colors shadow-md" data-i18n="viewProjects">View Projects</a>
             </div>
             
             <div class="mt-10 flex space-x-6">
@@ -101,19 +103,19 @@
     <!-- About Me Section -->
     <section id="about" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center">About Me</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="aboutMe">About Me</h2>
             <div class="max-w-3xl mx-auto">
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="aboutText1">
                     I am a passionate software developer with expertise in Java, Spring Boot, and microservices architecture. 
                     With a strong foundation in software engineering principles, I specialize in building robust, scalable 
                     applications that solve real-world problems.
                 </p>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="aboutText2">
                     My experience spans across developing REST APIs, implementing authentication systems, creating 
                     microservices architectures, and working with various databases. I am driven by clean code practices 
                     and continuously strive to improve my skills and stay updated with the latest technologies.
                 </p>
-                <p class="text-gray-700 dark:text-gray-300">
+                <p class="text-gray-700 dark:text-gray-300" data-i18n="aboutText3">
                     When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, 
                     and sharing knowledge with the developer community.
                 </p>
@@ -124,12 +126,12 @@
     <!-- Skills Section -->
     <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center">Technical Skills</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="technicalSkills">Technical Skills</h2>
             
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Backend -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Backend Development</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="backendDev">Backend Development</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -156,7 +158,7 @@
                 
                 <!-- Databases -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Databases</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="databases">Databases</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -183,7 +185,7 @@
                 
                 <!-- DevOps & Tools -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">DevOps & Tools</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="devOpsTools">DevOps & Tools</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -210,7 +212,7 @@
                 
                 <!-- Frontend -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Frontend</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="frontend">Frontend</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -233,7 +235,7 @@
                 
                 <!-- Message Brokers & Integration -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Integration</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="integration">Integration</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -256,7 +258,7 @@
                 
                 <!-- Soft Skills -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Soft Skills</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="softSkills">Soft Skills</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
