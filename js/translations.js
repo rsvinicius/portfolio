@@ -101,7 +101,7 @@ const translations = {
         yourLocation: "Your Location",
         
         // Footer
-        copyright: "© 2025 Vinicius Rodrigues. All rights reserved.",
+        copyright: "© 2025 Vinicius Rodrigues Silva. All rights reserved.",
         
         // Language Switcher
         switchToEnglish: "EN",
@@ -214,7 +214,7 @@ const translations = {
         yourLocation: "Sua Localização",
         
         // Footer
-        copyright: "© 2025 Vinicius Rodrigues. Todos os direitos reservados.",
+        copyright: "© 2025 Vinicius Rodrigues Silva. Todos os direitos reservados.",
         
         // Language Switcher
         switchToEnglish: "EN",
