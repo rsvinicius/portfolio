@@ -65,8 +65,8 @@ const translations = {
         viewAllProjects: "View all projects on GitHub",
         
         // Project 1
-        project1Title: "KeepStrong Delivery",
-        project1Desc: "A comprehensive platform inspired by iFood that provides a seamless food delivery experience. Built with a microservices architecture.",
+        project1Title: "MockK",
+        project1Desc: "A powerful and flexible mocking library for Kotlin, enabling developers to write clean and maintainable tests with ease.",
         
         // Project 2
         project2Title: "Antifraud System",
@@ -75,14 +75,6 @@ const translations = {
         // Project 3
         project3Title: "Priori Task API",
         project3Desc: "A task management API designed to help users manage their tasks effectively with features like priorities, categories, and deadlines.",
-        
-        // Project 4
-        project4Title: "Book Finder",
-        project4Desc: "An application for searching books by multiple criteria. Allows users to find books by title, author, genre, and other parameters.",
-        
-        // Project 5
-        project5Title: "Cinema Room REST Service",
-        project5Desc: "A Spring REST service to help manage a small movie theatre. Handles HTTP requests in controllers, creates services and responds with JSON objects.",
         
         viewOnGitHub: "View on GitHub",
         
@@ -182,29 +174,22 @@ const translations = {
         
         // Projects Section
         featuredProjects: "Projetos em Destaque",
-        viewAllProjects: "Ver todos os projetos no GitHub",
+        viewAllProjects: "Veja todos os projetos no GitHub",
         
+
         // Project 1
-        project1Title: "KeepStrong Delivery",
-        project1Desc: "Uma plataforma abrangente inspirada no iFood que oferece uma experiência de entrega de alimentos tranquila. Construído com arquitetura de microsserviços.",
+        project1Title: "MockK",
+        project1Desc: "Uma biblioteca de mocking poderosa e flexível para Kotlin, permitindo que os desenvolvedores escrevam testes limpos e de fácil manutenção.",
         
         // Project 2
         project2Title: "Sistema Antifraude",
         project2Desc: "Uma demonstração simplificada de sistemas antifraude usados no setor financeiro. Detecta transações suspeitas e previne fraudes em tempo real.",
         
         // Project 3
-        project3Title: "API Priori Task",
+        project3Title: "Priori Task API",
         project3Desc: "Uma API de gerenciamento de tarefas projetada para ajudar os usuários a gerenciar suas tarefas de forma eficaz com recursos como prioridades, categorias e prazos.",
         
-        // Project 4
-        project4Title: "Localizador de Livros",
-        project4Desc: "Uma aplicação para pesquisar livros por múltiplos critérios. Permite aos usuários encontrar livros por título, autor, gênero e outros parâmetros.",
-        
-        // Project 5
-        project5Title: "Serviço REST de Sala de Cinema",
-        project5Desc: "Um serviço REST Spring para ajudar a gerenciar um pequeno cinema. Lida com requisições HTTP em controladores, cria serviços e responde com objetos JSON.",
-        
-        viewOnGitHub: "Ver no GitHub",
+        viewOnGitHub: "Veja no GitHub",
         
         // Education Section
         masters: "Pós-graduação Lato Sensu - MBA, Engenharia de Software",
