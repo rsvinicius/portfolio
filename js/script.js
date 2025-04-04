@@ -1,5 +1,57 @@
-// Language and theme switching functionality
+// Component loading functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Load all components
+    loadComponent('header-container', 'components/header.html');
+    loadComponent('hero-container', 'components/hero.html');
+    loadComponent('about-container', 'components/about.html');
+    loadComponent('skills-container', 'components/skills.html');
+    loadComponent('experience-container', 'components/experience.html');
+    loadComponent('projects-container', 'components/projects.html');
+    loadComponent('education-container', 'components/education.html');
+    loadComponent('contact-container', 'components/contact.html');
+    loadComponent('footer-container', 'components/footer.html');
+});
+
+// Function to load components
+function loadComponent(containerId, componentPath) {
+    fetch(componentPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load component: ${componentPath}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById(containerId).innerHTML = html;
+            
+            // Track loaded components
+            if (!window.loadedComponents) {
+                window.loadedComponents = new Set();
+            }
+            window.loadedComponents.add(containerId);
+
+            // Check if all components are loaded
+            const allComponents = [
+                'header-container',
+                'hero-container',
+                'about-container',
+                'skills-container',
+                'experience-container',
+                'projects-container',
+                'education-container',
+                'contact-container',
+                'footer-container'
+            ];
+
+            if (allComponents.every(component => window.loadedComponents.has(component))) {
+                initializePostLoadFunctionality();
+            }
+        })
+        .catch(error => console.error('Error loading component:', error));
+}
+
+// Initialize functionality after all components are loaded
+function initializePostLoadFunctionality() {
     // Import translations
     import('./translations.js')
         .then(module => {
@@ -87,7 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+
+    // Initialize form handling
+    initializeContactForm();
+}
 
 // Language toggle functionality
 function initializeLanguageToggle(translations) {
@@ -163,7 +218,7 @@ function updateToggleText(element, lang, translations) {
 }
 
 // Simple form handling
-document.addEventListener('DOMContentLoaded', function() {
+function initializeContactForm() {
     const contactForm = document.querySelector('#contact form');
     
     if (contactForm) {
@@ -201,4 +256,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
         });
     }
-});
+}
