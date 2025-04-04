@@ -31,12 +31,13 @@
                 <a href="#" class="text-xl font-bold text-blue-900">VR<span class="text-blue-600">.</span></a>
                 
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-sm font-medium hover:text-blue-600 transition-colors">About</a>
-                    <a href="#skills" class="text-sm font-medium hover:text-blue-600 transition-colors">Skills</a>
-                    <a href="#experience" class="text-sm font-medium hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="text-sm font-medium hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#education" class="text-sm font-medium hover:text-blue-600 transition-colors">Education</a>
-                    <a href="#contact" class="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="#about" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="about">About</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="skills">Skills</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="experience">Experience</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="projects">Projects</a>
+                    <a href="#education" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="education">Education</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="contact">Contact</a>
+                    <button id="language-toggle" class="text-sm font-medium hover:text-blue-600 transition-colors">PT</button>
                     <button id="theme-toggle" class="text-sm font-medium hover:text-blue-600 transition-colors">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:inline"></i>
@@ -45,11 +46,12 @@
                 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center space-x-4">
-                    <button id="mobile-theme-toggle" class="text-gray-800 focus:outline-none">
+                    <button id="mobile-language-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none">PT</button>
+                    <button id="mobile-theme-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none">
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:inline"></i>
                     </button>
-                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -59,12 +61,12 @@
             
             <!-- Mobile menu, hidden by default -->
             <div id="mobile-menu" class="hidden md:hidden mt-2 py-2 space-y-2">
-                <a href="#about" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">About</a>
-                <a href="#skills" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Skills</a>
-                <a href="#experience" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Experience</a>
-                <a href="#projects" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Projects</a>
-                <a href="#education" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Education</a>
-                <a href="#contact" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1">Contact</a>
+                <a href="#about" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="about">About</a>
+                <a href="#skills" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="skills">Skills</a>
+                <a href="#experience" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="experience">Experience</a>
+                <a href="#projects" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="projects">Projects</a>
+                <a href="#education" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="education">Education</a>
+                <a href="#contact" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="contact">Contact</a>
             </div>
         </div>
     </header>
@@ -76,12 +78,12 @@
                 <img src="assets/profile-photo.jpeg" alt="Vinicius Rodrigues" class="w-full h-full object-cover">
             </div>
             <h1 class="text-4xl sm:text-5xl font-bold text-blue-900 dark:text-blue-300 text-center tracking-tight">Vinicius Rodrigues</h1>
-            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mt-2 text-center">Software Developer</p>
-            <p class="text-center max-w-xl mt-6 text-gray-700 dark:text-gray-300">Specialized in building reliable, scalable applications with Java, Spring Boot and microservices architecture</p>
+            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mt-2 text-center" data-i18n="role">Software Developer</p>
+            <p class="text-center max-w-xl mt-6 text-gray-700 dark:text-gray-300" data-i18n="specialization">Specialized in building reliable, scalable applications with Java, Spring Boot and microservices architecture</p>
             
             <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition-colors shadow-md">Get in Touch</a>
-                <a href="#projects" class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-md font-medium transition-colors shadow-md">View Projects</a>
+                <a href="#contact" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition-colors shadow-md" data-i18n="getInTouch">Get in Touch</a>
+                <a href="#projects" class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-md font-medium transition-colors shadow-md" data-i18n="viewProjects">View Projects</a>
             </div>
             
             <div class="mt-10 flex space-x-6">
@@ -101,19 +103,19 @@
     <!-- About Me Section -->
     <section id="about" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center">About Me</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="aboutMe">About Me</h2>
             <div class="max-w-3xl mx-auto">
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="aboutText1">
                     I am a passionate software developer with expertise in Java, Spring Boot, and microservices architecture. 
                     With a strong foundation in software engineering principles, I specialize in building robust, scalable 
                     applications that solve real-world problems.
                 </p>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="aboutText2">
                     My experience spans across developing REST APIs, implementing authentication systems, creating 
                     microservices architectures, and working with various databases. I am driven by clean code practices 
                     and continuously strive to improve my skills and stay updated with the latest technologies.
                 </p>
-                <p class="text-gray-700 dark:text-gray-300">
+                <p class="text-gray-700 dark:text-gray-300" data-i18n="aboutText3">
                     When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, 
                     and sharing knowledge with the developer community.
                 </p>
@@ -124,12 +126,12 @@
     <!-- Skills Section -->
     <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center">Technical Skills</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="technicalSkills">Technical Skills</h2>
             
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Backend -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Backend Development</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="backendDev">Backend Development</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -156,7 +158,7 @@
                 
                 <!-- Databases -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Databases</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="databases">Databases</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -183,7 +185,7 @@
                 
                 <!-- DevOps & Tools -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">DevOps & Tools</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="devOpsTools">DevOps & Tools</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -210,7 +212,7 @@
                 
                 <!-- Frontend -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Frontend</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="frontend">Frontend</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -233,7 +235,7 @@
                 
                 <!-- Message Brokers & Integration -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Integration</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="integration">Integration</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -256,7 +258,7 @@
                 
                 <!-- Soft Skills -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300">Soft Skills</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="softSkills">Soft Skills</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
@@ -287,55 +289,55 @@
     <!-- Experience Section -->
     <section id="experience" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-12 text-center">Work Experience</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-12 text-center" data-i18n="workExperience">Work Experience</h2>
             
             <div class="max-w-3xl mx-auto space-y-12">
                 <!-- Experience 1 -->
                 <div class="border-l-4 border-blue-600 pl-6 relative">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300">Senior Software Engineer</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">Company Name • 2022 - Present</p>
-                    <p class="text-gray-700 dark:text-gray-300 mb-3">
+                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="seniorDeveloper">Senior Software Engineer</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="seniorCompany">Company Name • 2022 - Present</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3" data-i18n="seniorDesc">
                         Leading the development of microservices-based applications using Spring Boot, Java, and various databases.
                         Implementing robust API solutions and enhancing system performance.
                     </p>
                     <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                        <li>Developed and maintained multiple microservices to handle different business domains</li>
-                        <li>Implemented CI/CD pipelines to streamline deployment processes</li>
-                        <li>Conducted code reviews and mentored junior developers</li>
-                        <li>Improved system architecture for better scalability and reliability</li>
+                        <li data-i18n="seniorItem1">Developed and maintained multiple microservices to handle different business domains</li>
+                        <li data-i18n="seniorItem2">Implemented CI/CD pipelines to streamline deployment processes</li>
+                        <li data-i18n="seniorItem3">Conducted code reviews and mentored junior developers</li>
+                        <li data-i18n="seniorItem4">Improved system architecture for better scalability and reliability</li>
                     </ul>
                 </div>
                 
                 <!-- Experience 2 -->
                 <div class="border-l-4 border-blue-600 pl-6 relative">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300">Software Developer</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">Previous Company • 2020 - 2022</p>
-                    <p class="text-gray-700 dark:text-gray-300 mb-3">
+                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="developer">Software Developer</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="developerCompany">Previous Company • 2020 - 2022</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3" data-i18n="developerDesc">
                         Worked on Java-based backend applications, REST APIs, and database integrations.
                     </p>
                     <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                        <li>Built RESTful APIs using Spring Boot for various client applications</li>
-                        <li>Implemented authentication and authorization systems</li>
-                        <li>Worked with SQL databases and ORM frameworks</li>
-                        <li>Collaborated with frontend teams to integrate API solutions</li>
+                        <li data-i18n="developerItem1">Built RESTful APIs using Spring Boot for various client applications</li>
+                        <li data-i18n="developerItem2">Implemented authentication and authorization systems</li>
+                        <li data-i18n="developerItem3">Worked with SQL databases and ORM frameworks</li>
+                        <li data-i18n="developerItem4">Collaborated with frontend teams to integrate API solutions</li>
                     </ul>
                 </div>
                 
                 <!-- Experience 3 -->
                 <div class="border-l-4 border-blue-600 pl-6 relative">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300">Junior Developer</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">First Company • 2018 - 2020</p>
-                    <p class="text-gray-700 dark:text-gray-300 mb-3">
+                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="juniorDeveloper">Junior Developer</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="juniorCompany">First Company • 2018 - 2020</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3" data-i18n="juniorDesc">
                         Started my journey in software development by working on various web applications and backend services.
                     </p>
                     <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                        <li>Developed features for Java-based applications</li>
-                        <li>Worked with version control systems</li>
-                        <li>Participated in Agile development processes</li>
-                        <li>Fixed bugs and implemented enhancements for existing systems</li>
+                        <li data-i18n="juniorItem1">Developed features for Java-based applications</li>
+                        <li data-i18n="juniorItem2">Worked with version control systems</li>
+                        <li data-i18n="juniorItem3">Participated in Agile development processes</li>
+                        <li data-i18n="juniorItem4">Fixed bugs and implemented enhancements for existing systems</li>
                     </ul>
                 </div>
             </div>
@@ -345,7 +347,7 @@
     <!-- Projects Section -->
     <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center">Featured Projects</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="featuredProjects">Featured Projects</h2>
             
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project 1 -->
@@ -354,8 +356,8 @@
                         <i class="fas fa-utensils text-5xl text-blue-700 dark:text-blue-300"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2">KeepStrong Delivery</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2" data-i18n="project1Title">KeepStrong Delivery</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="project1Desc">
                             A comprehensive platform inspired by iFood that provides a seamless food delivery experience. 
                             Built with a microservices architecture.
                         </p>
@@ -367,7 +369,7 @@
                         </div>
                         <a href="https://github.com/rsvinicius/keepstrong-delivery" target="_blank" class="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium flex items-center transition-colors">
                             <i class="fab fa-github mr-2"></i>
-                            View on GitHub
+                            <span data-i18n="viewOnGitHub">View on GitHub</span>
                             <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
@@ -379,8 +381,8 @@
                         <i class="fas fa-shield-alt text-5xl text-blue-700 dark:text-blue-300"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2">Antifraud System</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2" data-i18n="project2Title">Antifraud System</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="project2Desc">
                             A simplified demonstration of anti-fraud systems used in the financial sector. Detects suspicious transactions
                             and prevents fraud in real-time.
                         </p>
@@ -391,7 +393,7 @@
                         </div>
                         <a href="https://github.com/rsvinicius/antifraud-system" target="_blank" class="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium flex items-center transition-colors">
                             <i class="fab fa-github mr-2"></i>
-                            View on GitHub
+                            <span data-i18n="viewOnGitHub">View on GitHub</span>
                             <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
@@ -403,8 +405,8 @@
                         <i class="fas fa-tasks text-5xl text-blue-700 dark:text-blue-300"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2">Priori Task API</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2" data-i18n="project3Title">Priori Task API</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="project3Desc">
                             A task management API designed to help users manage their tasks effectively with 
                             features like priorities, categories, and deadlines.
                         </p>
@@ -416,7 +418,7 @@
                         </div>
                         <a href="https://github.com/rsvinicius/priori-task-api" target="_blank" class="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium flex items-center transition-colors">
                             <i class="fab fa-github mr-2"></i>
-                            View on GitHub
+                            <span data-i18n="viewOnGitHub">View on GitHub</span>
                             <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
@@ -428,8 +430,8 @@
                         <i class="fas fa-book text-5xl text-blue-700 dark:text-blue-300"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2">Book Finder</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2" data-i18n="project4Title">Book Finder</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="project4Desc">
                             An application for searching books by multiple criteria. Allows users to find books by title, author,
                             genre, and other parameters.
                         </p>
@@ -440,7 +442,7 @@
                         </div>
                         <a href="https://github.com/rsvinicius/book-finder" target="_blank" class="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium flex items-center transition-colors">
                             <i class="fab fa-github mr-2"></i>
-                            View on GitHub
+                            <span data-i18n="viewOnGitHub">View on GitHub</span>
                             <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
@@ -452,8 +454,8 @@
                         <i class="fas fa-film text-5xl text-blue-700 dark:text-blue-300"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2">Cinema Room REST Service</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2" data-i18n="project5Title">Cinema Room REST Service</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="project5Desc">
                             A Spring REST service to help manage a small movie theatre. Handles HTTP requests in controllers,
                             creates services and responds with JSON objects.
                         </p>
@@ -465,7 +467,7 @@
                         </div>
                         <a href="https://github.com/rsvinicius/cinema-room-rest-service" target="_blank" class="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium flex items-center transition-colors">
                             <i class="fab fa-github mr-2"></i>
-                            View on GitHub
+                            <span data-i18n="viewOnGitHub">View on GitHub</span>
                             <i class="fas fa-external-link-alt ml-1 text-xs"></i>
                         </a>
                     </div>
@@ -474,7 +476,7 @@
             
             <div class="mt-12 text-center">
                 <a href="https://github.com/rsvinicius?tab=repositories" target="_blank" class="inline-flex items-center text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium transition-colors">
-                    View all projects on GitHub
+                    <span data-i18n="viewAllProjects">View all projects on GitHub</span>
                     <i class="fas fa-long-arrow-alt-right ml-2"></i>
                 </a>
             </div>
@@ -484,15 +486,15 @@
     <!-- Education Section -->
     <section id="education" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-12 text-center">Education</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-12 text-center" data-i18n="education">Education</h2>
             
             <div class="max-w-3xl mx-auto space-y-12">
                 <!-- Education 1 -->
                 <div class="border-l-4 border-blue-600 pl-6 relative">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300">Masters in Computer Science</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">University Name • 2018-2020</p>
-                    <p class="text-gray-700 dark:text-gray-300">
+                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="masters">Masters in Computer Science</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="mastersSchool">University Name • 2018-2020</p>
+                    <p class="text-gray-700 dark:text-gray-300" data-i18n="mastersDesc">
                         Focus on advanced software engineering, distributed systems, and cloud computing.
                         Thesis on microservices architecture optimization.
                     </p>
@@ -501,9 +503,9 @@
                 <!-- Education 2 -->
                 <div class="border-l-4 border-blue-600 pl-6 relative">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300">Bachelor's in Computer Science</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">University Name • 2014-2018</p>
-                    <p class="text-gray-700 dark:text-gray-300">
+                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="bachelors">Bachelor's in Computer Science</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="bachelorsSchool">University Name • 2014-2018</p>
+                    <p class="text-gray-700 dark:text-gray-300" data-i18n="bachelorsDesc">
                         Comprehensive curriculum covering programming fundamentals, data structures, algorithms,
                         databases, and software development methodologies.
                     </p>
@@ -512,13 +514,13 @@
                 <!-- Certifications -->
                 <div class="border-l-4 border-blue-600 pl-6 relative">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300">Professional Certifications</h3>
+                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="certifications">Professional Certifications</h3>
                     <p class="text-gray-700 dark:text-gray-300 mt-2">
                         <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                            <li>Spring Professional Certification</li>
-                            <li>Java SE 11 Professional Developer</li>
-                            <li>AWS Certified Developer - Associate</li>
-                            <li>Docker Certified Associate</li>
+                            <li data-i18n="certification1">Spring Professional Certification</li>
+                            <li data-i18n="certification2">Java SE 11 Professional Developer</li>
+                            <li data-i18n="certification3">AWS Certified Developer - Associate</li>
+                            <li data-i18n="certification4">Docker Certified Associate</li>
                         </ul>
                     </p>
                 </div>
@@ -529,10 +531,10 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center">Get in Touch</h2>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="getInTouch">Get in Touch</h2>
             
             <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <p class="text-gray-700 dark:text-gray-300 mb-6 text-center">
+                <p class="text-gray-700 dark:text-gray-300 mb-6 text-center" data-i18n="contactText">
                     Feel free to reach out if you have any questions or want to discuss potential opportunities.
                 </p>
                 
@@ -562,31 +564,34 @@
                         <div class="bg-blue-100 p-3 rounded-full text-blue-700">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <span class="ml-4 text-gray-700 dark:text-gray-300">Your Location</span>
+                        <span class="ml-4 text-gray-700 dark:text-gray-300" data-i18n="yourLocation">Your Location</span>
                     </div>
                 </div>
                 
                 <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                     <form action="#" method="POST" class="space-y-4">
                         <div>
-                            <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Name</label>
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-1" data-i18n="name">Name</label>
                             <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                data-i18n-placeholder="name">
                         </div>
                         
                         <div>
-                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Email</label>
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-1" data-i18n="email">Email</label>
                             <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                data-i18n-placeholder="email">
                         </div>
                         
                         <div>
-                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-1">Message</label>
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-1" data-i18n="message">Message</label>
                             <textarea id="message" name="message" rows="4" required
-                                class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                data-i18n-placeholder="message"></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 px-4 rounded-md font-medium transition-colors shadow-md">
+                        <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 px-4 rounded-md font-medium transition-colors shadow-md" data-i18n="sendMessage">
                             Send Message
                         </button>
                     </form>
@@ -599,7 +604,7 @@
     <footer class="py-8 bg-blue-900 dark:bg-gray-900 text-white transition-colors duration-200">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-sm mb-4 md:mb-0">&copy; 2025 Vinicius Rodrigues. All rights reserved.</p>
+                <p class="text-sm mb-4 md:mb-0" data-i18n="copyright">&copy; 2025 Vinicius Rodrigues. All rights reserved.</p>
                 
                 <div class="flex space-x-4">
                     <a href="https://github.com/rsvinicius" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
