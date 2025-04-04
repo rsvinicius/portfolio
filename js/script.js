@@ -4,11 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
     
-    // Check for saved theme preference, otherwise use system preference
+    // Check for saved theme preference, default to light theme
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
     }
 
