@@ -43,3 +43,6 @@ jspm_packages/
 # Build directories
 /dist
 /build
+
+# repomix-output-*
+repomix-output.xml
