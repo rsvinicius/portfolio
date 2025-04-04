@@ -24,8 +24,26 @@ function loadComponent(containerId, componentPath) {
         .then(html => {
             document.getElementById(containerId).innerHTML = html;
             
-            // If this is the last component being loaded, initialize other functionality
-            if (containerId === 'footer-container') {
+            // Track loaded components
+            if (!window.loadedComponents) {
+                window.loadedComponents = new Set();
+            }
+            window.loadedComponents.add(containerId);
+
+            // Check if all components are loaded
+            const allComponents = [
+                'header-container',
+                'hero-container',
+                'about-container',
+                'skills-container',
+                'experience-container',
+                'projects-container',
+                'education-container',
+                'contact-container',
+                'footer-container'
+            ];
+
+            if (allComponents.every(component => window.loadedComponents.has(component))) {
                 initializePostLoadFunctionality();
             }
         })
