@@ -10,13 +10,13 @@ const translations = {
         
         // Hero Section
         role: "Software Developer",
-        specialization: "Specialized in building reliable, scalable applications with Java, Spring Boot and microservices architecture",
+        specialization: "Specialized in building reliable, scalable applications with Java, Kotlin, Spring and Microservices Architecture",
         getInTouch: "Get in Touch",
         viewProjects: "View Projects",
         
         // About Section
         aboutMe: "About Me",
-        aboutText1: "I am a passionate software developer with expertise in Java, Spring Boot, and microservices architecture. With a strong foundation in software engineering principles, I specialize in building robust, scalable applications that solve real-world problems.",
+        aboutText1: "I am a passionate software developer with expertise in Java, Kotlin, Spring and Microservices Architecture. With a strong foundation in software engineering principles, I specialize in building robust, scalable applications that solve real-world problems.",
         aboutText2: "My experience spans across developing REST APIs, implementing authentication systems, creating microservices architectures, and working with various databases. I am driven by clean code practices and continuously strive to improve my skills and stay updated with the latest technologies.",
         aboutText3: "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.",
         
@@ -129,13 +129,13 @@ const translations = {
         
         // Hero Section
         role: "Desenvolvedor de Software",
-        specialization: "Especializado em construir aplicações confiáveis e escaláveis com Java, Spring Boot e arquitetura de microsserviços",
+        specialization: "Especializado em construir aplicações confiáveis e escaláveis com Java, Kotlin, Spring e Arquitetura de Microsserviços",
         getInTouch: "Entre em Contato",
         viewProjects: "Ver Projetos",
         
         // About Section
         aboutMe: "Sobre Mim",
-        aboutText1: "Sou um desenvolvedor de software apaixonado com expertise em Java, Spring Boot e arquitetura de microsserviços. Com uma forte base em princípios de engenharia de software, eu me especializo em construir aplicações robustas e escaláveis que resolvem problemas do mundo real.",
+        aboutText1: "Sou um desenvolvedor de software apaixonado com expertise em Java, Kotlin, Spring e Arquitetura de Microsserviços. Com uma forte base em princípios de engenharia de software, eu me especializo em construir aplicações robustas e escaláveis que resolvem problemas do mundo real.",
         aboutText2: "Minha experiência se estende pelo desenvolvimento de APIs REST, implementação de sistemas de autenticação, criação de arquiteturas de microsserviços e trabalho com diversos bancos de dados. Sou guiado por práticas de código limpo e busco continuamente melhorar minhas habilidades e me manter atualizado com as mais recentes tecnologias.",
         aboutText3: "Quando não estou codificando, gosto de explorar novas tecnologias, contribuir para projetos open-source e compartilhar conhecimento com a comunidade de desenvolvedores.",
         
