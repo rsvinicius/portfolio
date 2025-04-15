@@ -127,7 +127,7 @@ const translations = {
         
         // About Section
         aboutMe: "Sobre Mim",
-        aboutText1: "Sou um desenvolvedor de software apaixonado com expertise em Java, Kotlin, Spring e Arquitetura de Microsserviços. Com uma forte base em princípios de engenharia de software, eu me especializo em construir aplicações robustas e escaláveis que resolvem problemas do mundo real.",
+        aboutText1: "Sou um desenvolvedor de software com expertise em Java, Kotlin, Spring e Arquitetura de Microsserviços. Com uma forte base em princípios de engenharia de software, eu me especializo em construir aplicações robustas e escaláveis que resolvem problemas do mundo real.",
         aboutText2: "Minha experiência se estende pelo desenvolvimento de APIs REST, implementação de sistemas de autenticação, criação de arquiteturas de microsserviços e trabalho com diversos bancos de dados. Sou guiado por práticas de código limpo e busco continuamente melhorar minhas habilidades e me manter atualizado com as mais recentes tecnologias.",
         aboutText3: "Quando não estou codificando, gosto de explorar novas tecnologias, contribuir para projetos open-source e compartilhar conhecimento com a comunidade de desenvolvedores.",
         
