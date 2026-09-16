@@ -29,14 +29,14 @@ const translations = {
 
         // Metric Stat Cards
         metric1Num: "+500M",
-        metric1Label: "Monthly Requests",
-        metric1Sub: "Microservices scale across 10M+ users",
-        metric2Num: "Batch & Streaming",
-        metric2Label: "B2B Billing & Reports",
-        metric2Sub: "Financial reconciliation & report pipelines",
-        metric3Num: "99.99%",
-        metric3Label: "System Availability",
-        metric3Sub: "Resilient financial and card backends",
+        metric1Label: "B2C Scale Throughput",
+        metric1Sub: "Monthly requests across microservices",
+        metric2Num: "+$100B",
+        metric2Label: "B2B Financial Volume",
+        metric2Sub: "Global processed volume & reconciliation",
+        metric3Num: "+500 TPS",
+        metric3Label: "Peak Processing Rate",
+        metric3Sub: "High-scale transaction volume & streaming",
 
         // Contact Pre-filled Email Strings
         contactEmailSubject: "Software Engineering Opportunity - Vinicius R. Silva",
@@ -166,14 +166,14 @@ const translations = {
 
         // Metric Stat Cards
         metric1Num: "+500M",
-        metric1Label: "Requisições Mensais",
-        metric1Sub: "Escala de microsserviços para 10M+ usuários",
-        metric2Num: "Batch & Streaming",
-        metric2Label: "Faturamento e Relatórios B2B",
-        metric2Sub: "Reconciliação financeira e pipelines de relatórios",
-        metric3Num: "99.99%",
-        metric3Label: "Disponibilidade de Sistemas",
-        metric3Sub: "Backends resilientes de pagamentos e cartões",
+        metric1Label: "Vazão em Escala B2C",
+        metric1Sub: "Requisições mensais em microsserviços",
+        metric2Num: "+$100B",
+        metric2Label: "Volume Financeiro B2B",
+        metric2Sub: "Volume global processado e reconciliação",
+        metric3Num: "+500 TPS",
+        metric3Label: "Taxa de Pico de Processamento",
+        metric3Sub: "Processamento transacional e streaming de alta escala",
 
         // Contact Pre-filled Email Strings
         contactEmailSubject: "Oportunidade Engenharia de Software - Vinicius R. Silva",

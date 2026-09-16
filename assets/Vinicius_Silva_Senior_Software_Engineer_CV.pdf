@@ -16,7 +16,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 6 0 obj
-<< /Length 2342 >>
+<< /Length 2339 >>
 stream
 BT
 /F1 18 Tf
@@ -33,19 +33,19 @@ BT
 (PROFESSIONAL SUMMARY) Tj
 /F2 9 Tf
 0 -13 Td
-(Software Engineer specializing in JVM architectures, B2B billing and reporting pipelines,) Tj
+(Software Engineer specializing in JVM architectures, B2B billing/reconciliation engines,) Tj
 0 -11 Td
-(and high-throughput backend services handling over 500M req/mo across microservices.) Tj
+(and mission-critical financial processing handling over 500M req/mo and +00B in global volume.) Tj
 0 -16 Td
 /F1 11 Tf
 (CORE SCALE & METRICS) Tj
 /F2 9 Tf
 0 -13 Td
-(* Monthly Requests: +500M monthly requests across microservices (Alelo Brasil)) Tj
+(* B2C Scale Throughput: +500M monthly requests across microservices (Alelo Brasil)) Tj
 0 -11 Td
-(* B2B Billing & Reports: Financial reconciliation and file streaming pipelines (Trustly)) Tj
+(* B2B Financial Volume: +00B global processed volume and reconciliation (Trustly)) Tj
 0 -11 Td
-(* System Availability: 99.99% SLA in high-volume transaction processing and payment card backends) Tj
+(* Peak Processing Rate: +500 TPS transaction processing, batch extraction, and streaming) Tj
 0 -16 Td
 /F1 11 Tf
 (EXPERIENCE) Tj
@@ -106,5 +106,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-2796
+2793
 %%EOF
