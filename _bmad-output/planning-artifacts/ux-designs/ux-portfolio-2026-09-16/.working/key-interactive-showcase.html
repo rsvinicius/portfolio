@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Screen: Interactive Engineering Showcase | Vinicius Silva</title>
+  <style>
+    /*
+      Governing Spine Sections:
+      - DESIGN.md: Colors (status-approved, status-flagged, status-rejected, surface-terminal), Typography, Components (antifraud-sandbox, dotme-terminal)
+      - EXPERIENCE.md: Foundation, Information Architecture (#projects), Component Patterns, State Patterns, Key Flows
+    */
+    :root {
+      --surface-base: #0B0F19;
+      --surface-card: #111827;
+      --surface-card-subtle: #1F2937;
+      --surface-terminal: #0D1117;
+      --surface-terminal-header: #161B22;
+      --border-subtle: #1F2937;
+      --border-medium: #374151;
+      --text-primary: #F9FAFB;
+      --text-secondary: #9CA3AF;
+      --text-muted: #6B7280;
+      --accent-primary: #3B82F6;
+      --status-flagged: #F59E0B;
+      --status-flagged-bg: rgba(245, 158, 11, 0.15);
+      --status-flagged-border: #D97706;
+      --status-approved: #10B981;
+      --status-rejected: #EF4444;
+      --terminal-prompt: #58A6FF;
+      --terminal-success: #3FB950;
+      --terminal-text: #C9D1D9;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #050811;
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .browser-frame {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--surface-base);
+      border-radius: 12px;
+      border: 1px solid var(--border-medium);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+    .browser-header {
+      background: #090D16;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-close { background: #FF5F56; }
+    .dot-min { background: #FFBD2E; }
+    .dot-max { background: #27C93F; }
+    .browser-url-bar {
+      margin-left: 16px;
+      background: #111827;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      width: 320px;
+    }
+
+    .content-area { padding: 48px 32px; max-width: 960px; margin: 0 auto; }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-idx { font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary); }
+    .section-title { font-size: 24px; font-weight: 600; }
+    .section-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 32px; max-width: 760px; }
+
+    .showcase-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Widget 1: Antifraud Sandbox */
+    .widget-box {
+      background: var(--surface-card);
+      border: 1px solid var(--border-medium);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .widget-title { font-size: 18px; font-weight: 600; }
+    .widget-subtitle { font-size: 13px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px; }
+
+    .badge-decision {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: var(--status-flagged-bg);
+      color: var(--status-flagged);
+      border: 1px solid var(--status-flagged-border);
+      letter-spacing: 0.05em;
+    }
+
+    .sandbox-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .slider-group { display: flex; flex-direction: column; gap: 18px; }
+    .slider-item { display: flex; flex-direction: column; gap: 6px; }
+    .slider-label-row { display: flex; justify-content: space-between; font-size: 13px; }
+    .slider-name { color: var(--text-secondary); }
+    .slider-val { font-family: var(--font-mono); font-weight: 600; color: var(--text-primary); }
+    .slider-track {
+      width: 100%;
+      height: 6px;
+      background: var(--surface-card-subtle);
+      border-radius: 3px;
+      position: relative;
+    }
+    .slider-fill { height: 100%; background: var(--accent-primary); border-radius: 3px; }
+    .slider-thumb {
+      width: 16px;
+      height: 16px;
+      background: var(--accent-primary);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: -5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Diagnostics Card */
+    .diagnostics-box {
+      background: var(--surface-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .score-headline { font-size: 12px; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; }
+    .score-meter { display: flex; align-items: baseline; gap: 8px; margin: 8px 0 16px 0; }
+    .score-num { font-family: var(--font-mono); font-size: 40px; font-weight: 700; color: var(--status-flagged); }
+    .score-max { font-family: var(--font-mono); font-size: 16px; color: var(--text-muted); }
+    .score-bar-bg { width: 100%; height: 8px; background: var(--surface-card-subtle); border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+    .score-bar-fill { width: 58%; height: 100%; background: var(--status-flagged); }
+
+    .formula-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 12px;
+    }
+    .formula-row { display: flex; justify-content: space-between; }
+
+    /* Widget 2: dotme Terminal */
+    .terminal-window {
+      background: var(--surface-terminal);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      overflow: hidden;
+      font-family: var(--font-mono);
+    }
+    .terminal-header {
+      background: var(--surface-terminal-header);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .terminal-dots { display: flex; gap: 6px; }
+    .terminal-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .terminal-title { font-size: 11px; color: var(--text-muted); }
+    .terminal-body {
+      padding: 18px 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--terminal-text);
+      min-height: 170px;
+    }
+    .cmd-line { color: var(--text-primary); margin-bottom: 8px; }
+    .cmd-prompt { color: var(--terminal-prompt); }
+    .log-info { color: #8B949E; }
+    .log-success { color: var(--terminal-success); }
+    .cursor-blink { display: inline-block; width: 8px; height: 14px; background: var(--terminal-prompt); vertical-align: middle; margin-left: 4px; }
+  </style>
+</head>
+<body>
+
+  <div class="browser-frame">
+    <!-- Window Header -->
+    <div class="browser-header">
+      <div class="browser-dot dot-close"></div>
+      <div class="browser-dot dot-min"></div>
+      <div class="browser-dot dot-max"></div>
+      <div class="browser-url-bar">https://viniciussilva.dev/#projects</div>
+    </div>
+
+    <div class="content-area">
+      <div class="section-head">
+        <span class="section-idx">02</span>
+        <h2 class="section-title">Interactive Engineering Showcases</h2>
+      </div>
+      <p class="section-desc">
+        Active client-side simulations demonstrating mathematical risk scoring and declarative systems automation with zero third-party dependencies or external backend calls.
+      </p>
+
+      <div class="showcase-grid">
+        <!-- Antifraud Sandbox -->
+        <div class="widget-box">
+          <div class="widget-header">
+            <div>
+              <div class="widget-title">Antifraud Financial Security Engine &bull; Real-Time Sandbox</div>
+              <div class="widget-subtitle">Heuristic transaction evaluation with multi-factor velocity & geo-jump calibration</div>
+            </div>
+            <div class="badge-decision">FLAGGED / REVIEW</div>
+          </div>
+
+          <div class="sandbox-layout">
+            <!-- Controls -->
+            <div class="slider-group">
+              <div class="slider-item">
+                <div class="slider-label-row">
+                  <span class="slider-name">Transaction Amount</span>
+                  <span class="slider-val">$450.00</span>
+                </div>
+                <div class="slider-track">
+                  <div class="slider-fill" style="width: 25%;"></div>
+                  <div class="slider-thumb" style="left: calc(25% - 8px);"></div>
+                </div>
+              </div>
+
+              <div class="slider-item">
+                <div class="slider-label-row">
+                  <span class="slider-name">Time Delta Since Previous</span>
+                  <span class="slider-val">15 min</span>
+                </div>
+                <div class="slider-track">
+                  <div class="slider-fill" style="width: 12%;"></div>
+                  <div class="slider-thumb" style="left: calc(12% - 8px);"></div>
+                </div>
+              </div>
+
+              <div class="slider-item">
+                <div class="slider-label-row">
+                  <span class="slider-name">Physical Distance Jump</span>
+                  <span class="slider-val">850 km</span>
+                </div>
+                <div class="slider-track">
+                  <div class="slider-fill" style="width: 35%;"></div>
+                  <div class="slider-thumb" style="left: calc(35% - 8px);"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diagnostics -->
+            <div class="diagnostics-box">
+              <div>
+                <div class="score-headline">Calibrated Risk Index</div>
+                <div class="score-meter">
+                  <span class="score-num">58.4</span>
+                  <span class="score-max">/ 100</span>
+                </div>
+                <div class="score-bar-bg">
+                  <div class="score-bar-fill"></div>
+                </div>
+              </div>
+
+              <div class="formula-breakdown">
+                <div class="formula-row"><span>Travel Velocity</span><span>3,400 km/h (Supersonic Geo-Jump)</span></div>
+                <div class="formula-row"><span>Velocity Penalty (P_vel)</span><span>37.5 / 50</span></div>
+                <div class="formula-row"><span>Geo-Jump Penalty (P_geo)</span><span>50.0 / 50</span></div>
+                <div class="formula-row"><span>Damping Ratio Applied</span><span>0.8 Heuristics + 0.2 Base</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- dotme Autonomous Terminal -->
+        <div>
+          <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: baseline;">
+            <div style="font-size: 16px; font-weight: 600;">dotme &bull; Declarative Dotfiles Manager CLI</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">Autonomous Typewriter Loop &bull; Zero Input Required</div>
+          </div>
+
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <div class="terminal-dot dot-close"></div>
+                <div class="terminal-dot dot-min"></div>
+                <div class="terminal-dot dot-max"></div>
+              </div>
+              <div class="terminal-title">dotme &mdash; zsh &mdash; 80x24</div>
+              <div style="width: 30px;"></div>
+            </div>
+            <div class="terminal-body">
+              <div class="cmd-line"><span class="cmd-prompt">$ </span>dotme sync --verbose<span class="cursor-blink"></span></div>
+              <div class="log-info">[info] Scanning manifest from ~/.dotfiles/manifest.yaml...</div>
+              <div class="log-info">[verify] Checking atomic symlink graph for collisions (24 nodes)...</div>
+              <div class="log-info">[link] ~/.zshrc -&gt; ~/.dotfiles/zsh/zshrc [OK]</div>
+              <div class="log-info">[link] ~/.gitconfig -&gt; ~/.dotfiles/git/gitconfig [OK]</div>
+              <div class="log-info">[link] ~/.config/nvim/init.lua -&gt; ~/.dotfiles/nvim/init.lua [OK]</div>
+              <div class="log-success">[success] 0 conflicts detected. State safely reconciled in 12ms.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

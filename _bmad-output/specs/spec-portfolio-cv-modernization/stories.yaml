@@ -1,0 +1,53 @@
+- id: "1"
+  title: Executive Hero, Direct Contact & SEO
+  description: >-
+    Implement the executive headline, verified scale metrics (+500M req/mo, +$100B volume), pulsing availability beacon, ATS CV download CTA, and structured mailto trigger per CAP-1 and CAP-8. Align with DESIGN.md color tokens, zero count-up animation rule, and mockups/hero-and-experience.html.
+  spec_checkpoint: false
+  done_checkpoint: false
+  invoke_dev_with: >-
+    Reference DESIGN.md for typography/colors and mockups/hero-and-experience.html for layout. Keep metrics static (no counter animation) for instant scanning.
+
+- id: "2"
+  title: Career Scale Narrative & Concluded Academic Credentials
+  description: >-
+    Restructure experience to highlight Trustly B2B financial systems alongside consolidated Alelo 4+ year high-volume scale per CAP-2. Update education in components/education.html to reflect USP/Esalq MBA as Concluded per CAP-7 and EXPERIENCE.md.
+  spec_checkpoint: false
+  done_checkpoint: false
+  invoke_dev_with: >-
+    Follow mockups/hero-and-experience.html and EXPERIENCE.md for career card hierarchy and verified degree display.
+
+- id: "3"
+  title: 4-Layer Architectural Skills & Open Source Showcase
+  description: >-
+    Reorganize technical competencies into the 4-layer taxonomy (JVM Core, Distributed Systems, Cloud/DevOps, AI-Augmented SDLC) per CAP-6. Build the Open Source showcase highlighting MockK v1.14.0 bug fix, dotme CLI, n8n-docs, and microbot per CAP-5 and DESIGN.md.
+  spec_checkpoint: false
+  done_checkpoint: false
+  invoke_dev_with: >-
+    Align badge styling and grid layout with DESIGN.md component-patterns (skills-grid and oss-card).
+
+- id: "4"
+  title: Interactive Antifraud Sandbox Widget
+  description: >-
+    Implement the client-side financial risk scoring widget in the Antifraud card with reactive sliders for amount, time delta, and distance per CAP-3 and EXPERIENCE.md. Render real-time risk scores (<2ms), WCAG AA decision badges (APPROVED, FLAGGED, REJECTED), and heuristic breakdowns per mockups/interactive-showcase.html.
+  spec_checkpoint: false
+  done_checkpoint: false
+  invoke_dev_with: >-
+    Strictly use the mathematical formulas and WCAG AA status colors defined in EXPERIENCE.md and DESIGN.md. Zero external libraries.
+
+- id: "5"
+  title: Autonomous dotme CLI Terminal Loop
+  description: >-
+    Build the macOS-style dark terminal demo in the dotme project card with an autonomous typewriter loop demonstrating symlink reconciliation and atomic rollback checks per CAP-4 and EXPERIENCE.md. Implement smooth 5-second hold and clean restart cycle per mockups/interactive-showcase.html.
+  spec_checkpoint: false
+  done_checkpoint: true
+  invoke_dev_with: >-
+    Reference mockups/interactive-showcase.html for terminal header dots and typewriter timing. Must run autonomously without requiring visitor typing.
+
+- id: "6"
+  title: Bilingual Localization & Translation Sync
+  description: >-
+    Synchronize dictionary keys in js/translations.js to guarantee full EN/PT parity across all new headlines, scale metrics, project cards, and widget outputs per CAP-9. Ensure seamless language toggle without layout shifts or raw translation keys per EXPERIENCE.md.
+  spec_checkpoint: false
+  done_checkpoint: true
+  invoke_dev_with: >-
+    Ensure all slider labels, risk status badges, and terminal log entries translate cleanly via data-i18n.

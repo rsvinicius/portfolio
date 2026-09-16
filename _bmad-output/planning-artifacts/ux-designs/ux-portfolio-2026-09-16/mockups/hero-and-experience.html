@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Screen: Hero & Career Narrative | Vinicius Silva</title>
+  <style>
+    /*
+      Governing Spine Sections:
+      - DESIGN.md: Brand & Style, Colors, Typography, Layout & Spacing, Components (navigation-bar, hero-section, metric-stat-card, experience-card, cta-button-primary)
+      - EXPERIENCE.md: Foundation, Information Architecture (#hero, #experience), Component Patterns, State Patterns
+    */
+    :root {
+      --surface-base: #0B0F19;
+      --surface-card: #111827;
+      --surface-card-subtle: #1F2937;
+      --border-subtle: #1F2937;
+      --border-medium: #374151;
+      --text-primary: #F9FAFB;
+      --text-secondary: #9CA3AF;
+      --text-muted: #6B7280;
+      --accent-primary: #3B82F6;
+      --accent-primary-hover: #2563EB;
+      --status-approved: #10B981;
+      --status-approved-bg: rgba(16, 185, 129, 0.15);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #050811;
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    /* Device Browser Frame */
+    .browser-frame {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--surface-base);
+      border-radius: 12px;
+      border: 1px solid var(--border-medium);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+    .browser-header {
+      background: #090D16;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-close { background: #FF5F56; }
+    .dot-min { background: #FFBD2E; }
+    .dot-max { background: #27C93F; }
+    .browser-url-bar {
+      margin-left: 16px;
+      background: #111827;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      width: 320px;
+    }
+
+    /* Web Content */
+    .site-nav {
+      height: 60px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(11, 15, 25, 0.9);
+    }
+    .nav-brand { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); }
+    .nav-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-secondary); }
+    .nav-actions { display: flex; gap: 12px; align-items: center; }
+    .lang-toggle {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: var(--surface-card-subtle);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: var(--text-secondary);
+    }
+
+    .content-area { padding: 48px 32px; max-width: 960px; margin: 0 auto; }
+
+    /* Hero Section */
+    .badge-availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--status-approved-bg);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--status-approved);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+    }
+    .beacon-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--status-approved);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--status-approved);
+    }
+
+    h1.hero-title {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    h2.hero-sub {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--accent-primary);
+      margin-bottom: 16px;
+      font-family: var(--font-mono);
+    }
+    p.hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .cta-group { display: flex; gap: 16px; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--accent-primary);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 18px;
+      border-radius: 6px;
+      border: 1px solid var(--border-medium);
+      cursor: pointer;
+    }
+
+    /* Metric Cards */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .metric-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .metric-num {
+      font-family: var(--font-mono);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .metric-label {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .metric-sub { font-size: 13px; color: var(--text-secondary); }
+
+    /* Experience Cards */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+    }
+    .section-idx { font-family: var(--font-mono); font-size: 12px; color: var(--accent-primary); }
+    .section-title { font-size: 22px; font-weight: 600; }
+
+    .exp-list { display: flex; flex-direction: column; gap: 20px; }
+    .exp-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 24px;
+    }
+    .exp-header { display: flex; justify-content: space-between; margin-bottom: 12px; }
+    .exp-role { font-size: 16px; font-weight: 600; }
+    .exp-company { color: var(--accent-primary); font-family: var(--font-mono); font-size: 13px; margin-top: 2px; }
+    .exp-period { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+    .exp-bullets { list-style: square; padding-left: 20px; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <div class="browser-frame">
+    <!-- Window Header -->
+    <div class="browser-header">
+      <div class="browser-dot dot-close"></div>
+      <div class="browser-dot dot-min"></div>
+      <div class="browser-dot dot-max"></div>
+      <div class="browser-url-bar">https://viniciussilva.dev/#hero</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <div class="nav-brand">VRS / SENIOR SWE</div>
+      <div class="nav-links">
+        <span>Experience</span>
+        <span>Projects</span>
+        <span>Skills</span>
+        <span>Education</span>
+      </div>
+      <div class="nav-actions">
+        <span class="lang-toggle">EN | PT</span>
+        <button class="btn-primary" style="padding: 6px 12px; font-size: 12px;">ATS CV (PDF)</button>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content-area">
+      <!-- Hero -->
+      <section>
+        <div class="badge-availability">
+          <span class="beacon-dot"></span>
+          <span>Open to select senior/staff opportunities (Remote / Hybrid)</span>
+        </div>
+        <h1 class="hero-title">Vinicius R. Silva</h1>
+        <h2 class="hero-sub">Senior Software Engineer &bull; Backend & Distributed Systems</h2>
+        <p class="hero-desc">
+          Specialized in high-throughput JVM architectures, B2B billing/reconciliation engines, and mission-critical financial processing handling over 500M req/mo and +$100B in global volume.
+        </p>
+        <div class="cta-group">
+          <button class="btn-primary">Download ATS CV (PDF)</button>
+          <button class="btn-secondary">GitHub</button>
+          <button class="btn-secondary">LinkedIn</button>
+          <button class="btn-secondary">Contact via Email</button>
+        </div>
+      </section>
+
+      <!-- Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">B2C Scale Throughput</div>
+          <div class="metric-num">+500M</div>
+          <div class="metric-sub">Monthly requests across microservices</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">B2B Financial Volume</div>
+          <div class="metric-num">+$100B</div>
+          <div class="metric-sub">Global processed volume & reconciliation</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Peak B2B Backoffice Rate</div>
+          <div class="metric-num">+500 TPS</div>
+          <div class="metric-sub">Multi-tenant reports & billing streaming</div>
+        </div>
+      </div>
+
+      <!-- Experience Section Preview -->
+      <section>
+        <div class="section-head">
+          <span class="section-idx">01</span>
+          <h2 class="section-title">Career Narrative & Enterprise Impact</h2>
+        </div>
+        <div class="exp-list">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Senior Software Engineer</div>
+                <div class="exp-company">Trustly (Global PayWithMyBank) &bull; FinTech</div>
+              </div>
+              <div class="exp-period">2022 &ndash; Present</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Architected multi-tenant B2B billing and reconciliation pipelines processing +$100B volume for 9k+ global merchants.</li>
+              <li>Engineered high-scale Spring Batch and Quartz scheduler engines with reactive S3/ZIP streaming, achieving +500 TPS under peak batch load.</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Engineer / Tech Lead</div>
+                <div class="exp-company">Alelo Brasil &bull; Payments & Cards</div>
+              </div>
+              <div class="exp-period">4+ Years Consolidated</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Scaled core transaction processing to +500M monthly requests serving 10M+ cardholders across 150k client businesses.</li>
+              <li>Led legacy migration into resilient event-driven microservices with strict circuit-breaking and zero-downtime deployments.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</body>
+</html>

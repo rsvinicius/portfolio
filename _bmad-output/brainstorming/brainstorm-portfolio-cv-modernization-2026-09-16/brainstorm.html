@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainstorm Keepsake // Modernização de Portfólio & CV Executivo</title>
+  <style>
+    :root {
+      --bg-base: #0a0c10;
+      --bg-subtle: #11141c;
+      --bg-card: #161b26;
+      --bg-card-hover: #1c2230;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(255, 255, 255, 0.2);
+      --text-main: #f0f3f8;
+      --text-muted: #8b949e;
+      --text-faint: #484f58;
+      --accent: #38bdf8;
+      --accent-muted: rgba(56, 189, 248, 0.12);
+      --emerald: #10b981;
+      --emerald-muted: rgba(16, 185, 129, 0.12);
+      --amber: #f59e0b;
+      --amber-muted: rgba(245, 158, 11, 0.12);
+      --rose: #f43f5e;
+      --rose-muted: rgba(244, 63, 94, 0.12);
+      --code-bg: #0d1117;
+      --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", ui-sans-serif, system-ui;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+      --radius: 8px;
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f8fafc;
+      --bg-subtle: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f8fafc;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-focus: rgba(0, 0, 0, 0.2);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-faint: #94a3b8;
+      --accent: #0284c7;
+      --accent-muted: rgba(2, 132, 199, 0.08);
+      --emerald: #059669;
+      --emerald-muted: rgba(5, 150, 105, 0.08);
+      --amber: #d97706;
+      --amber-muted: rgba(217, 119, 6, 0.08);
+      --rose: #e11d48;
+      --rose-muted: rgba(225, 29, 72, 0.08);
+      --code-bg: #0f172a;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 1rem 6rem;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* Executive Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .brand-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-family: var(--mono);
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text-main);
+    }
+
+    .badge-pill.active {
+      background: var(--emerald-muted);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: var(--emerald);
+    }
+
+    .badge-pill.active::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--emerald);
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-family: var(--mono);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .theme-toggle-btn:hover {
+      border-color: var(--border-focus);
+      background: var(--bg-card-hover);
+    }
+
+    /* Navigation Anchors */
+    .anchor-nav {
+      position: sticky;
+      top: 0.75rem;
+      z-index: 50;
+      background: rgba(10, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.4rem 0.75rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow-x: auto;
+      box-shadow: var(--shadow-md);
+    }
+    [data-theme="light"] .anchor-nav {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-family: var(--mono);
+      padding: 0.35rem 0.7rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text-main);
+      background: var(--bg-card-hover);
+    }
+
+    /* Hero Header */
+    .hero-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-pretitle {
+      font-family: var(--mono);
+      font-size: 0.825rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .hero-lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 820px;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .hero-chip {
+      font-family: var(--mono);
+      font-size: 0.775rem;
+      padding: 0.3rem 0.65rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    /* Section Structure */
+    .section-block {
+      margin-bottom: 4.5rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-top: 0.25rem;
+    }
+
+    .section-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 650px;
+    }
+
+    /* Technique 1: Worst Possible Idea */
+    .anti-pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-comparison {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-comparison:hover {
+      border-color: var(--border-focus);
+      box-shadow: var(--shadow-md);
+    }
+
+    .anti-badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: var(--rose-muted);
+      color: var(--rose);
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+      font-weight: 600;
+    }
+
+    .gold-badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: var(--emerald-muted);
+      color: var(--emerald);
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+      font-weight: 600;
+    }
+
+    .rule-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .rule-body {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Dual Scale Radar / FinTech Metric Compare */
+    .scale-matrix {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .scale-matrix {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .scale-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+
+    .scale-card h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .metric-row:last-child {
+      border-bottom: none;
+    }
+
+    .metric-name {
+      color: var(--text-muted);
+    }
+    .metric-value {
+      font-family: var(--mono);
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Technique 2: Persona Journey & Authority Triad */
+    .triad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 880px) {
+      .triad-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .triad-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .triad-pillar-num {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      font-family: var(--mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-faint);
+    }
+
+    .triad-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      padding-right: 2rem;
+    }
+
+    .triad-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .triad-proof {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem;
+      font-size: 0.8rem;
+      font-family: var(--mono);
+      color: var(--accent);
+    }
+
+    /* Candidate Scanning Flow */
+    .scan-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .scan-timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 500px) {
+      .scan-timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border-top: 3px solid var(--accent);
+    }
+
+    .step-time {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .step-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Technique 3: Crank the Dial to 11 (Interactive Sandboxes) */
+    .dial-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 960px) {
+      .dial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .interactive-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .card-tag {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-headline {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-caption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Antifraud Sandbox Widget */
+    .sandbox-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .control-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .control-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.825rem;
+    }
+
+    .control-label {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .control-value {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    input[type=range] {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(56, 189, 248, 0.6);
+    }
+
+    .sandbox-result {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .result-score-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .verdict-badge {
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-family: var(--mono);
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .verdict-approved {
+      background: var(--emerald-muted);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .verdict-review {
+      background: var(--amber-muted);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .verdict-rejected {
+      background: var(--rose-muted);
+      color: var(--rose);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+
+    .score-meter {
+      height: 8px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0.5rem 0;
+    }
+
+    .score-fill {
+      height: 100%;
+      width: 25%;
+      background: var(--emerald);
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+
+    .formula-breakdown {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* dotme Terminal Simulator */
+    .terminal-container {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 380px;
+    }
+
+    .terminal-bar {
+      background: #161b22;
+      padding: 0.5rem 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .t-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .t-dot.red { background: #ff5f56; }
+    .t-dot.yellow { background: #ffbd2e; }
+    .t-dot.green { background: #27c93f; }
+
+    .terminal-title {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .terminal-actions button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .terminal-actions button:hover {
+      color: var(--text-main);
+      border-color: var(--border-focus);
+    }
+
+    .terminal-screen {
+      padding: 1.25rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      line-height: 1.65;
+      color: #c9d1d9;
+      flex-grow: 1;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .prompt-prefix {
+      color: var(--emerald);
+    }
+
+    .prompt-cmd {
+      color: #58a6ff;
+      font-weight: 600;
+    }
+
+    .terminal-highlight {
+      color: var(--accent);
+    }
+
+    .terminal-success {
+      color: var(--emerald);
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--accent);
+      vertical-align: middle;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Open Source Ecosystem Showcase */
+    .os-hub-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .os-hub-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .os-highlight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .os-meta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .os-pill {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .os-community-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .os-mini-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .os-mini-info h5 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .os-mini-info p {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+    }
+
+    .os-stat {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* The Climax: MoSCoW Blueprint & Synthesis */
+    .moscow-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: var(--bg-card);
+    }
+
+    .tab-btn.active {
+      color: var(--text-main);
+      background: var(--bg-card);
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+
+    .moscow-panel {
+      display: none;
+    }
+
+    .moscow-panel.active {
+      display: block;
+    }
+
+    .moscow-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+
+    .moscow-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .moscow-item-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .moscow-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+
+    .tag-must { background: var(--emerald-muted); color: var(--emerald); border: 1px solid rgba(16,185,129,0.3); }
+    .tag-should { background: var(--accent-muted); color: var(--accent); border: 1px solid rgba(56,189,248,0.3); }
+    .tag-could { background: var(--amber-muted); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+    .tag-wont { background: var(--rose-muted); color: var(--rose); border: 1px solid rgba(244,63,94,0.3); }
+
+    .moscow-item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .moscow-item-body {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Executive Hero Live Specimen */
+    .specimen-box {
+      background: var(--bg-subtle);
+      border: 1px dashed var(--border-focus);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .specimen-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .specimen-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .specimen-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .specimen-role {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .specimen-summary {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .specimen-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .specimen-btn {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--text-main);
+      color: var(--bg-base);
+      border: 1px solid var(--text-main);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    /* Skills Architecture Matrix */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .layer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .layer-title {
+      font-size: 0.85rem;
+      font-family: var(--mono);
+      color: var(--accent);
+      margin-bottom: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+
+    .layer-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .layer-chip {
+      font-size: 0.75rem;
+      font-family: var(--mono);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      color: var(--text-main);
+    }
+
+    /* Footer Meta */
+    .executive-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Executive Top Bar -->
+    <header class="top-bar">
+      <div class="brand-meta">
+        <span class="badge-pill active">Sessão Concluída</span>
+        <span>•</span>
+        <span>BMAD Brainstorming Artifact</span>
+        <span>•</span>
+        <span>2026-09-16</span>
+      </div>
+      <div>
+        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+          <span id="themeIcon">🌓</span>
+          <span id="themeLabel">Alternar Tema</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sticky Anchor Navigation -->
+    <nav class="anchor-nav" aria-label="Navegação do Keepsake">
+      <div class="nav-links">
+        <a href="#worst-idea" class="active">01. Worst Possible Idea</a>
+        <a href="#persona-journey">02. Persona Journey</a>
+        <a href="#dial-11">03. Crank the Dial to 11</a>
+        <a href="#synthesis">04. Clímax: Síntese & MoSCoW</a>
+      </div>
+      <span class="badge-pill" style="font-size: 0.7rem;">High-Scale FinTech</span>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="hero-header">
+      <div class="hero-pretitle">
+        <span>⚡ Strategic Engineering Keepsake</span>
+      </div>
+      <h1 class="hero-title">Modernização de Portfólio & CV Executivo</h1>
+      <p class="hero-lead">
+        Artefato interativo consolidado da sessão de ideação. Destinado a transformar o portfólio tradicional em uma vitrine executiva de engenharia sênior — alto sinal, ruído zero, prova matemática de escala em FinTech e ecossistema de software vivo.
+      </p>
+      <div class="hero-chips">
+        <span class="hero-chip">Senior Software Engineer</span>
+        <span class="hero-chip">JVM Ecosystem (Java / Kotlin)</span>
+        <span class="hero-chip">FinTech Critical Core (Alelo + Trustly)</span>
+        <span class="hero-chip">Open Source Commits (MockK v1.14.0)</span>
+        <span class="hero-chip">AI-Augmented SDLC</span>
+        <span class="hero-chip">MBA USP/Esalq Concluído</span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: WORST POSSIBLE IDEA -->
+    <section class="section-block" id="worst-idea">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Técnica I // Inversão Sistemática</span>
+          <h2 class="section-title">Worst Possible Idea: A Inversão dos Anti-Padrões</h2>
+        </div>
+        <p class="section-desc">
+          Identificamos os anti-padrões grotescos que destroem a credibilidade de engenheiros seniores e invertemos cada um na sua contrapartida de alto calibre executivo.
+        </p>
+      </div>
+
+      <div class="anti-pattern-grid">
+        <div class="card-comparison">
+          <span class="anti-badge">Anti-Padrão #1 // Opacidade</span>
+          <div>
+            <div class="rule-title">Portfólio genérico sem dados de escala</div>
+            <div class="rule-body">Afirmar que constrói "sistemas de alta performance" sem apresentar uma única métrica real de TPS, volume financeiro transacionado ou requests/mês.</div>
+          </div>
+          <span class="gold-badge">Diretriz Executiva de Ouro</span>
+          <div class="rule-body" style="color: var(--text-main);">
+            <strong>Métricas Factualmente Auditáveis:</strong> Apresentar a escala global da Trustly (+500 TPS, +$100B, 30+ países) e o volume maciço da Alelo (+500M req/mês, +10M usuários).
+          </div>
+        </div>
+
+        <div class="card-comparison">
+          <span class="anti-badge">Anti-Padrão #2 // Diluição</span>
+          <div>
+            <div class="rule-title">Trajetória picotada e prolixa</div>
+            <div class="rule-body">Listar múltiplas transições de cargo internas menores na Alelo ao longo de 4+ anos, gerando ruído e desorientando o recrutador sênior.</div>
+          </div>
+          <span class="gold-badge">Diretriz Executiva de Ouro</span>
+          <div class="rule-body" style="color: var(--text-main);">
+            <strong>Consolidação em Bloco Único:</strong> Unificar os 4+ anos de Alelo em um único bloco coeso de liderança e estabilidade, posicionando a Trustly como empresa atual.
+          </div>
+        </div>
+
+        <div class="card-comparison">
+          <span class="anti-badge">Anti-Padrão #3 // Efeito Estufa</span>
+          <div>
+            <div class="rule-title">Slogans vazios e clichês no Hero</div>
+            <div class="rule-body">Utilizar frases como "Transformando café em código de alta performance" ou "Apaixonado por resolver problemas com tecnologia".</div>
+          </div>
+          <span class="gold-badge">Diretriz Executiva de Ouro</span>
+          <div class="rule-body" style="color: var(--text-main);">
+            <strong>Clareza Cirúrgica Factual:</strong> "Senior Software Engineer (Backend & Distributed Systems). Core FinTech, JVM, processamento assíncrono batch e escala crítica."
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Career Scale Radar -->
+      <div class="scale-matrix">
+        <div class="scale-card">
+          <h4>
+            <span>Alelo Brasil</span>
+            <span class="badge-pill" style="font-size: 0.7rem;">4+ Anos (Consolidado)</span>
+          </h4>
+          <p style="font-size: 0.825rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Pilar de Escala B2C de Alto Volume e Baixa Latência no ecossistema financeiro de benefícios.
+          </p>
+          <div class="metric-row">
+            <span class="metric-name">Volume de Requisições</span>
+            <span class="metric-value">+500M req/mês</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Empresas Clientes B2B</span>
+            <span class="metric-value">+150.000 clientes</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Usuários Finais Ativos</span>
+            <span class="metric-value">+10 Milhões</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Foco Arquitetural</span>
+            <span class="metric-value">Distributed Microservices, JVM</span>
+          </div>
+        </div>
+
+        <div class="scale-card">
+          <h4>
+            <span>Trustly</span>
+            <span class="badge-pill active" style="font-size: 0.7rem;">Empresa Atual</span>
+          </h4>
+          <p style="font-size: 0.825rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Pilar de Alta Criticidade Financeira B2B, Billing massivo e reconciliação assíncrona.
+          </p>
+          <div class="metric-row">
+            <span class="metric-name">Throughput de Pagamentos</span>
+            <span class="metric-value">+500 TPS globais</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Volume Transacionado</span>
+            <span class="metric-value">+$100 Bilhões / ano</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Presença & Merchants</span>
+            <span class="metric-value">+9.000 merchants (30+ países)</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Arquitetura Crítica</span>
+            <span class="metric-value">Spring Batch, Quartz, S3 Stream, SFTP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PERSONA JOURNEY -->
+    <section class="section-block" id="persona-journey">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Técnica II // Jornada & Autoridade</span>
+          <h2 class="section-title">Persona Journey: A Tríade da Autoridade Holística</h2>
+        </div>
+        <p class="section-desc">
+          Como Hiring Managers e Staff Engineers escaneiam um perfil executivo em menos de 180 segundos: o balanço indispensável entre empresas de ponta, formação de elite e provas de código auditáveis.
+        </p>
+      </div>
+
+      <div class="triad-grid">
+        <div class="triad-card">
+          <span class="triad-pillar-num">01</span>
+          <h3>Empresas Tier-1 FinTech</h3>
+          <p>Validação de fogo sob pressão real de mercado. Sustentação de sistemas com reconciliação financeira de bilhões de dólares e tráfego B2C massivo.</p>
+          <div class="triad-proof">Alelo (B2C Scale) + Trustly (B2B Billing)</div>
+        </div>
+
+        <div class="triad-card">
+          <span class="triad-pillar-num">02</span>
+          <h3>Formação de Elite</h3>
+          <p>Rigor acadêmico formal aplicado à engenharia de software complexa. Conclusão de especialização executiva e base universitária pública sólida.</p>
+          <div class="triad-proof">MBA USP/Esalq CONCLUÍDO + UNESP</div>
+        </div>
+
+        <div class="triad-card">
+          <span class="triad-pillar-num">03</span>
+          <h3>Código & Open Source</h3>
+          <p>Capacidade demonstrada de intervir no ecossistema global. Correções em frameworks utilizados por milhões de desenvolvedores em escala global.</p>
+          <div class="triad-proof">MockK v1.14.0 Core Fix + dotme CLI</div>
+        </div>
+      </div>
+
+      <!-- Scanning Journey -->
+      <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem;">O Funil de Escaneamento Cognitivo do HM</h3>
+      <div class="scan-timeline">
+        <div class="timeline-step">
+          <div class="step-time">0 — 10 Segundos</div>
+          <div class="step-title">Posicionamento Factual</div>
+          <div class="step-desc">Hero cirúrgico: Senior Backend / Distributed Systems Engineer. Sem slogans vazios.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">10 — 30 Segundos</div>
+          <div class="step-title">Auditoria de Escala</div>
+          <div class="step-desc">Leitura dos blocos Trustly e Alelo com métricas de volume e complexidade transacional.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">30 — 90 Segundos</div>
+          <div class="step-title">Engenharia Viva</div>
+          <div class="step-desc">Interação com os sandboxes do Antifraude e Terminal do dotme. Prova técnica em ação.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">90 — 180 Segundos</div>
+          <div class="step-title">Conversão Sem Fricção</div>
+          <div class="step-desc">Download direto de CV ATS (1-2 págs) e acionamento via mailto ou LinkedIn direto.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CRANK THE DIAL TO 11 -->
+    <section class="section-block" id="dial-11">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Técnica III // Engenharia Viva</span>
+          <h2 class="section-title">Crank the Dial to 11: Ideação & Sandboxes Interativos</h2>
+        </div>
+        <p class="section-desc">
+          Elevar as ideias ao extremo de maturidade. Em vez de prints estáticos, integramos módulos interativos que comprovam domínio prático e sofisticação de produto.
+        </p>
+      </div>
+
+      <div class="dial-grid">
+        <!-- Interactive Antifraud Sandbox -->
+        <div class="interactive-card">
+          <div class="card-tag">
+            <span>🛡️ Sandbox Interativo</span>
+            <span>•</span>
+            <span>Antifraud Dynamic Engine</span>
+          </div>
+          <h3 class="card-headline">Simulador de Score Antifraude com Amortecimento</h3>
+          <p class="card-caption">
+            Ajuste os parâmetros da transação em tempo real para visualizar o recálculo ponderado (α = 0.8/0.2) e a análise na janela deslizante de 60 minutos.
+          </p>
+
+          <div class="sandbox-controls">
+            <div class="control-row">
+              <div class="control-header">
+                <span class="control-label">Valor da Transação (BRL)</span>
+                <span class="control-value" id="valAmountDisplay">R$ 1.500</span>
+              </div>
+              <input type="range" id="inputAmount" min="50" max="25000" step="50" value="1500" oninput="updateAntifraud()">
+            </div>
+
+            <div class="control-row">
+              <div class="control-header">
+                <span class="control-label">Velocidade (Tx nos últimos 60 min)</span>
+                <span class="control-value" id="valVelocityDisplay">2 transações</span>
+              </div>
+              <input type="range" id="inputVelocity" min="0" max="15" step="1" value="2" oninput="updateAntifraud()">
+            </div>
+
+            <div class="control-row">
+              <div class="control-header">
+                <span class="control-label">Dispersão Geográfica / Salto de IP</span>
+                <span class="control-value" id="valGeoDisplay">12 km</span>
+              </div>
+              <input type="range" id="inputGeo" min="0" max="2000" step="10" value="12" oninput="updateAntifraud()">
+            </div>
+          </div>
+
+          <div class="sandbox-result">
+            <div class="result-score-bar">
+              <div>
+                <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--mono); text-transform: uppercase;">Índice de Risco Calculado</span>
+                <div style="font-size: 1.5rem; font-weight: 700; font-family: var(--mono);" id="scoreDisplay">24 / 100</div>
+              </div>
+              <div id="verdictBadge" class="verdict-badge verdict-approved">APROVADO</div>
+            </div>
+
+            <div class="score-meter">
+              <div class="score-fill" id="scoreMeterFill"></div>
+            </div>
+
+            <div class="formula-breakdown" id="formulaBreakdown">
+              Score = (Base: 12) + (Velocidade: +6) + (Geo: +1) + Damping (0.8/0.2) = 24.
+              <br>Decisão: Pipeline limpo. Nenhuma violação heurística detectada.
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal dotme Simulator -->
+        <div class="interactive-card">
+          <div class="card-tag">
+            <span>💻 Terminal Emulator</span>
+            <span>•</span>
+            <span>dotme CLI in Action</span>
+          </div>
+          <h3 class="card-headline">Emulador de Loop Animado do dotme</h3>
+          <p class="card-caption">
+            Demonstração com typewriter do utilitário open source de gerenciamento de dotfiles com pattern globbing e testes automatizados.
+          </p>
+
+          <div class="terminal-container">
+            <div class="terminal-bar">
+              <div class="terminal-dots">
+                <span class="t-dot red"></span>
+                <span class="t-dot yellow"></span>
+                <span class="t-dot green"></span>
+              </div>
+              <span class="terminal-title">zsh — dotme apply</span>
+              <div class="terminal-actions">
+                <button onclick="restartTerminal()">Replay</button>
+              </div>
+            </div>
+            <div class="terminal-screen" id="terminalScreen"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open Source Ecosystem Hub -->
+      <div class="os-hub-grid">
+        <div class="os-highlight-card">
+          <div class="os-meta-header">
+            <span class="os-pill">Core Framework Contribution</span>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted);">Release v1.14.0</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">MockK (Kotlin) — Correção de State Leak</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+            Intervenção cirúrgica no método <code style="font-family: var(--mono); color: var(--accent);">confirmVerified</code>. Corrigido vazamento de estado em chamadas sequenciais de mocks, garantindo isolamento total e determinismo em suítes de testes unitários globais.
+          </p>
+          <div style="font-family: var(--mono); font-size: 0.75rem; color: var(--emerald); background: var(--emerald-muted); border: 1px solid rgba(16,185,129,0.25); padding: 0.5rem 0.75rem; border-radius: 4px;">
+            ✓ Adotado globalmente na release v1.14.0 utilizada por milhares de empresas.
+          </div>
+        </div>
+
+        <div class="os-highlight-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span class="os-pill" style="margin-bottom: 0.75rem; display: inline-block;">Ecossistema & Ferramental</span>
+            <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">Mural de Ativos Open Source</h4>
+            <div class="os-community-list">
+              <div class="os-mini-card">
+                <div class="os-mini-info">
+                  <h5>dotme CLI</h5>
+                  <p>Dotfiles management CLI with glob filter</p>
+                </div>
+                <span class="os-stat">Author</span>
+              </div>
+              <div class="os-mini-card">
+                <div class="os-mini-info">
+                  <h5>n8n-docs</h5>
+                  <p>Open source workflow engine documentation</p>
+                </div>
+                <span class="os-stat">Contributor</span>
+              </div>
+              <div class="os-mini-card">
+                <div class="os-mini-info">
+                  <h5>microbot</h5>
+                  <p>Lightweight automation bot for dev routines</p>
+                </div>
+                <span class="os-stat">Creator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: THE CLIMAX - SÍNTESE ESTRATÉGICA & MOSCOW -->
+    <section class="section-block" id="synthesis">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">O Clímax // Roadmap Definitivo</span>
+          <h2 class="section-title">Síntese Estratégica & Arquitetura MoSCoW</h2>
+        </div>
+        <p class="section-desc">
+          O plano tático acordado para a modernização. Priorização rígida de entrega para maximizar o impacto executivo e mitigar qualquer dispersão técnica.
+        </p>
+      </div>
+
+      <!-- MoSCoW Interactive Tabs -->
+      <div class="moscow-tabs">
+        <button class="tab-btn active" onclick="switchMoscow('must')">Must Have (Incondicional)</button>
+        <button class="tab-btn" onclick="switchMoscow('should')">Should Have (Alto Valor)</button>
+        <button class="tab-btn" onclick="switchMoscow('could')">Could Have (Refinamento)</button>
+        <button class="tab-btn" onclick="switchMoscow('wont')">Won't Have (Descartados)</button>
+      </div>
+
+      <div class="moscow-panel active" id="panel-must">
+        <div class="moscow-items-grid">
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-must">MUST</span>
+              <span class="moscow-item-title">Hero Factual Ultra-Sóbrio</span>
+            </div>
+            <div class="moscow-item-body">Nome, cargo cirúrgico (Senior Backend & Distributed Systems), 2 linhas de posicionamento factual com Trustly + Alelo, e botões diretos de CV e contato.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-must">MUST</span>
+              <span class="moscow-item-title">Dual Scale FinTech (Trustly + Alelo)</span>
+            </div>
+            <div class="moscow-item-body">Trustly como empresa atual (Billing B2B, Spring Batch, S3 Streaming, 500 TPS) e Alelo consolidada em um único bloco de impacto (+500M req/mês).</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-must">MUST</span>
+              <span class="moscow-item-title">Engenharia Viva em 2 Projetos</span>
+            </div>
+            <div class="moscow-item-body">Card do Antifraud System com sandbox interativo funcional e card do dotme com terminal animado typewriter.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-must">MUST</span>
+              <span class="moscow-item-title">Hub Open Source & MockK</span>
+            </div>
+            <div class="moscow-item-body">Mural unificado destacando a contribuição para MockK v1.14.0 (correção de state leak) e projetos comunitários.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-must">MUST</span>
+              <span class="moscow-item-title">Atualização Acadêmica MBA USP</span>
+            </div>
+            <div class="moscow-item-body">Atualização explícita para status CONCLUÍDO no MBA em Engenharia de Software pela USP/Esalq.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-must">MUST</span>
+              <span class="moscow-item-title">CV ATS em PDF para Download</span>
+            </div>
+            <div class="moscow-item-body">Geração de documento enxuto de 1-2 páginas alinhado cirurgicamente com as novas métricas para consumo de recrutadores e parsers ATS.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="moscow-panel" id="panel-should">
+        <div class="moscow-items-grid">
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-should">SHOULD</span>
+              <span class="moscow-item-title">Skills por Camadas Arquiteturais</span>
+            </div>
+            <div class="moscow-item-body">Agrupamento técnico em 4 camadas estruturadas: Backend Core, Arquitetura & Dados, Cloud & DevOps, IA & Modern Engineering.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-should">SHOULD</span>
+              <span class="moscow-item-title">Diferencial de IA no SDLC</span>
+            </div>
+            <div class="moscow-item-body">Destaque explícito de domínio aplicado de RAG, MCP (Model Context Protocol), AI Agents, Claude, Gemini e Skills de automação.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-should">SHOULD</span>
+              <span class="moscow-item-title">Badge de Disponibilidade Ativa</span>
+            </div>
+            <div class="moscow-item-body">Tag sutil "Open to select senior/staff opportunities" com link mailto pré-configurado sem formulários que falham.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="moscow-panel" id="panel-could">
+        <div class="moscow-items-grid">
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-could">COULD</span>
+              <span class="moscow-item-title">Filtros Interativos por Tecnologia</span>
+            </div>
+            <div class="moscow-item-body">Possibilidade de filtrar os projetos por tag (ex: Spring, Kotlin, AWS, Distributed) se o volume de projetos expandir.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-could">COULD</span>
+              <span class="moscow-item-title">Telemetria de Leitura sem Rastreio</span>
+            </div>
+            <div class="moscow-item-body">Micro-indicador de tempo médio de leitura de seções para fins puramente de UX local.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="moscow-panel" id="panel-wont">
+        <div class="moscow-items-grid">
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-wont">WON'T</span>
+              <span class="moscow-item-title">Slogans de Efeito no Hero</span>
+            </div>
+            <div class="moscow-item-body">Descartados por infantilizarem o perfil executivo e diminuírem a autoridade diante de diretores e CTOs.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-wont">WON'T</span>
+              <span class="moscow-item-title">Visualizador Bruto de PR Diff do MockK</span>
+            </div>
+            <div class="moscow-item-body">Descartado por ser excessivamente granular; substituído pelo Hub de impacto e credibilidade comunitária.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-wont">WON'T</span>
+              <span class="moscow-item-title">PrioriTask no Portfólio</span>
+            </div>
+            <div class="moscow-item-body">Substituído definitivamente pelo dotme, que apresenta complexidade técnica, testes e aplicabilidade muito superiores.</div>
+          </div>
+          <div class="moscow-item-card">
+            <div class="moscow-item-header">
+              <span class="moscow-tag tag-wont">WON'T</span>
+              <span class="moscow-item-title">Formulários Complexos de Contato</span>
+            </div>
+            <div class="moscow-item-body">Substituído por mailto direto e link LinkedIn, eliminando perda de leads por bugs de backend ou spam filters.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Specimen: Executive Hero Blueprint -->
+      <div class="specimen-box">
+        <div class="specimen-label">
+          <span>📐 Visual Specimen // O Novo Hero Executivo Aprovado</span>
+        </div>
+        <div class="specimen-content">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <h3 class="specimen-name">Vinicius Ribeiro</h3>
+              <div class="specimen-role">Senior Software Engineer — Backend & Distributed Systems</div>
+            </div>
+            <span class="badge-pill active">Open to Select Opportunities</span>
+          </div>
+          <p class="specimen-summary">
+            Engenheiro especializado em sistemas distribuídos de alta criticidade e escala em FinTech. Atualmente na <strong>Trustly</strong> arquitetando pipelines de billing B2B massivo e processamento batch assíncrono (+$100B transacionados, 500+ TPS). Trajetória de 4+ anos na <strong>Alelo</strong> sustentando arquiteturas de alta volumetria (+500M req/mês, 10M+ usuários). Contribuidor do core do <strong>MockK</strong> e criador da CLI <strong>dotme</strong>. MBA em Engenharia de Software pela USP/Esalq.
+          </p>
+          <div class="specimen-actions">
+            <a href="#cv" class="specimen-btn btn-primary">📄 Baixar CV Executivo (PDF)</a>
+            <a href="#linkedin" class="specimen-btn btn-outline">LinkedIn Profile ↗</a>
+            <a href="#github" class="specimen-btn btn-outline">GitHub & Open Source ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Matrix 4 Layers -->
+      <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Matriz de Competências em 4 Camadas Arquiteturais</h3>
+      <div class="skills-matrix">
+        <div class="layer-card">
+          <div class="layer-title">01. Backend Core & JVM</div>
+          <div class="layer-chips">
+            <span class="layer-chip">Java 17/21</span>
+            <span class="layer-chip">Kotlin</span>
+            <span class="layer-chip">Spring Boot</span>
+            <span class="layer-chip">Spring Batch</span>
+            <span class="layer-chip">Quartz Scheduler</span>
+            <span class="layer-chip">Javalite / Guice</span>
+            <span class="layer-chip">Clean Architecture</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">02. Arquitetura & Dados</div>
+          <div class="layer-chips">
+            <span class="layer-chip">PostgreSQL (Advanced)</span>
+            <span class="layer-chip">Distributed Systems</span>
+            <span class="layer-chip">High-Throughput Batch</span>
+            <span class="layer-chip">Large File Streaming</span>
+            <span class="layer-chip">Redis</span>
+            <span class="layer-chip">RabbitMQ / Kafka</span>
+            <span class="layer-chip">Reconciliação B2B</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">03. Cloud, Infra & DevOps</div>
+          <div class="layer-chips">
+            <span class="layer-chip">AWS S3</span>
+            <span class="layer-chip">AWS Lambda</span>
+            <span class="layer-chip">Secure SFTP Pipelines</span>
+            <span class="layer-chip">Docker</span>
+            <span class="layer-chip">GitHub Actions CI/CD</span>
+            <span class="layer-chip">Observability / APM</span>
+            <span class="layer-chip">RBAC Security</span>
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">04. IA & Modern Engineering</div>
+          <div class="layer-chips">
+            <span class="layer-chip">AI-Augmented SDLC</span>
+            <span class="layer-chip">Model Context Protocol</span>
+            <span class="layer-chip">RAG Architectures</span>
+            <span class="layer-chip">Autonomous AI Agents</span>
+            <span class="layer-chip">LLM Prompt Crafting</span>
+            <span class="layer-chip">Unit & Mutation Tests</span>
+            <span class="layer-chip">CLI Tools (dotme)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Meta -->
+    <footer class="executive-footer">
+      <div class="footer-left">
+        <span>Portfolio & CV Brainstorm Keepsake</span>
+        <span>•</span>
+        <span>Minimalist Ultra-Sober Executive Standard</span>
+      </div>
+      <div>
+        <span>Gerado com BMAD Creative Partner // 2026</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Theme Toggle Functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
+      if (newTheme === 'dark') {
+        icon.textContent = '🌓';
+        label.textContent = 'Modo Claro';
+      } else {
+        icon.textContent = '☀️';
+        label.textContent = 'Modo Escuro';
+      }
+    }
+
+    // Interactive Antifraud Engine Calculation
+    function updateAntifraud() {
+      const amount = parseFloat(document.getElementById('inputAmount').value);
+      const velocity = parseInt(document.getElementById('inputVelocity').value);
+      const geo = parseInt(document.getElementById('inputGeo').value);
+
+      // Formatting displays
+      document.getElementById('valAmountDisplay').textContent = 
+        'R$ ' + amount.toLocaleString('pt-BR');
+      document.getElementById('valVelocityDisplay').textContent = 
+        velocity + (velocity === 1 ? ' transação' : ' transações');
+      document.getElementById('valGeoDisplay').textContent = 
+        geo.toLocaleString('pt-BR') + ' km';
+
+      // Heuristic Scoring Algorithm
+      // Base risk from amount
+      let baseRisk = 0;
+      if (amount <= 2000) baseRisk = 10;
+      else if (amount <= 8000) baseRisk = 25;
+      else if (amount <= 15000) baseRisk = 45;
+      else baseRisk = 70;
+
+      // Velocity penalty (exponential over 4 tx/hr)
+      let velocityPenalty = 0;
+      if (velocity > 8) velocityPenalty = 40;
+      else if (velocity > 4) velocityPenalty = 20;
+      else velocityPenalty = velocity * 3;
+
+      // Geo dispersion penalty (> 500 km within window is anomalous)
+      let geoPenalty = 0;
+      if (geo > 800) geoPenalty = 35;
+      else if (geo > 300) geoPenalty = 15;
+      else geoPenalty = Math.round(geo / 50);
+
+      // Raw Risk Calculation
+      const rawRisk = (baseRisk * 0.5) + (velocityPenalty * 0.3) + (geoPenalty * 0.2);
+
+      // Human-in-the-loop dynamic damping formula: Score = (Raw * 0.8) + (Historical * 0.2)
+      // Assuming historical baseline is 15
+      const historicalBaseline = 15;
+      const finalScore = Math.min(100, Math.round((rawRisk * 0.8) + (historicalBaseline * 0.2)));
+
+      // Render Score & Meter
+      const scoreDisplay = document.getElementById('scoreDisplay');
+      const scoreFill = document.getElementById('scoreMeterFill');
+      const verdictBadge = document.getElementById('verdictBadge');
+      const formulaEl = document.getElementById('formulaBreakdown');
+
+      scoreDisplay.textContent = finalScore + ' / 100';
+      scoreFill.style.width = finalScore + '%';
+
+      if (finalScore < 40) {
+        verdictBadge.textContent = 'APROVADO';
+        verdictBadge.className = 'verdict-badge verdict-approved';
+        scoreFill.style.backgroundColor = 'var(--emerald)';
+        formulaEl.innerHTML = `Score ponderado: <strong>${finalScore}</strong> (Base: ${Math.round(baseRisk*0.5)}, Vel: ${Math.round(velocityPenalty*0.3)}, Geo: ${Math.round(geoPenalty*0.2)} com amortecimento α=0.8).<br>Decisão: <span style="color: var(--emerald);">Pipeline limpo. Transação autorizada automaticamente.</span>`;
+      } else if (finalScore < 70) {
+        verdictBadge.textContent = 'ANÁLISE MANUAL';
+        verdictBadge.className = 'verdict-badge verdict-review';
+        scoreFill.style.backgroundColor = 'var(--amber)';
+        formulaEl.innerHTML = `Score ponderado: <strong>${finalScore}</strong> (Alerta de velocidade/dispersão na janela de 60 min).<br>Decisão: <span style="color: var(--amber);">Roteada para esteira de revisão humana e desafio 2FA.</span>`;
+      } else {
+        verdictBadge.textContent = 'BLOQUEADO';
+        verdictBadge.className = 'verdict-badge verdict-rejected';
+        scoreFill.style.backgroundColor = 'var(--rose)';
+        formulaEl.innerHTML = `Score ponderado: <strong>${finalScore}</strong> (Dispersão espaço-temporal e valor anômalo).<br>Decisão: <span style="color: var(--rose);">Bloqueio preventivo imediato de pipeline RBAC.</span>`;
+      }
+    }
+
+    // Terminal Typewriter Loop for dotme
+    const terminalScript = [
+      { text: "vinicius@archbox ~ % dotme --version\n", delay: 40, class: "prompt-cmd" },
+      { text: "dotme v2.4.1 (x86_64-linux-gnu) — High-Performance Dotfiles Manager\n\n", delay: 10, class: "" },
+      { text: "vinicius@archbox ~ % dotme apply --profile executive\n", delay: 45, class: "prompt-cmd" },
+      { text: "[*] Reading manifest: ~/.dotfiles/manifest.toml...\n", delay: 20, class: "terminal-highlight" },
+      { text: "[*] Evaluating glob pattern exclusions (!**/.git, !**/*.secret)...\n", delay: 15, class: "" },
+      { text: "[+] Hydrating symlinks for zsh, nvim, tmux, gitconfig...\n", delay: 25, class: "terminal-success" },
+      { text: "[+] Running integrity and idempotency checks (128 rules)...\n", delay: 20, class: "" },
+      { text: "[✔] Configuration successfully synchronized in 14.8ms with zero conflicts.\n\n", delay: 20, class: "terminal-success" },
+      { text: "vinicius@archbox ~ % dotme test --coverage\n", delay: 45, class: "prompt-cmd" },
+      { text: "[✔] 48/48 tests passed (98.4% branch coverage).\n", delay: 20, class: "terminal-success" }
+    ];
+
+    let termTimeout = null;
+    function runTerminalTypewriter(index = 0, charIndex = 0) {
+      const screen = document.getElementById('terminalScreen');
+      if (index === 0 && charIndex === 0) {
+        screen.innerHTML = '';
+      }
+
+      if (index >= terminalScript.length) {
+        // finished, wait and loop
+        termTimeout = setTimeout(() => {
+          runTerminalTypewriter(0, 0);
+        }, 5000);
+        return;
+      }
+
+      const item = terminalScript[index];
+      if (charIndex < item.text.length) {
+        const span = document.createElement('span');
+        if (item.class) span.className = item.class;
+        span.textContent = item.text[charIndex];
+        screen.appendChild(span);
+        termTimeout = setTimeout(() => {
+          runTerminalTypewriter(index, charIndex + 1);
+        }, item.delay);
+      } else {
+        termTimeout = setTimeout(() => {
+          runTerminalTypewriter(index + 1, 0);
+        }, 200);
+      }
+    }
+
+    function restartTerminal() {
+      if (termTimeout) clearTimeout(termTimeout);
+      runTerminalTypewriter(0, 0);
+    }
+
+    // MoSCoW Tab Switching
+    function switchMoscow(panelId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.moscow-panel').forEach(panel => panel.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById('panel-' + panelId).classList.add('active');
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateAntifraud();
+      runTerminalTypewriter(0, 0);
+    });
+  </script>
+</body>
+</html>
