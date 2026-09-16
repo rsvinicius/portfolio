@@ -11,9 +11,9 @@ const translations = {
         // Hero Section
         availabilityBeacon: "Open to remote opportunities",
         heroRole: "Software Engineer • Backend",
-        heroDesc: "Specialized in high-throughput JVM architectures, B2B billing and reporting pipelines, and financial backends handling over 500M req/mo.",
+        heroDesc: "Software Engineer specializing in JVM architectures, distributed systems, and financial backends.",
         role: "Software Engineer • Backend",
-        specialization: "Specialized in high-throughput JVM architectures, B2B billing and reporting pipelines, and financial backends handling over 500M req/mo.",
+        specialization: "Software Engineer specializing in JVM architectures, distributed systems, and financial backends.",
         getInTouch: "Initiate Direct Contact",
         viewProjects: "View Projects",
         downloadCv: "Download ATS CV (PDF)",
@@ -30,7 +30,7 @@ const translations = {
         // Metric Stat Cards
         metric1Num: "+500M",
         metric1Label: "B2C Scale Throughput",
-        metric1Sub: "Monthly requests across microservices",
+        metric1Sub: "Microservices scale across 10M+ users",
         metric2Num: "+$100B",
         metric2Label: "B2B Financial Volume",
         metric2Sub: "Global processed volume & reconciliation",
@@ -148,9 +148,9 @@ const translations = {
         // Hero Section
         availabilityBeacon: "Disponível para oportunidades remotas",
         heroRole: "Engenheiro de Software • Backend",
-        heroDesc: "Especializado em arquiteturas JVM de alta vazão, pipelines de faturamento e relatórios B2B e sistemas financeiros lidando com mais de 500M req/mês.",
+        heroDesc: "Engenheiro de Software especializado em arquiteturas JVM, sistemas distribuídos e backends financeiros.",
         role: "Engenheiro de Software • Backend",
-        specialization: "Especializado em arquiteturas JVM de alta vazão, pipelines de faturamento e relatórios B2B e sistemas financeiros lidando com mais de 500M req/mês.",
+        specialization: "Engenheiro de Software especializado em arquiteturas JVM, sistemas distribuídos e backends financeiros.",
         getInTouch: "Iniciar Contato Direto",
         viewProjects: "Ver Projetos",
         downloadCv: "Baixar CV ATS (PDF)",
@@ -167,7 +167,7 @@ const translations = {
         // Metric Stat Cards
         metric1Num: "+500M",
         metric1Label: "Vazão em Escala B2C",
-        metric1Sub: "Requisições mensais em microsserviços",
+        metric1Sub: "Escala de microsserviços para 10M+ usuários",
         metric2Num: "+$100B",
         metric2Label: "Volume Financeiro B2B",
         metric2Sub: "Volume global processado e reconciliação",
