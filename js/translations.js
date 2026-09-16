@@ -9,11 +9,11 @@ const translations = {
         contact: "Contact",
         
         // Hero Section
-        availabilityBeacon: "Open to select senior/staff opportunities (Remote / Hybrid)",
-        heroRole: "Senior Software Engineer • Backend & Distributed Systems",
-        heroDesc: "Specialized in high-throughput JVM architectures, B2B billing/reconciliation engines, and mission-critical financial processing handling over 500M req/mo and +$100B in global volume.",
-        role: "Senior Software Engineer • Backend & Distributed Systems",
-        specialization: "Specialized in high-throughput JVM architectures, B2B billing/reconciliation engines, and mission-critical financial processing handling over 500M req/mo and +$100B in global volume.",
+        availabilityBeacon: "Open to remote opportunities",
+        heroRole: "Software Engineer • Backend",
+        heroDesc: "Specialized in high-throughput JVM architectures, B2B billing and reporting pipelines, and financial backends handling over 500M req/mo.",
+        role: "Software Engineer • Backend",
+        specialization: "Specialized in high-throughput JVM architectures, B2B billing and reporting pipelines, and financial backends handling over 500M req/mo.",
         getInTouch: "Initiate Direct Contact",
         viewProjects: "View Projects",
         downloadCv: "Download ATS CV (PDF)",
@@ -29,19 +29,19 @@ const translations = {
 
         // Metric Stat Cards
         metric1Num: "+500M",
-        metric1Label: "B2C Scale Throughput",
-        metric1Sub: "Monthly requests across microservices",
-        metric2Num: "+$100B",
-        metric2Label: "B2B Financial Volume",
-        metric2Sub: "Global processed volume & reconciliation",
-        metric3Num: "+500 TPS",
-        metric3Label: "Peak B2B Backoffice Rate",
-        metric3Sub: "Multi-tenant reports & billing streaming",
+        metric1Label: "Monthly Requests",
+        metric1Sub: "Microservices scale across 10M+ users",
+        metric2Num: "Batch & Streaming",
+        metric2Label: "B2B Billing & Reports",
+        metric2Sub: "Financial reconciliation & report pipelines",
+        metric3Num: "99.99%",
+        metric3Label: "System Availability",
+        metric3Sub: "Resilient financial and card backends",
 
         // Contact Pre-filled Email Strings
-        contactEmailSubject: "Senior Engineering Opportunity - Vinicius R. Silva",
-        contactEmailBody: "Hi Vinicius,\n\nI reviewed your portfolio and would like to discuss a Senior/Staff Software Engineer role at...",
-        contactText: "Direct outreach for senior engineering leadership, staff backend roles, and high-impact distributed systems.",
+        contactEmailSubject: "Software Engineering Opportunity - Vinicius R. Silva",
+        contactEmailBody: "Hi Vinicius,\n\nI reviewed your portfolio and would like to discuss a Software Engineer role at...",
+        contactText: "Direct outreach for software engineering opportunities, backend development, and high-throughput systems.",
         
         // About Section
         aboutMe: "About Me",
@@ -146,11 +146,11 @@ const translations = {
         contact: "Contato",
         
         // Hero Section
-        availabilityBeacon: "Disponível para oportunidades selecionadas de senior/staff (Remoto / Híbrido)",
-        heroRole: "Engenheiro de Software Sênior • Backend & Sistemas Distribuídos",
-        heroDesc: "Especializado em arquiteturas JVM de alta vazão, motores de faturamento/reconciliação B2B e processamento financeiro de missão crítica lidando com mais de 500M req/mês e +$100B em volume global.",
-        role: "Engenheiro de Software Sênior • Backend & Sistemas Distribuídos",
-        specialization: "Especializado em arquiteturas JVM de alta vazão, motores de faturamento/reconciliação B2B e processamento financeiro de missão crítica lidando com mais de 500M req/mês e +$100B em volume global.",
+        availabilityBeacon: "Disponível para oportunidades remotas",
+        heroRole: "Engenheiro de Software • Backend",
+        heroDesc: "Especializado em arquiteturas JVM de alta vazão, pipelines de faturamento e relatórios B2B e sistemas financeiros lidando com mais de 500M req/mês.",
+        role: "Engenheiro de Software • Backend",
+        specialization: "Especializado em arquiteturas JVM de alta vazão, pipelines de faturamento e relatórios B2B e sistemas financeiros lidando com mais de 500M req/mês.",
         getInTouch: "Iniciar Contato Direto",
         viewProjects: "Ver Projetos",
         downloadCv: "Baixar CV ATS (PDF)",
@@ -166,19 +166,19 @@ const translations = {
 
         // Metric Stat Cards
         metric1Num: "+500M",
-        metric1Label: "Vazão em Escala B2C",
-        metric1Sub: "Requisições mensais em microsserviços",
-        metric2Num: "+$100B",
-        metric2Label: "Volume Financeiro B2B",
-        metric2Sub: "Volume global processado e reconciliação",
-        metric3Num: "+500 TPS",
-        metric3Label: "Taxa de Pico Backoffice B2B",
-        metric3Sub: "Relatórios multi-tenant e streaming de faturamento",
+        metric1Label: "Requisições Mensais",
+        metric1Sub: "Escala de microsserviços para 10M+ usuários",
+        metric2Num: "Batch & Streaming",
+        metric2Label: "Faturamento e Relatórios B2B",
+        metric2Sub: "Reconciliação financeira e pipelines de relatórios",
+        metric3Num: "99.99%",
+        metric3Label: "Disponibilidade de Sistemas",
+        metric3Sub: "Backends resilientes de pagamentos e cartões",
 
         // Contact Pre-filled Email Strings
-        contactEmailSubject: "Oportunidade Engenharia Sênior - Vinicius R. Silva",
-        contactEmailBody: "Olá Vinicius,\n\nAnalisei seu portfólio e gostaria de conversar sobre uma oportunidade de Engenheiro de Software Sênior/Staff na...",
-        contactText: "Contato direto para liderança de engenharia sênior, posições staff backend e sistemas distribuídos de alto impacto.",
+        contactEmailSubject: "Oportunidade Engenharia de Software - Vinicius R. Silva",
+        contactEmailBody: "Olá Vinicius,\n\nAnalisei seu portfólio e gostaria de conversar sobre uma oportunidade de Engenheiro de Software na...",
+        contactText: "Contato direto para oportunidades de engenharia de software, desenvolvimento backend e sistemas de alta vazão.",
         
         // About Section
         aboutMe: "Sobre Mim",

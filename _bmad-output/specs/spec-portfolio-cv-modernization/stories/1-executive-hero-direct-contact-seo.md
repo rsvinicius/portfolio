@@ -82,6 +82,13 @@ context:
 
 ## Spec Change Log
 
+- **2026-09-16 (Human Walkthrough Review):**
+  - Calibrated seniority: updated from "Senior Software Engineer • Backend & Distributed Systems" to "Software Engineer • Backend" across all tags, headers, and translations.
+  - Adjusted availability beacon: replaced "Open to select senior/staff opportunities (Remote / Hybrid)" with "Open to remote opportunities".
+  - Recalibrated hero metric cards: replaced company-wide +$100B volume and 500 TPS backoffice with authentic personal engineering domain metrics (+500M monthly requests, Batch & Streaming B2B billing/reports, 99.99% system availability).
+  - Cleaned email prefill templates and contact texts of Senior/Staff phrasing.
+  - Updated ATS CV PDF asset to `Vinicius_Silva_Software_Engineer_CV.pdf`.
+
 ## Review Triage Log
 
 | ID | Location | Verdict | Evidence & Rationale |

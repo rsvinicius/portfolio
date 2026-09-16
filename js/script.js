@@ -227,8 +227,8 @@ function updateLanguage(lang, translations) {
 // Update prefilled mailto links across components
 function updateMailtoLinks(lang, translations) {
     const langDict = (translations && translations[lang]) ? translations[lang] : {};
-    const defaultSubject = "Senior Engineering Opportunity - Vinicius R. Silva";
-    const defaultBody = "Hi Vinicius,\r\n\r\nI reviewed your portfolio and would like to discuss a Senior/Staff Software Engineer role at...";
+    const defaultSubject = "Software Engineering Opportunity - Vinicius R. Silva";
+    const defaultBody = "Hi Vinicius,\r\n\r\nI reviewed your portfolio and would like to discuss a Software Engineer role at...";
     
     const subjectText = langDict.contactEmailSubject || defaultSubject;
     const bodyText = (langDict.contactEmailBody || defaultBody).replace(/\r?\n/g, '\r\n');
