@@ -60,21 +60,32 @@ function initializePostLoadFunctionality() {
         })
         .catch(error => console.error('Error loading translations:', error));
 
-    // Theme switching functionality
+    // Theme switching functionality (Dark mode by default per DESIGN.md & EXPERIENCE.md)
     const themeToggle = document.getElementById('theme-toggle');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
     
-    // Check for saved theme preference, default to light theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    let savedTheme = null;
+    try {
+        savedTheme = localStorage.getItem('theme');
+    } catch (e) {
+        console.warn('localStorage not accessible for theme', e);
+    }
+
+    if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+    } else {
         document.documentElement.classList.add('dark');
     }
 
     function toggleTheme() {
         document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', 
-            document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-        );
+        try {
+            localStorage.setItem('theme', 
+                document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+            );
+        } catch (e) {
+            console.warn('localStorage not accessible for saving theme', e);
+        }
     }
 
     // Add click handlers for theme toggles
@@ -102,7 +113,6 @@ function initializePostLoadFunctionality() {
     const backToTopButton = document.getElementById('back-to-top');
     
     if (backToTopButton) {
-        // Show/hide the button based on scroll position
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('scale-0');
@@ -113,7 +123,6 @@ function initializePostLoadFunctionality() {
             }
         });
         
-        // Scroll to top when clicked
         backToTopButton.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
@@ -127,7 +136,7 @@ function initializePostLoadFunctionality() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            if (href !== '#') {
+            if (href && href !== '#') {
                 e.preventDefault();
                 
                 const targetElement = document.querySelector(href);
@@ -140,14 +149,18 @@ function initializePostLoadFunctionality() {
         });
     });
 
-    // Initialize form handling
+    // Initialize contact form if present
     initializeContactForm();
 }
 
 // Language toggle functionality
 function initializeLanguageToggle(translations) {
-    // Get the saved language or default to English
-    const savedLanguage = localStorage.getItem('language') || 'en';
+    let savedLanguage = 'en';
+    try {
+        savedLanguage = localStorage.getItem('language') || 'en';
+    } catch (e) {
+        console.warn('localStorage not accessible for language', e);
+    }
     
     // Set the initial language
     document.documentElement.lang = savedLanguage;
@@ -162,20 +175,22 @@ function initializeLanguageToggle(translations) {
         const newLang = currentLang === 'en' ? 'pt' : 'en';
         
         document.documentElement.lang = newLang;
-        localStorage.setItem('language', newLang);
+        try {
+            localStorage.setItem('language', newLang);
+        } catch (e) {
+            console.warn('localStorage not accessible for saving language', e);
+        }
         
         updateLanguage(newLang, translations);
     }
     
     if (languageToggle) {
         languageToggle.addEventListener('click', handleLanguageToggle);
-        // Update the toggle text based on current language
         updateToggleText(languageToggle, savedLanguage, translations);
     }
     
     if (mobileLanguageToggle) {
         mobileLanguageToggle.addEventListener('click', handleLanguageToggle);
-        // Update the toggle text based on current language
         updateToggleText(mobileLanguageToggle, savedLanguage, translations);
     }
 }
@@ -185,7 +200,7 @@ function updateLanguage(lang, translations) {
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
+        if (translations && translations[lang] && translations[lang][key]) {
             element.textContent = translations[lang][key];
         }
     });
@@ -193,11 +208,14 @@ function updateLanguage(lang, translations) {
     // Update all input placeholders with data-i18n-placeholder
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) {
+        if (translations && translations[lang] && translations[lang][key]) {
             element.placeholder = translations[lang][key];
         }
     });
     
+    // Synchronize pre-filled mailto URIs with localized subject and body
+    updateMailtoLinks(lang, translations);
+
     // Update language toggle buttons
     const languageToggle = document.getElementById('language-toggle');
     const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
@@ -206,18 +224,87 @@ function updateLanguage(lang, translations) {
     if (mobileLanguageToggle) updateToggleText(mobileLanguageToggle, lang, translations);
 }
 
+// Update prefilled mailto links across components
+function updateMailtoLinks(lang, translations) {
+    const langDict = (translations && translations[lang]) ? translations[lang] : {};
+    const defaultSubject = "Senior Engineering Opportunity - Vinicius R. Silva";
+    const defaultBody = "Hi Vinicius,\r\n\r\nI reviewed your portfolio and would like to discuss a Senior/Staff Software Engineer role at...";
+    
+    const subjectText = langDict.contactEmailSubject || defaultSubject;
+    const bodyText = (langDict.contactEmailBody || defaultBody).replace(/\r?\n/g, '\r\n');
+    
+    const subject = encodeURIComponent(subjectText);
+    const body = encodeURIComponent(bodyText);
+    const mailtoUri = `mailto:vrodrigues.code@gmail.com?subject=${subject}&body=${body}`;
+    
+    document.querySelectorAll('a[href^="mailto:vrodrigues.code@gmail.com"]').forEach(link => {
+        link.setAttribute('href', mailtoUri);
+    });
+}
+
 // Update language toggle button text
 function updateToggleText(element, lang, translations) {
-    const nextLang = lang === 'en' ? 'pt' : 'en';
-    
+    if (!translations) return;
     if (lang === 'en') {
-        element.textContent = translations.en.switchToPortuguese;
+        element.textContent = translations.en ? translations.en.switchToPortuguese : 'PT';
     } else {
-        element.textContent = translations.pt.switchToEnglish;
+        element.textContent = translations.pt ? translations.pt.switchToEnglish : 'EN';
     }
 }
 
-// Simple form handling
+// Clipboard copy fallback function for direct email action
+window.copyEmailToClipboard = function() {
+    const email = 'vrodrigues.code@gmail.com';
+    
+    function showFeedback() {
+        const feedback = document.getElementById('copy-feedback');
+        if (feedback) {
+            feedback.classList.remove('opacity-0', 'pointer-events-none');
+            feedback.classList.add('opacity-100');
+            
+            if (window._copyTimeout) {
+                clearTimeout(window._copyTimeout);
+            }
+            window._copyTimeout = setTimeout(() => {
+                feedback.classList.remove('opacity-100');
+                feedback.classList.add('opacity-0', 'pointer-events-none');
+                window._copyTimeout = null;
+            }, 2000);
+        }
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email)
+            .then(showFeedback)
+            .catch(() => fallbackCopy(email));
+    } else {
+        fallbackCopy(email);
+    }
+    
+    function fallbackCopy(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        let successful = false;
+        try {
+            successful = document.execCommand('copy');
+        } catch (err) {
+            console.error('Fallback copy error: ', err);
+        }
+        if (successful) {
+            showFeedback();
+        } else {
+            console.error('Fallback copy command failed or unsupported');
+        }
+        document.body.removeChild(textArea);
+    }
+};
+
+// Form handling (retained gracefully if a form exists)
 function initializeContactForm() {
     const contactForm = document.querySelector('#contact form');
     
@@ -225,32 +312,20 @@ function initializeContactForm() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
             const name = contactForm.querySelector('#name').value;
             const email = contactForm.querySelector('#email').value;
-            const message = contactForm.querySelector('#message').value;
-            
-            // Get the current language
             const lang = document.documentElement.lang || 'en';
             
-            // Import translations for the form response
             import('./translations.js')
                 .then(module => {
                     const translations = module.default;
                     let responseMsg = translations[lang].formResponse;
-                    
-                    // Replace placeholders with actual values
                     responseMsg = responseMsg.replace('{0}', name).replace('{1}', email);
-                    
-                    // Show the response
                     alert(responseMsg);
-                    
-                    // Reset the form
                     contactForm.reset();
                 })
                 .catch(error => {
                     console.error('Error loading translations:', error);
-                    // Fallback to English if translations fail to load
                     alert(`Thank you, ${name}! Your message has been received. I'll get back to you at ${email} soon.`);
                     contactForm.reset();
                 });

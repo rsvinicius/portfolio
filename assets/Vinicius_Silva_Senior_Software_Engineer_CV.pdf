@@ -1,0 +1,125 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Length 3026 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 50 745 Tm
+(Vinicius R. Silva) Tj
+/F2 11 Tf
+1 0 0 1 50 728 Tm
+(Senior Software Engineer | Backend & Distributed Systems) Tj
+/F2 9 Tf
+1 0 0 1 50 714 Tm
+(Email: vrodrigues.code@gmail.com | LinkedIn: linkedin.com/in/rs-vinicius | GitHub: github.com/rsvinicius) Tj
+/F1 11 Tf
+1 0 0 1 50 690 Tm
+(PROFESSIONAL SUMMARY) Tj
+/F2 9 Tf
+1 0 0 1 50 675 Tm
+(Senior Software Engineer specializing in high-throughput JVM architectures, B2B billing/reconciliation engines,) Tj
+/F2 9 Tf
+1 0 0 1 50 663 Tm
+(and mission-critical financial processing handling over 500M req/mo and +$100B in global volume.) Tj
+/F1 11 Tf
+1 0 0 1 50 640 Tm
+(CORE SCALE METRICS) Tj
+/F2 9 Tf
+1 0 0 1 50 625 Tm
+(* B2C Scale Throughput: +500M monthly requests across microservices \(Alelo Brasil\)) Tj
+/F2 9 Tf
+1 0 0 1 50 613 Tm
+(* B2B Financial Volume: +$100B global processed volume & automated reconciliation \(Trustly\)) Tj
+/F2 9 Tf
+1 0 0 1 50 601 Tm
+(* Peak Backoffice Rate: +500 TPS batch processing, report streaming, and S3/ZIP delivery) Tj
+/F1 11 Tf
+1 0 0 1 50 578 Tm
+(WORK EXPERIENCE) Tj
+/F1 10 Tf
+1 0 0 1 50 563 Tm
+(Senior Software Engineer | Trustly \(Global PayWithMyBank\)) Tj
+/F2 9 Tf
+1 0 0 1 50 550 Tm
+(2022 - Present | Financial Technology & Global Banking Infrastructure) Tj
+/F2 9 Tf
+1 0 0 1 50 537 Tm
+(- Architected multi-tenant B2B billing and reconciliation pipelines processing +$100B volume for 9k+ global merchants.) Tj
+/F2 9 Tf
+1 0 0 1 50 525 Tm
+(- Engineered high-scale Spring Batch and Quartz scheduler engines achieving +500 TPS under peak batch load.) Tj
+/F2 9 Tf
+1 0 0 1 50 513 Tm
+(- Implemented reactive S3/ZIP file streaming, eliminating memory pressure and reducing latency by 40%.) Tj
+/F1 10 Tf
+1 0 0 1 50 490 Tm
+(Software Engineer / Tech Lead | Alelo Brasil) Tj
+/F2 9 Tf
+1 0 0 1 50 477 Tm
+(4+ Years Consolidated | Payments & Card Infrastructure) Tj
+/F2 9 Tf
+1 0 0 1 50 464 Tm
+(- Scaled core transaction processing to +500M monthly requests serving 10M+ cardholders across 150k client businesses.) Tj
+/F2 9 Tf
+1 0 0 1 50 452 Tm
+(- Led legacy migration into resilient event-driven microservices with strict circuit-breaking and zero-downtime.) Tj
+/F1 11 Tf
+1 0 0 1 50 429 Tm
+(TECHNICAL SKILLS) Tj
+/F2 9 Tf
+1 0 0 1 50 414 Tm
+(* Languages & Core: Java 21, Kotlin, Virtual Threads, JVM Internals, SQL) Tj
+/F2 9 Tf
+1 0 0 1 50 402 Tm
+(* Distributed Systems: Spring Boot, Spring Batch, Kafka, RabbitMQ, Microservices, Redis) Tj
+/F2 9 Tf
+1 0 0 1 50 390 Tm
+(* Cloud & Database: AWS \(S3, ECS, RDS\), PostgreSQL, Docker, Kubernetes, CI/CD) Tj
+/F1 11 Tf
+1 0 0 1 50 367 Tm
+(EDUCATION & CERTIFICATIONS) Tj
+/F1 10 Tf
+1 0 0 1 50 352 Tm
+(MBA in Software Engineering \(Concluded\) | Universidade de Sao Paulo \(USP/Esalq\)) Tj
+/F2 9 Tf
+1 0 0 1 50 340 Tm
+(Advanced distributed architectures, microservices scalability, and engineering management.) Tj
+/F1 10 Tf
+1 0 0 1 50 320 Tm
+(Bachelor of Science in Electrical Engineering | UNESP) Tj
+/F2 9 Tf
+1 0 0 1 50 308 Tm
+(Emphasis on control systems, automation, and computer science.) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000332 00000 n 
+0000000402 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3480
+%%EOF

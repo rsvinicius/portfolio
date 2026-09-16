@@ -9,10 +9,39 @@ const translations = {
         contact: "Contact",
         
         // Hero Section
-        role: "Software Developer",
-        specialization: "Specialized in building reliable, scalable applications with Java, Kotlin, Spring and Microservices Architecture",
-        getInTouch: "Get in Touch",
+        availabilityBeacon: "Open to select senior/staff opportunities (Remote / Hybrid)",
+        heroRole: "Senior Software Engineer • Backend & Distributed Systems",
+        heroDesc: "Specialized in high-throughput JVM architectures, B2B billing/reconciliation engines, and mission-critical financial processing handling over 500M req/mo and +$100B in global volume.",
+        role: "Senior Software Engineer • Backend & Distributed Systems",
+        specialization: "Specialized in high-throughput JVM architectures, B2B billing/reconciliation engines, and mission-critical financial processing handling over 500M req/mo and +$100B in global volume.",
+        getInTouch: "Initiate Direct Contact",
         viewProjects: "View Projects",
+        downloadCv: "Download ATS CV (PDF)",
+        downloadCvShort: "ATS CV (PDF)",
+        contactEmail: "Contact via Email",
+        sendDirectEmail: "Send Direct Email",
+        copyEmail: "Copy Email",
+        emailCopied: "Email copied to clipboard",
+        contactSectionIndex: "04. CONTACT",
+        resumeLabel: "Resume",
+        contactConnect: "Connect",
+        contactInspect: "Inspect Code",
+
+        // Metric Stat Cards
+        metric1Num: "+500M",
+        metric1Label: "B2C Scale Throughput",
+        metric1Sub: "Monthly requests across microservices",
+        metric2Num: "+$100B",
+        metric2Label: "B2B Financial Volume",
+        metric2Sub: "Global processed volume & reconciliation",
+        metric3Num: "+500 TPS",
+        metric3Label: "Peak B2B Backoffice Rate",
+        metric3Sub: "Multi-tenant reports & billing streaming",
+
+        // Contact Pre-filled Email Strings
+        contactEmailSubject: "Senior Engineering Opportunity - Vinicius R. Silva",
+        contactEmailBody: "Hi Vinicius,\n\nI reviewed your portfolio and would like to discuss a Senior/Staff Software Engineer role at...",
+        contactText: "Direct outreach for senior engineering leadership, staff backend roles, and high-impact distributed systems.",
         
         // About Section
         aboutMe: "About Me",
@@ -41,7 +70,7 @@ const translations = {
         developerDesc: "Implementing robust API solutions and enhancing system performance.",
         juniorDeveloper: "Junior Software Engineer",
         juniorCompany: "Alelo Brasil • 2022 - 2025",
-        juniorDesc: "Worked on Java/Kotlin-based backend applications, REST APIs, and database integrations.",
+        juniorDesc: "Trabalhou em aplicações backend baseadas em Java/Kotlin, APIs REST e integrações de banco de dados.",
         internDeveloper: "Intern Software Engineer",
         internCompany: "Alelo Brasil • 2021 - 2022",
         internDesc: "Started my journey in software development by working on various web applications and backend services.",
@@ -50,7 +79,6 @@ const translations = {
         developerItem1: "Improved system architecture for better scalability and reliability",
         developerItem2: "Developed and maintained multiple microservices to handle different business domains",
         developerItem3: "Conducted code reviews and mentored junior developers",
-        // developerItem4: "",
         juniorItem1: "Built RESTful APIs using Spring Boot for various client applications",
         juniorItem2: "Implemented authentication and authorization systems",
         juniorItem3: "Worked with SQL and NoSQL databases",
@@ -91,9 +119,7 @@ const translations = {
         certification3: "AWS Certified Developer - Associate",
         certification4: "Docker Certified Associate",
         
-        // Contact Section
-        getInTouch: "Get in Touch",
-        contactText: "Feel free to reach out if you have any questions or want to discuss potential opportunities.",
+        // Contact Section Form Keys
         name: "Name",
         email: "Email",
         message: "Message",
@@ -101,7 +127,7 @@ const translations = {
         yourLocation: "Your Location",
         
         // Footer
-        copyright: "© 2025 Vinicius Rodrigues Silva. All rights reserved.",
+        copyright: "© 2026 Vinicius Rodrigues Silva. All rights reserved.",
         
         // Language Switcher
         switchToEnglish: "EN",
@@ -120,10 +146,39 @@ const translations = {
         contact: "Contato",
         
         // Hero Section
-        role: "Desenvolvedor de Software",
-        specialization: "Especializado em construir aplicações confiáveis e escaláveis com Java, Kotlin, Spring e Arquitetura de Microsserviços",
-        getInTouch: "Entre em Contato",
+        availabilityBeacon: "Disponível para oportunidades selecionadas de senior/staff (Remoto / Híbrido)",
+        heroRole: "Engenheiro de Software Sênior • Backend & Sistemas Distribuídos",
+        heroDesc: "Especializado em arquiteturas JVM de alta vazão, motores de faturamento/reconciliação B2B e processamento financeiro de missão crítica lidando com mais de 500M req/mês e +$100B em volume global.",
+        role: "Engenheiro de Software Sênior • Backend & Sistemas Distribuídos",
+        specialization: "Especializado em arquiteturas JVM de alta vazão, motores de faturamento/reconciliação B2B e processamento financeiro de missão crítica lidando com mais de 500M req/mês e +$100B em volume global.",
+        getInTouch: "Iniciar Contato Direto",
         viewProjects: "Ver Projetos",
+        downloadCv: "Baixar CV ATS (PDF)",
+        downloadCvShort: "CV ATS (PDF)",
+        contactEmail: "Contato por E-mail",
+        sendDirectEmail: "Enviar E-mail Direto",
+        copyEmail: "Copiar E-mail",
+        emailCopied: "E-mail copiado para a área de transferência",
+        contactSectionIndex: "04. CONTATO",
+        resumeLabel: "Currículo",
+        contactConnect: "Conectar",
+        contactInspect: "Inspecionar Código",
+
+        // Metric Stat Cards
+        metric1Num: "+500M",
+        metric1Label: "Vazão em Escala B2C",
+        metric1Sub: "Requisições mensais em microsserviços",
+        metric2Num: "+$100B",
+        metric2Label: "Volume Financeiro B2B",
+        metric2Sub: "Volume global processado e reconciliação",
+        metric3Num: "+500 TPS",
+        metric3Label: "Taxa de Pico Backoffice B2B",
+        metric3Sub: "Relatórios multi-tenant e streaming de faturamento",
+
+        // Contact Pre-filled Email Strings
+        contactEmailSubject: "Oportunidade Engenharia Sênior - Vinicius R. Silva",
+        contactEmailBody: "Olá Vinicius,\n\nAnalisei seu portfólio e gostaria de conversar sobre uma oportunidade de Engenheiro de Software Sênior/Staff na...",
+        contactText: "Contato direto para liderança de engenharia sênior, posições staff backend e sistemas distribuídos de alto impacto.",
         
         // About Section
         aboutMe: "Sobre Mim",
@@ -144,7 +199,6 @@ const translations = {
         softSkills3: "Metodologias Ágeis",
         softSkills4: "Gestão de Tempo",
         softSkills5: "Aprendizado Contínuo",
-   
         
         // Experience Section
         workExperience: "Experiência Profissional",
@@ -162,7 +216,6 @@ const translations = {
         developerItem1: "Melhorou a arquitetura do sistema para maior escalabilidade e confiabilidade",
         developerItem2: "Desenvolveu e manteve múltiplos microsserviços para lidar com diferentes domínios de negócios",
         developerItem3: "Realizou revisões de código e orientou desenvolvedores juniores",
-        // developerItem4: "",
         juniorItem1: "Construiu APIs RESTful usando Spring Boot para várias aplicações cliente",
         juniorItem2: "Implementou sistemas de autenticação e autorização",
         juniorItem3: "Trabalhou com bancos de dados SQL e NoSQL",
@@ -176,7 +229,6 @@ const translations = {
         featuredProjects: "Projetos em Destaque",
         viewAllProjects: "Veja todos os projetos no GitHub",
         
-
         // Project 1
         project1Title: "MockK",
         project1Desc: "Uma biblioteca de mocking poderosa e flexível para Kotlin, permitindo que os desenvolvedores escrevam testes limpos e de fácil manutenção.",
@@ -204,9 +256,7 @@ const translations = {
         certification3: "AWS Certified Developer - Associate",
         certification4: "Docker Certified Associate",
         
-        // Contact Section
-        getInTouch: "Entre em Contato",
-        contactText: "Sinta-se à vontade para entrar em contato se tiver alguma pergunta ou quiser discutir potenciais oportunidades.",
+        // Contact Section Form Keys
         name: "Nome",
         email: "Email",
         message: "Mensagem",
@@ -214,7 +264,7 @@ const translations = {
         yourLocation: "Sua Localização",
         
         // Footer
-        copyright: "© 2025 Vinicius Rodrigues Silva. Todos os direitos reservados.",
+        copyright: "© 2026 Vinicius Rodrigues Silva. Todos os direitos reservados.",
         
         // Language Switcher
         switchToEnglish: "EN",
