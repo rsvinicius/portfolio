@@ -201,7 +201,12 @@ function updateLanguage(lang, translations) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations && translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
+            const val = translations[lang][key];
+            if (typeof val === 'string' && /<[a-z][\s\S]*>/i.test(val)) {
+                element.innerHTML = val;
+            } else {
+                element.textContent = val;
+            }
         }
     });
     

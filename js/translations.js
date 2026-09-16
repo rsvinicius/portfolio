@@ -22,7 +22,7 @@ const translations = {
         sendDirectEmail: "Send Direct Email",
         copyEmail: "Copy Email",
         emailCopied: "Email copied to clipboard",
-        contactSectionIndex: "04. CONTACT",
+        contactSectionIndex: "05. CONTACT",
         resumeLabel: "Resume",
         contactConnect: "Connect",
         contactInspect: "Inspect Code",
@@ -64,55 +64,62 @@ const translations = {
         softSkills5: "Continuous Learning",
         
         // Experience Section
-        workExperience: "Work Experience",
-        developer: "Software Engineer",
-        developerCompany: "Alelo Brasil • 2025 - Present",
-        developerDesc: "Implementing robust API solutions and enhancing system performance.",
-        juniorDeveloper: "Junior Software Engineer",
-        juniorCompany: "Alelo Brasil • 2022 - 2025",
-        juniorDesc: "Trabalhou em aplicações backend baseadas em Java/Kotlin, APIs REST e integrações de banco de dados.",
-        internDeveloper: "Intern Software Engineer",
-        internCompany: "Alelo Brasil • 2021 - 2022",
-        internDesc: "Started my journey in software development by working on various web applications and backend services.",
+        experienceSectionIndex: "02. EXPERIENCE",
+        workExperience: "Career Narrative & Enterprise Impact",
+        experienceSubtitle: "High-throughput JVM architectures, financial settlement pipelines, and large-scale distributed systems.",
         
-        // Experience List Items
-        developerItem1: "Improved system architecture for better scalability and reliability",
-        developerItem2: "Developed and maintained multiple microservices to handle different business domains",
-        developerItem3: "Conducted code reviews and mentored junior developers",
-        juniorItem1: "Built RESTful APIs using Spring Boot for various client applications",
-        juniorItem2: "Implemented authentication and authorization systems",
-        juniorItem3: "Worked with SQL and NoSQL databases",
-        juniorItem4: "Collaborated with frontend teams to integrate API solutions",
-        internItem1: "Developed features for Java-based applications",
-        internItem2: "Worked with version control systems",
-        internItem3: "Participated in Agile development processes",
-        internItem4: "Fixed bugs and implemented enhancements for existing systems",
-        
-        // Projects Section
-        featuredProjects: "Featured Projects",
-        viewAllProjects: "View all projects on GitHub",
-        
-        // Project 1
-        project1Title: "MockK",
-        project1Desc: "A powerful and flexible mocking library for Kotlin, enabling developers to write clean and maintainable tests with ease.",
-        
-        // Project 2
-        project2Title: "Antifraud System",
-        project2Desc: "A simplified demonstration of anti-fraud systems used in the financial sector. Detects suspicious transactions and prevents fraud in real-time.",
-        
-        // Project 3
-        project3Title: "Priori Task API",
-        project3Desc: "A task management API designed to help users manage their tasks effectively with features like priorities, categories, and deadlines.",
-        
-        viewOnGitHub: "View on GitHub",
-        
+        // Trustly Experience
+        trustlyRole: "Senior Software Engineer — Core B2B & Financial Services",
+        trustlyCompany: "Trustly",
+        trustlySector: "• Global Pay-by-Bank & Open Banking Leader",
+        trustlyPeriod: "2025 – Present",
+        trustlyDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.",
+        trustlyBullet1: "Architected and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.",
+        trustlyBullet2: "Designed mass reports and reconciliation pipelines using <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong>, extracting and consolidating millions of daily transaction records.",
+        trustlyBullet3: "Engineered low-memory file streaming mechanisms for massive report payloads (PDF, ZIP, CSV), integrating <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong>, and automated secure delivery via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> to partner financial institutions.",
+        trustlyBullet4: "Developed across resilient polyglot JVM frameworks (Spring Boot, Javalite, Google Guice) and optimized complex <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong> queries and table locking, significantly reducing analytical execution times.",
+
+        // Alelo Consolidated Experience
+        aleloRole: "Software Engineer Progression (Intern to Senior)",
+        aleloCompany: "Alelo Brasil",
+        aleloSector: "• Corporate Benefits & Payments (Elo / Bradesco & BB)",
+        aleloPeriod: "2021 – 2025 (4+ Years)",
+        aleloDesc: "Consolidated 4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
+        aleloBullet1: "Scaled core card transaction processing and benefits microservices in Java/Kotlin (Spring Boot), sustaining <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mo</strong> serving <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ users</strong> across 150k enterprise clients under <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% availability</strong>.",
+        aleloBullet2: "Architected decoupled event-driven microservices utilizing <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Apache Kafka</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">RabbitMQ</strong> with <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong> distributed caching, mitigating latency spikes during peak retail shopping hours.",
+        aleloBullet3: "Engineered secure authentication and authorization flows (OAuth2, JWT, RBAC), ensuring transactional integrity and zero-trust identity verification across client endpoints.",
+        aleloBullet4: "Conducted zero-downtime database schema refactoring and data migrations on high-volume relational and NoSQL databases (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong>, Oracle, MongoDB) across tables with hundreds of millions of records.",
+        aleloBullet5: "Led technical code reviews, fostered clean architecture standards, and mentored junior engineers, substantially increasing automated unit and integration test coverage.",
+
+        // Legacy compatibility mappings
+        developer: "Senior Software Engineer — Core B2B & Financial Services",
+        developerCompany: "Trustly • 2025 - Present",
+        developerDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.",
+        juniorDeveloper: "Software Engineer Progression (Intern to Senior)",
+        juniorCompany: "Alelo Brasil • 2021 - 2025",
+        juniorDesc: "Consolidated 4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
+
         // Education Section
-        masters: "Postgraduate Lato Sensu - MBA, Software Engineering",
-        mastersSchool: "University of São Paulo - USP/Esalq • 2024-Present",
-        mastersDesc: "Course focused on advanced software engineering practices, including microservices architecture, agile methodologies, and the development of scalable and distributed systems.",
-        bachelors: "Bachelor's Degree in Electrical Engineering",
-        bachelorsSchool: "São Paulo State University Júlio de Mesquita Filho - UNESP • 2016-2023",
-        bachelorsDesc: "Solid education in electrical engineering with an emphasis on control systems, electronics, and applied programming. Experience in interdisciplinary projects involving automation and software development.",
+        educationSectionIndex: "04. EDUCATION",
+        education: "Education",
+        educationTitle: "Academic Credentials",
+        educationSubtitle: "Formal higher education, concluded postgraduate specializations, and verified engineering degrees.",
+        educationStatusConcluded: "Concluded",
+        educationVerifyLink: "Verify Institutional Credential",
+
+        // Masters / MBA
+        masters: "MBA in Software Engineering",
+        mastersSchool: "University of São Paulo (USP / Esalq)",
+        mbaDegreeType: "Postgraduate Lato Sensu",
+        mbaPeriod: "2024 – 2025",
+        mastersDesc: "Advanced specialization focused on Distributed Systems Architecture, Microservices, Domain-Driven Design, Design Patterns, Requirements Engineering, Cloud Computing, and Scalable Resilient Systems at Latin America's top-ranked institution.",
+
+        // Bachelors
+        bachelors: "Bachelor of Science (B.S.) in Electrical Engineering",
+        bachelorsSchool: "São Paulo State University (UNESP)",
+        bachelorsDegreeType: "Bachelor's Degree (STEM)",
+        bachelorsPeriod: "2016 – 2023",
+        bachelorsDesc: "5-year rigorous engineering curriculum (STEM) with focus on control systems, automation, signal processing, applied programming, algorithms, and mathematical modeling.",
         certifications: "Professional Certifications",
         certification1: "Spring Professional Certification",
         certification2: "Java SE 11 Professional Developer",
@@ -159,7 +166,7 @@ const translations = {
         sendDirectEmail: "Enviar E-mail Direto",
         copyEmail: "Copiar E-mail",
         emailCopied: "E-mail copiado para a área de transferência",
-        contactSectionIndex: "04. CONTATO",
+        contactSectionIndex: "05. CONTATO",
         resumeLabel: "Currículo",
         contactConnect: "Conectar",
         contactInspect: "Inspecionar Código",
@@ -201,55 +208,62 @@ const translations = {
         softSkills5: "Aprendizado Contínuo",
         
         // Experience Section
-        workExperience: "Experiência Profissional",
-        developer: "Engenheiro de Software",
-        developerCompany: "Alelo Brasil • 2025 - Presente",
-        developerDesc: "Implementando soluções robustas de API e aprimorando o desempenho do sistema.",
-        juniorDeveloper: "Engenheiro de Software Júnior",
-        juniorCompany: "Alelo Brasil • 2022 - 2025",
-        juniorDesc: "Trabalhou em aplicações backend baseadas em Java/Kotlin, APIs REST e integrações de banco de dados.",
-        internDeveloper: "Estagiário de Engenharia de Software",
-        internCompany: "Alelo Brasil • 2021 - 2022",
-        internDesc: "Iniciei minha jornada no desenvolvimento de software trabalhando em várias aplicações web e serviços backend.",
+        experienceSectionIndex: "02. EXPERIÊNCIA",
+        workExperience: "Trajetória Profissional & Escala Corporativa",
+        experienceSubtitle: "Arquiteturas JVM de alta vazão, liquidação financeira e sistemas distribuídos em larga escala.",
         
-        // Experience List Items
-        developerItem1: "Melhorou a arquitetura do sistema para maior escalabilidade e confiabilidade",
-        developerItem2: "Desenvolveu e manteve múltiplos microsserviços para lidar com diferentes domínios de negócios",
-        developerItem3: "Realizou revisões de código e orientou desenvolvedores juniores",
-        juniorItem1: "Construiu APIs RESTful usando Spring Boot para várias aplicações cliente",
-        juniorItem2: "Implementou sistemas de autenticação e autorização",
-        juniorItem3: "Trabalhou com bancos de dados SQL e NoSQL",
-        juniorItem4: "Colaborou com equipes de frontend para integrar soluções de API",
-        internItem1: "Desenvolveu funcionalidades para aplicações baseadas em Java",
-        internItem2: "Trabalhou com sistemas de controle de versão",
-        internItem3: "Participou de processos de desenvolvimento Ágil",
-        internItem4: "Corrigiu bugs e implementou melhorias em sistemas existentes",
-        
-        // Projects Section
-        featuredProjects: "Projetos em Destaque",
-        viewAllProjects: "Veja todos os projetos no GitHub",
-        
-        // Project 1
-        project1Title: "MockK",
-        project1Desc: "Uma biblioteca de mocking poderosa e flexível para Kotlin, permitindo que os desenvolvedores escrevam testes limpos e de fácil manutenção.",
-        
-        // Project 2
-        project2Title: "Sistema Antifraude",
-        project2Desc: "Uma demonstração simplificada de sistemas antifraude usados no setor financeiro. Detecta transações suspeitas e previne fraudes em tempo real.",
-        
-        // Project 3
-        project3Title: "Priori Task API",
-        project3Desc: "Uma API de gerenciamento de tarefas projetada para ajudar os usuários a gerenciar suas tarefas de forma eficaz com recursos como prioridades, categorias e prazos.",
-        
-        viewOnGitHub: "Veja no GitHub",
-        
+        // Trustly Experience
+        trustlyRole: "Engenheiro de Software Sênior — Core B2B & Serviços Financeiros",
+        trustlyCompany: "Trustly",
+        trustlySector: "• Líder Global em Pay-by-Bank & Open Banking",
+        trustlyPeriod: "2025 – Presente",
+        trustlyDesc: "Engenharia de motores de billing B2B de missão crítica e relatórios financeiros massivos processando +$100B em volume e +500 TPS com tolerância zero a discrepâncias.",
+        trustlyBullet1: "Engenharia e sustentação de pipelines de faturamento B2B e liquidação financeira de merchants lidando com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> e volumes bilionários com tolerância zero a divergências contábeis.",
+        trustlyBullet2: "Arquitetura de pipelines assíncronos e batch em larga escala com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> e <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong> para extração, consolidação e reconciliação contábil de milhões de eventos transacionais diários.",
+        trustlyBullet3: "Implementação de streaming de arquivos com baixo consumo de memória para relatórios pesados (PDF, ZIP, CSV), integrando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong> e despacho seguro automatizado via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> para bancos parceiros.",
+        trustlyBullet4: "Desenvolvimento em arquiteturas resilientes com JVM poliglota (Spring Boot, Javalite, Google Guice) e refatoração com tuning de consultas complexas em <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong>, reduzindo contenção de locks e tempos analíticos.",
+
+        // Alelo Consolidated Experience
+        aleloRole: "Trajetória Consolidada em Engenharia de Software (Estágio a Sênior)",
+        aleloCompany: "Alelo Brasil",
+        aleloSector: "• Benefícios Corporativos & Pagamentos (Elo / Bradesco & BB)",
+        aleloPeriod: "2021 – 2025 (4+ Anos)",
+        aleloDesc: "4+ anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
+        aleloBullet1: "Evolução da malha de microsserviços em Java/Kotlin (Spring Boot), sustentando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mês</strong> para <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ usuários</strong> ativos em 150k empresas com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% de disponibilidade</strong>.",
+        aleloBullet2: "Concepção de microsserviços desacoplados com mensageria assíncrona (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Kafka/RabbitMQ</strong>) e cache distribuído (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong>), eliminando gargalos de throughput nos horários de pico comercial.",
+        aleloBullet3: "Implementação de fluxos de autenticação e autorização robustos (OAuth2, JWT, RBAC), garantindo estrita integridade transacional contra fraudes de identidade.",
+        aleloBullet4: "Refatoração e migração de esquemas sem indisponibilidade em bancos relacionais e não-relacionais (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong>, Oracle, MongoDB) em tabelas com centenas de milhões de registros.",
+        aleloBullet5: "Liderança técnica em code reviews, disseminação de Clean Architecture e mentoria de desenvolvedores juniores, elevando expressivamente a cobertura de testes automatizados.",
+
+        // Legacy compatibility mappings
+        developer: "Engenheiro de Software Sênior — Core B2B & Serviços Financeiros",
+        developerCompany: "Trustly • 2025 - Presente",
+        developerDesc: "Engenharia de motores de billing B2B de missão crítica e relatórios financeiros massivos processando +$100B em volume e +500 TPS com tolerância zero a discrepâncias.",
+        juniorDeveloper: "Trajetória Consolidada em Engenharia de Software (Estágio a Sênior)",
+        juniorCompany: "Alelo Brasil • 2021 - 2025",
+        juniorDesc: "4+ anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
+
         // Education Section
-        masters: "Pós-graduação Lato Sensu - MBA, Engenharia de Software",
-        mastersSchool: "Universidade de São Paulo - USP/Esalq • 2024-Presente",
-        mastersDesc: "Curso focado em práticas avançadas de engenharia de software, incluindo arquitetura de microsserviços, metodologias ágeis e desenvolvimento de sistemas escaláveis e distribuídos.",
+        educationSectionIndex: "04. FORMAÇÃO",
+        education: "Formação",
+        educationTitle: "Formação Acadêmica",
+        educationSubtitle: "Formação acadêmica formal, pós-graduação concluída e diplomas verificados de engenharia.",
+        educationStatusConcluded: "Concluído",
+        educationVerifyLink: "Verificar Credencial Institucional",
+
+        // Masters / MBA
+        masters: "MBA em Engenharia de Software",
+        mastersSchool: "Universidade de São Paulo (USP / Esalq)",
+        mbaDegreeType: "Pós-Graduação Lato Sensu",
+        mbaPeriod: "2024 – 2025",
+        mastersDesc: "Especialização avançada focada em Arquitetura de Sistemas Distribuídos, Microsserviços, Domain-Driven Design, Design Patterns, Engenharia de Requisitos, Nuvem e Sistemas Escaláveis de Alta Resiliência pela instituição nº 1 da América Latina.",
+
+        // Bachelors
         bachelors: "Bacharelado em Engenharia Elétrica",
-        bachelorsSchool: "Universidade Estadual Paulista Júlio de Mesquita Filho - UNESP • 2016-2023",
-        bachelorsDesc: "Formação sólida em engenharia elétrica com ênfase em sistemas de controle, eletrônica e programação aplicada. Experiência em projetos interdisciplinares envolvendo automação e desenvolvimento de software.",
+        bachelorsSchool: "Universidade Estadual Paulista (UNESP)",
+        bachelorsDegreeType: "Graduação / Bacharelado (STEM)",
+        bachelorsPeriod: "2016 – 2023",
+        bachelorsDesc: "Formação sólida de 5 anos em engenharia com foco em sistemas de controle, automação, processamento de sinais, programação aplicada, algoritmos e modelagem matemática.",
         certifications: "Certificações Profissionais",
         certification1: "Certificação Spring Professional",
         certification2: "Java SE 11 Professional Developer",

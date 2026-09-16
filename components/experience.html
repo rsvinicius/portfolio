@@ -1,49 +1,142 @@
 <!-- Experience Section -->
-<section id="experience" class="py-16 bg-white dark:bg-gray-800 transition-colors duration-200">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-12 text-center" data-i18n="workExperience"></h2>
-        
-        <div class="max-w-3xl mx-auto space-y-12">
-            <!-- Experience 1 -->
-            <div class="border-l-4 border-blue-600 pl-6 relative">
-                <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="developer"></h3>
-                <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="developerCompany"></p>
-                <p class="text-gray-700 dark:text-gray-300 mb-3" data-i18n="developerDesc"></p>
-                <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                    <li data-i18n="developerItem1"></li>
-                    <li data-i18n="developerItem2"></li>
-                    <li data-i18n="developerItem3"></li>
-                    <!-- <li data-i18n="developerItem4"></li> -->
-                </ul>
+<section id="experience" class="py-16 lg:py-24 bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F9FAFB] transition-colors duration-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
+        <!-- Section Header -->
+        <div class="mb-12">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]" data-i18n="experienceSectionIndex">02. EXPERIENCE</span>
             </div>
-            
-            <!-- Experience 2 -->
-            <div class="border-l-4 border-blue-600 pl-6 relative">
-                <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="juniorDeveloper"></h3>
-                <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="juniorCompany"></p>
-                <p class="text-gray-700 dark:text-gray-300 mb-3" data-i18n="juniorDesc"></p>
-                <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                    <li data-i18n="juniorItem1"></li>
-                    <li data-i18n="juniorItem2"></li>
-                    <li data-i18n="juniorItem3"></li>
-                    <li data-i18n="juniorItem4"></li>
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="workExperience">Career Narrative & Enterprise Impact</h2>
+            <p class="text-base text-[#475569] dark:text-[#9CA3AF] mt-2 max-w-2xl" data-i18n="experienceSubtitle">
+                High-throughput JVM architectures, financial settlement pipelines, and large-scale distributed systems.
+            </p>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Trustly Experience Card (2025 – Present) -->
+            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm">
+                <!-- Card Header -->
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4 pb-4 border-b border-[#E2E8F0] dark:border-[#1F2937]">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="trustlyRole">Senior Software Engineer — Core B2B & Financial Services</h3>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                            <a href="https://www.trustly.com/" target="_blank" rel="noopener noreferrer" class="font-mono font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline inline-flex items-center gap-1.5" aria-label="Trustly (opens in new tab)">
+                                <span data-i18n="trustlyCompany">Trustly</span>
+                                <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                            </a>
+                            <span class="text-[#64748B] dark:text-[#6B7280]" data-i18n="trustlySector">• Global Pay-by-Bank & Open Banking Leader</span>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#CBD5E1] dark:border-[#374151]" data-i18n="trustlyPeriod">
+                            2025 – Present
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Role Summary -->
+                <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="trustlyDesc">
+                    Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.
+                </p>
+
+                <!-- Quantitative Achievements -->
+                <ul class="space-y-3.5 mb-6 text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="trustlyBullet1">Architected and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="trustlyBullet2">Designed mass reports and reconciliation pipelines using <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">Spring Batch</strong> and <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">Quartz Scheduler</strong>, extracting and consolidating millions of daily transaction records.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="trustlyBullet3">Engineered low-memory file streaming mechanisms for massive report payloads (PDF, ZIP, CSV), integrating <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">AWS S3</strong>, <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">AWS Lambda</strong>, and automated secure delivery via <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">SFTP</strong> to partner financial institutions.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="trustlyBullet4">Developed across resilient polyglot JVM frameworks (Spring Boot, Javalite, Google Guice) and optimized complex <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">PostgreSQL</strong> queries and table locking, significantly reducing analytical execution times.</span>
+                    </li>
                 </ul>
+
+                <!-- Tech Stack Chips -->
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java 21</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Boot</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Batch</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">PostgreSQL</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">AWS S3</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">AWS Lambda</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">SFTP Streaming</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Quartz</span>
+                </div>
             </div>
 
-            <!-- Experience 3 -->
-            <div class="border-l-4 border-blue-600 pl-6 relative">
-                <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-1 border-4 border-white dark:border-gray-800"></div>
-                <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300" data-i18n="internDeveloper"></h3>
-                <p class="text-gray-600 dark:text-gray-400 font-medium mb-2" data-i18n="internCompany"></p>
-                <p class="text-gray-700 dark:text-gray-300 mb-3" data-i18n="internDesc"></p>
-                <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                    <li data-i18n="internItem1"></li>
-                    <li data-i18n="internItem2"></li>
-                    <li data-i18n="internItem3"></li>
-                    <li data-i18n="internItem4"></li>
+            <!-- Alelo Experience Card (Consolidated 4+ Year Trajectory) -->
+            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm">
+                <!-- Card Header -->
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4 pb-4 border-b border-[#E2E8F0] dark:border-[#1F2937]">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="aleloRole">Software Engineer Progression (Intern to Senior)</h3>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                            <a href="https://www.alelo.com.br/" target="_blank" rel="noopener noreferrer" class="font-mono font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline inline-flex items-center gap-1.5" aria-label="Alelo Brasil (opens in new tab)">
+                                <span data-i18n="aleloCompany">Alelo Brasil</span>
+                                <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                            </a>
+                            <span class="text-[#64748B] dark:text-[#6B7280]" data-i18n="aleloSector">• Corporate Benefits & Payments (Elo / Bradesco & BB)</span>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#CBD5E1] dark:border-[#374151]" data-i18n="aleloPeriod">
+                            2021 – 2025 (4+ Years)
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Role Summary -->
+                <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="aleloDesc">
+                    Consolidated 4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.
+                </p>
+
+                <!-- Quantitative Achievements -->
+                <ul class="space-y-3.5 mb-6 text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="aleloBullet1">Scaled core card transaction processing and benefits microservices in Java/Kotlin (Spring Boot), sustaining <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500M req/mo</strong> serving <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">10M+ users</strong> across 150k enterprise clients under <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">99.99% availability</strong>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="aleloBullet2">Architected decoupled event-driven microservices utilizing <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">Apache Kafka</strong> and <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">RabbitMQ</strong> with <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">Redis</strong> distributed caching, mitigating latency spikes during peak retail shopping hours.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="aleloBullet3">Engineered secure authentication and authorization flows (OAuth2, JWT, RBAC), ensuring transactional integrity and zero-trust identity verification across client endpoints.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="aleloBullet4">Conducted zero-downtime database schema refactoring and data migrations on high-volume relational and NoSQL databases (<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">PostgreSQL</strong>, Oracle, MongoDB) across tables with hundreds of millions of records.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
+                        <span data-i18n="aleloBullet5">Led technical code reviews, fostered clean architecture standards, and mentored junior engineers, substantially increasing automated unit and integration test coverage.</span>
+                    </li>
                 </ul>
+
+                <!-- Tech Stack Chips -->
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java / Kotlin</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Boot</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Microservices</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Apache Kafka</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Redis</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">RabbitMQ</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">PostgreSQL</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Docker</span>
+                </div>
             </div>
         </div>
     </div>
