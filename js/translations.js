@@ -69,10 +69,10 @@ const translations = {
         experienceSubtitle: "High-throughput JVM architectures, financial settlement pipelines, and large-scale distributed systems.",
         
         // Trustly Experience
-        trustlyRole: "Senior Software Engineer — Core B2B & Financial Services",
+        trustlyRole: "Software Engineer",
         trustlyCompany: "Trustly",
         trustlySector: "• Global Pay-by-Bank & Open Banking Leader",
-        trustlyPeriod: "2025 – Present",
+        trustlyPeriod: "Jan 2026 – Present",
         trustlyDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.",
         trustlyBullet1: "Architected and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.",
         trustlyBullet2: "Designed mass reports and reconciliation pipelines using <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong>, extracting and consolidating millions of daily transaction records.",
@@ -80,24 +80,24 @@ const translations = {
         trustlyBullet4: "Developed across resilient polyglot JVM frameworks (Spring Boot, Javalite, Google Guice) and optimized complex <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong> queries and table locking, significantly reducing analytical execution times.",
 
         // Alelo Consolidated Experience
-        aleloRole: "Software Engineer Progression (Intern to Senior)",
+        aleloRole: "Software Engineer Progression (Intern to Mid-Level)",
         aleloCompany: "Alelo Brasil",
-        aleloSector: "• Corporate Benefits & Payments (Elo / Bradesco & BB)",
-        aleloPeriod: "2021 – 2025 (4+ Years)",
-        aleloDesc: "Consolidated 4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
-        aleloBullet1: "Scaled core card transaction processing and benefits microservices in Java/Kotlin (Spring Boot), sustaining <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mo</strong> serving <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ users</strong> across 150k enterprise clients under <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% availability</strong>.",
-        aleloBullet2: "Architected decoupled event-driven microservices utilizing <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Apache Kafka</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">RabbitMQ</strong> with <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong> distributed caching, mitigating latency spikes during peak retail shopping hours.",
+        aleloSector: "• Corporate Benefits & Payments (Bradesco & Banco do Brasil)",
+        aleloPeriod: "2021 – Jan 2026 (~5 Years)",
+        aleloDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
+        aleloBullet1: "Scaled core card transaction processing and benefits microservices in Java/Kotlin (Spring Boot), sustaining <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mo</strong> serving <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ users</strong> across <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">150k</strong> enterprise clients under <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% availability</strong>.",
+        aleloBullet2: "Architected decoupled asynchronous microservices utilizing <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> with <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong> distributed caching, mitigating latency spikes during peak retail shopping hours.",
         aleloBullet3: "Engineered secure authentication and authorization flows (OAuth2, JWT, RBAC), ensuring transactional integrity and zero-trust identity verification across client endpoints.",
-        aleloBullet4: "Conducted zero-downtime database schema refactoring and data migrations on high-volume relational and NoSQL databases (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong>, Oracle, MongoDB) across tables with hundreds of millions of records.",
+        aleloBullet4: "Conducted zero-downtime database schema refactoring and data migrations on high-volume relational and NoSQL databases (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Oracle</strong>, MongoDB) across tables with hundreds of millions of records.",
         aleloBullet5: "Led technical code reviews, fostered clean architecture standards, and mentored junior engineers, substantially increasing automated unit and integration test coverage.",
 
         // Legacy compatibility mappings
-        developer: "Senior Software Engineer — Core B2B & Financial Services",
-        developerCompany: "Trustly • 2025 - Present",
+        developer: "Software Engineer",
+        developerCompany: "Trustly • Jan 2026 - Present",
         developerDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.",
-        juniorDeveloper: "Software Engineer Progression (Intern to Senior)",
-        juniorCompany: "Alelo Brasil • 2021 - 2025",
-        juniorDesc: "Consolidated 4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
+        juniorDeveloper: "Software Engineer Progression (Intern to Mid-Level)",
+        juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
+        juniorDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
 
         // Education Section
         educationSectionIndex: "04. EDUCATION",
@@ -106,12 +106,14 @@ const translations = {
         educationSubtitle: "Formal higher education, concluded postgraduate specializations, and verified engineering degrees.",
         educationStatusConcluded: "Concluded",
         educationVerifyLink: "Verify Institutional Credential",
+        educationVerifyDeclaration: "View Completion Statement (PDF)",
+        educationVerifyDiploma: "Verify Official Diploma",
 
         // Masters / MBA
         masters: "MBA in Software Engineering",
         mastersSchool: "University of São Paulo (USP / Esalq)",
         mbaDegreeType: "Postgraduate Lato Sensu",
-        mbaPeriod: "2024 – 2025",
+        mbaPeriod: "2024 – 2026",
         mastersDesc: "Advanced specialization focused on Distributed Systems Architecture, Microservices, Domain-Driven Design, Design Patterns, Requirements Engineering, Cloud Computing, and Scalable Resilient Systems at Latin America's top-ranked institution.",
 
         // Bachelors
@@ -213,35 +215,35 @@ const translations = {
         experienceSubtitle: "Arquiteturas JVM de alta vazão, liquidação financeira e sistemas distribuídos em larga escala.",
         
         // Trustly Experience
-        trustlyRole: "Engenheiro de Software Sênior — Core B2B & Serviços Financeiros",
+        trustlyRole: "Engenheiro de Software",
         trustlyCompany: "Trustly",
         trustlySector: "• Líder Global em Pay-by-Bank & Open Banking",
-        trustlyPeriod: "2025 – Presente",
-        trustlyDesc: "Engenharia de motores de billing B2B de missão crítica e relatórios financeiros massivos processando +$100B em volume e +500 TPS com tolerância zero a discrepâncias.",
+        trustlyPeriod: "Jan 2026 – Presente",
+        trustlyDesc: "Desenvolvimento de sistemas de billing B2B de missão crítica e relatórios financeiros em larga escala, processando mais de $100B em volume transacional e +500 TPS com rigorosa consistência contábil.",
         trustlyBullet1: "Engenharia e sustentação de pipelines de faturamento B2B e liquidação financeira de merchants lidando com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> e volumes bilionários com tolerância zero a divergências contábeis.",
         trustlyBullet2: "Arquitetura de pipelines assíncronos e batch em larga escala com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> e <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong> para extração, consolidação e reconciliação contábil de milhões de eventos transacionais diários.",
         trustlyBullet3: "Implementação de streaming de arquivos com baixo consumo de memória para relatórios pesados (PDF, ZIP, CSV), integrando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong> e despacho seguro automatizado via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> para bancos parceiros.",
         trustlyBullet4: "Desenvolvimento em arquiteturas resilientes com JVM poliglota (Spring Boot, Javalite, Google Guice) e refatoração com tuning de consultas complexas em <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong>, reduzindo contenção de locks e tempos analíticos.",
 
         // Alelo Consolidated Experience
-        aleloRole: "Trajetória Consolidada em Engenharia de Software (Estágio a Sênior)",
+        aleloRole: "Trajetória em Engenharia de Software (Estágio a Pleno)",
         aleloCompany: "Alelo Brasil",
-        aleloSector: "• Benefícios Corporativos & Pagamentos (Elo / Bradesco & BB)",
-        aleloPeriod: "2021 – 2025 (4+ Anos)",
-        aleloDesc: "4+ anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
-        aleloBullet1: "Evolução da malha de microsserviços em Java/Kotlin (Spring Boot), sustentando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mês</strong> para <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ usuários</strong> ativos em 150k empresas com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% de disponibilidade</strong>.",
-        aleloBullet2: "Concepção de microsserviços desacoplados com mensageria assíncrona (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Kafka/RabbitMQ</strong>) e cache distribuído (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong>), eliminando gargalos de throughput nos horários de pico comercial.",
+        aleloSector: "• Benefícios Corporativos & Pagamentos (Bradesco & Banco do Brasil)",
+        aleloPeriod: "2021 – Jan 2026 (~5 Anos)",
+        aleloDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
+        aleloBullet1: "Evolução da malha de microsserviços em Java/Kotlin (Spring Boot), sustentando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mês</strong> para <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ usuários</strong> ativos em <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">150k</strong> empresas com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% de disponibilidade</strong>.",
+        aleloBullet2: "Concepção de microsserviços desacoplados com mensageria assíncrona (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong>) e processamento em lote com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong>, além de cache distribuído (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong>), eliminando gargalos de throughput nos horários de pico comercial.",
         aleloBullet3: "Implementação de fluxos de autenticação e autorização robustos (OAuth2, JWT, RBAC), garantindo estrita integridade transacional contra fraudes de identidade.",
-        aleloBullet4: "Refatoração e migração de esquemas sem indisponibilidade em bancos relacionais e não-relacionais (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong>, Oracle, MongoDB) em tabelas com centenas de milhões de registros.",
+        aleloBullet4: "Refatoração e migração de esquemas sem indisponibilidade em bancos relacionais e não-relacionais (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Oracle</strong>, MongoDB) em tabelas com centenas de milhões de registros.",
         aleloBullet5: "Liderança técnica em code reviews, disseminação de Clean Architecture e mentoria de desenvolvedores juniores, elevando expressivamente a cobertura de testes automatizados.",
 
         // Legacy compatibility mappings
-        developer: "Engenheiro de Software Sênior — Core B2B & Serviços Financeiros",
-        developerCompany: "Trustly • 2025 - Presente",
-        developerDesc: "Engenharia de motores de billing B2B de missão crítica e relatórios financeiros massivos processando +$100B em volume e +500 TPS com tolerância zero a discrepâncias.",
-        juniorDeveloper: "Trajetória Consolidada em Engenharia de Software (Estágio a Sênior)",
-        juniorCompany: "Alelo Brasil • 2021 - 2025",
-        juniorDesc: "4+ anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
+        developer: "Engenheiro de Software",
+        developerCompany: "Trustly • Jan 2026 - Presente",
+        developerDesc: "Desenvolvimento de sistemas de billing B2B de missão crítica e relatórios financeiros em larga escala, processando mais de $100B em volume transacional e +500 TPS com rigorosa consistência contábil.",
+        juniorDeveloper: "Trajetória em Engenharia de Software (Estágio a Pleno)",
+        juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
+        juniorDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
 
         // Education Section
         educationSectionIndex: "04. FORMAÇÃO",
@@ -250,12 +252,14 @@ const translations = {
         educationSubtitle: "Formação acadêmica formal, pós-graduação concluída e diplomas verificados de engenharia.",
         educationStatusConcluded: "Concluído",
         educationVerifyLink: "Verificar Credencial Institucional",
+        educationVerifyDeclaration: "Visualizar Declaração de Conclusão (PDF)",
+        educationVerifyDiploma: "Verificar Diploma Oficial",
 
         // Masters / MBA
         masters: "MBA em Engenharia de Software",
         mastersSchool: "Universidade de São Paulo (USP / Esalq)",
         mbaDegreeType: "Pós-Graduação Lato Sensu",
-        mbaPeriod: "2024 – 2025",
+        mbaPeriod: "2024 – 2026",
         mastersDesc: "Especialização avançada focada em Arquitetura de Sistemas Distribuídos, Microsserviços, Domain-Driven Design, Design Patterns, Engenharia de Requisitos, Nuvem e Sistemas Escaláveis de Alta Resiliência pela instituição nº 1 da América Latina.",
 
         // Bachelors

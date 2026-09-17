@@ -75,7 +75,7 @@ context:
   - Trustly (2025 – Present): Focus on mission-critical B2B billing engines, batch reporting with Spring Batch & Quartz, low-memory file streaming (PDF/ZIP/CSV) via AWS S3 and automated SFTP, and PostgreSQL query/lock tuning at +500 TPS scale.
   - Alelo Brasil (2021 – 2025, 4+ years consolidated): Highlighting +500M req/mo scale across 10M+ users with 99.99% availability SLA, event-driven messaging (Kafka, RabbitMQ, Redis), zero-downtime database migrations, and clean architecture leadership.
 - Modernized `components/education.html` with verified `Concluded` badges in `{colors.status-approved}`:
-  - USP/Esalq MBA in Software Engineering (2024 – 2025): Explicitly marked as Concluded with institutional verification trigger.
+  - USP/Esalq MBA in Software Engineering (2024 – 2026): Explicitly marked as Concluded with institutional verification trigger.
   - UNESP Bachelor of Science in Electrical Engineering (2016 – 2023): Marked as Concluded with STEM curriculum breakdown and verification trigger.
 - Synchronized all translation keys across English and Portuguese in `js/translations.js`, ensuring zero missing keys and full bilingual parity.
 - Enhanced `js/script.js`'s `updateLanguage` to handle rich HTML formatting in translation strings (`<strong>` tags for monospace scale metrics) without disrupting plain text elements.
@@ -101,6 +101,14 @@ context:
 | B-12 | `js/translations.js:132-137` | `low` | Orphaned keys for commented certifications; kept for backward compatibility without runtime harm. |
 | V-01 | `js/script.js:204-209` | `defer` | Pure static project lacks automated headless test framework; recorded in deferred-work.md. |
 | V-02 | `components/education.html:7` | `medium` | Duplicate of B-01 regarding section index sequence; patched. |
+| U-01 | `components/experience.html:22`, `js/translations.js` | `high` | Seniority calibration: calibrated from Senior to Software Engineer at Trustly and Intern to Mid-Level (Pleno) at Alelo; patched. |
+| U-02 | `components/experience.html:84`, `js/translations.js` | `medium` | Company ownership correction: removed Elo; Alelo belongs solely to Bradesco and Banco do Brasil; patched. |
+| U-03 | `components/experience.html:30, 90`, `js/translations.js` | `medium` | Timeline calibration: Alelo until Jan 2026, Trustly starting Jan 2026 to Present; patched. |
+| U-04 | `components/experience.html:109`, `js/translations.js` | `low` | Visual consistency: bolded 150k metric chip in first Alelo achievement bullet; patched. |
+| U-05 | `components/experience.html:113, 121, 134`, `js/translations.js` | `high` | Tech stack accuracy: replaced Kafka/RabbitMQ/PostgreSQL with ActiveMQ/Spring Batch/Oracle at Alelo; updated SFTP tag at Trustly; patched. |
+| U-06 | `js/translations.js` | `medium` | PT-BR localization: rewritten literal translation of Trustly description into natural, professional PT-BR; patched. |
+| U-07 | `components/education.html:43, 80`, `js/translations.js` | `high` | Credential verification: added USP/Esalq completion declaration PDF and official UNESP validation URL; patched. |
+| U-08 | `components/education.html:25`, `js/translations.js` | `medium` | Academic graduation date: calibrated USP/Esalq MBA completion period from 2024 – 2025 to 2024 – 2026; patched. |
 
 ## Design Notes
 
