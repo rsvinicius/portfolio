@@ -39,7 +39,7 @@ Reposition the digital portfolio and executive CV of Vinicius R. Silva from a tr
 
 - **CAP-5**
   - **intent:** Technical evaluators can inspect verified contributions to global open-source projects and developer productivity tools.
-  - **success:** A dedicated showcase displays MockK, dotme CLI, n8n-docs, and microbot with links to external proof repositories.
+  - **success:** A dedicated showcase displays MockK, dotme CLI, and n8n-docs with links to external proof repositories.
 
 - **CAP-6**
   - **intent:** Engineering recruiters and managers can assess technical competencies structured by architectural concern and modern AI-augmented workflows.

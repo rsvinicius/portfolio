@@ -13,7 +13,7 @@
 ### Should Have (P1 — High Conversion & Engagement)
 - Interactive client-side Antifraud sandbox card with dynamic risk calculation and heuristic breakdown.
 - Autonomous typewriter loop terminal for dotme project card with symlink verification output.
-- Open Source ecosystem showcase (MockK, dotme, n8n-docs, microbot).
+- Open Source ecosystem showcase (MockK, dotme, n8n-docs).
 - Active pulsing availability badge and pre-structured direct mailto action.
 
 ### Could Have (P2 — UX Polish)
@@ -36,7 +36,7 @@
 | `components/hero.html` | Executive headline, factual scale metrics, pulsing availability badge, primary/secondary CTAs. |
 | `components/experience.html` | Trustly primary block (B2B Billing, Reports, Batch, SFTP/S3) and consolidated Alelo block (4+ yrs, 500M+ req/mo). |
 | `components/projects.html` | Antifraud card with interactive sandbox widget container; dotme card with loop terminal container. |
-| `components/opensource.html` | Open source ecosystem grid (MockK, dotme, n8n-docs, microbot). |
+| `components/opensource.html` | Open source ecosystem grid (MockK, dotme, n8n-docs). |
 | `components/skills.html` | 4-layer taxonomy layout (JVM Core, Distributed Systems, Cloud/DevOps, AI-Augmented SDLC). |
 | `components/education.html` | Concluded MBA in Software Engineering at USP/Esalq; UNESP CS degree. |
 | `components/contact.html` | Executive contact blueprint: direct pre-filled mailto, LinkedIn, GitHub, ATS CV link. |

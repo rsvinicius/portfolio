@@ -155,7 +155,6 @@ Especialista em pipelines de *Billing B2B*, reconciliação financeira automatiz
 
 ### **Outras Contribuições Comunitárias:**
 - **n8n-docs:** Contribuição ativa com correções e aprimoramentos na documentação oficial da plataforma global de orquestração de fluxos e automação low-code/code.
-- **microbot:** Desenvolvimento e manutenção de automações utilitárias para infraestrutura de desenvolvimento e monitoramento de rotinas locais.
 
 ---
 

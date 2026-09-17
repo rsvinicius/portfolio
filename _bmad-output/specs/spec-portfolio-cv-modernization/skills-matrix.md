@@ -28,7 +28,6 @@
 
 | Project / Repository | Role | Technical Scope | Verification Link / Proof |
 | :--- | :--- | :--- | :--- |
-| **MockK** | Contributor (Merged PR) | Unit testing & mocking library for Kotlin | GitHub Repository / Merged PR |
+| **MockK** | Contributor | Unit testing & mocking library for Kotlin | Official GitHub Repo |
 | **dotme** | Creator & Maintainer | Declarative dotfiles CLI tool with pattern filtering | Public GitHub Repo |
 | **n8n-docs** | Contributor | Workflow automation documentation & integrations | Official n8n Repo |
-| **microbot** | Creator & Developer | Developer productivity automation tooling | Public GitHub Repo |

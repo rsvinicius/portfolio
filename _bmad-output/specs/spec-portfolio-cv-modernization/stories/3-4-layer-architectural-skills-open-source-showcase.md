@@ -89,8 +89,13 @@ context:
 
 ## Spec Change Log
 
+- 2026-09-17: Walkthrough review calibration per human direction:
+  - MockK: Simplified badge to "Contributor", removed specific release version tag (v1.14.0), and updated link target directly to the main repository (`https://github.com/mockk/mockk`).
+  - Microbot: Removed completely from the portfolio and CV. Given that Microbot is an automation bot for Old School RuneScape (violating game ToS / anti-cheat rules), its presence represents an ethics/compliance red flag for recruiters and fintech/enterprise hiring managers.
+  - Open Source layout: Adjusted grid from 2x2 to a balanced 3-column responsive layout (`lg:grid-cols-3`) for MockK, dotme, and n8n-docs.
+
 - 2026-09-17: Story refined per human direction:
-  - Simplified MockK presentation: placed alongside dotme, n8n-docs, and microbot in the open-source hub without verbose bug fix breakdown.
+  - Simplified MockK presentation: placed alongside dotme and n8n-docs in the open-source hub without verbose bug fix breakdown.
   - Objective skill names: standardized to concise labels (e.g. "Java", "PostgreSQL").
   - Skills taxonomy pruned: removed Apache Kafka, CloudWatch, IAM, RPC, Kubernetes, Linux internals, Spring Data, Spring Security.
   - Skills taxonomy expanded: added ActiveMQ, MongoDB, Microservices, Spring Webflux across the appropriate architectural layers.
@@ -120,15 +125,16 @@ context:
 ## Design Notes
 
 - **Skills Grid Ergonomics**: The skills matrix uses a 2x2 grid (`grid-cols-1 md:grid-cols-2`) on desktop rather than 4 cramped columns. Concise badge labels keep the layout clean, readable, and balanced.
-- **Open Source Showcase**: Open-source contributions are presented in an integrated showcase grid featuring MockK, dotme, n8n-docs, and microbot without disproportionate hero framing, keeping the focus on verified community engagement and utility.
+- **Open Source Showcase**: Open-source contributions are presented in an integrated showcase grid featuring MockK, dotme, and n8n-docs without disproportionate hero framing, keeping the focus on verified community engagement and utility.
 - **Navigation & Canonical IA**: Replacing `#about` with `#opensource` perfectly aligns navigation with the 8 canonical surfaces defined in `EXPERIENCE.md` Section 2.
 
 ## Verification
 
 **Commands:**
 - `! grep -q "about-container" js/script.js && grep -q "opensource-container" js/script.js` -- expected: barrier array updated, zero about-container references in script.js.
-- `grep -E 'href="https://github.com/mockk/mockk/pull/1367"' components/opensource.html` -- expected: verified GitHub PR #1367 link present.
-- `grep -c 'rel="noopener noreferrer"' components/opensource.html` -- expected: >= 4 secure external links.
+- `grep -E 'href="https://github.com/mockk/mockk"' components/opensource.html` -- expected: verified GitHub repo link present.
+- `grep -c 'rel="noopener noreferrer"' components/opensource.html` -- expected: >= 3 secure external links.
+- `! grep -E "microbot" components/opensource.html` -- expected: microbot excluded.
 - `! grep -E "[0-9]+%|<progress" components/skills.html` -- expected: zero percentage progress bars.
 - `! grep -E "Kafka|CloudWatch|Kubernetes" components/skills.html` -- expected: unexperienced skills excluded.
 - `grep -E "opensource|backendCore|distributedSystems|cloudDevOps|aiAugmented" js/translations.js` -- expected: translation keys present.

@@ -19,7 +19,7 @@
 - id: "3"
   title: 4-Layer Architectural Skills & Open Source Showcase
   description: >-
-    Reorganize technical competencies into the 4-layer taxonomy (JVM Core, Distributed Systems, Cloud/DevOps, AI-Augmented SDLC) per CAP-6. Build the Open Source showcase featuring MockK, dotme CLI, n8n-docs, and microbot per CAP-5 and DESIGN.md.
+    Reorganize technical competencies into the 4-layer taxonomy (JVM Core, Distributed Systems, Cloud/DevOps, AI-Augmented SDLC) per CAP-6. Build the Open Source showcase featuring MockK, dotme CLI, and n8n-docs per CAP-5 and DESIGN.md.
   spec_checkpoint: false
   done_checkpoint: true
   invoke_dev_with: >-
