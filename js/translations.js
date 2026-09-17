@@ -40,7 +40,7 @@ const translations = {
         metric3Sub: "High-scale transaction volume & streaming",
 
         // Contact Pre-filled Email Strings
-        contactEmailSubject: "Software Engineering Opportunity - Vinicius R. Silva",
+        contactEmailSubject: "Software Engineering Opportunity - Vinicius Rodrigues Silva",
         contactEmailBody: "Hi Vinicius,\n\nI reviewed your portfolio and would like to discuss a Software Engineer role at...",
         contactText: "Direct outreach for software engineering opportunities, backend development, and high-throughput systems.",
         
@@ -280,7 +280,7 @@ const translations = {
         metric3Sub: "Processamento transacional e streaming de alta escala",
 
         // Contact Pre-filled Email Strings
-        contactEmailSubject: "Oportunidade Engenharia de Software - Vinicius R. Silva",
+        contactEmailSubject: "Oportunidade Engenharia de Software - Vinicius Rodrigues Silva",
         contactEmailBody: "Olá Vinicius,\n\nAnalisei seu portfólio e gostaria de conversar sobre uma oportunidade de Engenheiro de Software na...",
         contactText: "Contato direto para oportunidades de engenharia de software, desenvolvimento backend e sistemas de alta vazão.",
         

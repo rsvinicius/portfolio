@@ -164,8 +164,8 @@ test('dynamic script keys and Antifraud decision badges adhere to spec', () => {
     assert.equal(translations.pt.antifraudNormalSpeed, 'Trânsito Normal');
 
     // Dynamic contact mailto strings
-    assert.equal(translations.en.contactEmailSubject, 'Software Engineering Opportunity - Vinicius R. Silva');
-    assert.equal(translations.pt.contactEmailSubject, 'Oportunidade Engenharia de Software - Vinicius R. Silva');
+    assert.equal(translations.en.contactEmailSubject, 'Software Engineering Opportunity - Vinicius Rodrigues Silva');
+    assert.equal(translations.pt.contactEmailSubject, 'Oportunidade Engenharia de Software - Vinicius Rodrigues Silva');
     assert.ok(translations.en.contactEmailBody.includes('Hi Vinicius'));
     assert.ok(translations.pt.contactEmailBody.includes('Olá Vinicius'));
 
@@ -349,7 +349,7 @@ function createLocalizationHarness(initialLocalStorage = {}) {
 
     // Mailto link
     const mailtoLink = addElement('hero-mailto', 'a', {
-        href: 'mailto:vrodrigues.code@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20Vinicius%20R.%20Silva&body=Hi%20Vinicius,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20Software%20Engineer%20role%20at...'
+        href: 'mailto:vrodrigues.code@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20Vinicius%20Rodrigues%20Silva&body=Hi%20Vinicius,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20Software%20Engineer%20role%20at...'
     });
 
     const documentMock = {
@@ -487,7 +487,7 @@ test('Language Toggle to PT updates DOM in <50ms without page reload', () => {
     // Verify mailto URI adapted to Portuguese
     const href = harness.elementsById['hero-mailto'].getAttribute('href');
     assert.ok(
-        href.includes('Oportunidade%20Engenharia%20de%20Software%20-%20Vinicius%20R.%20Silva'),
+        href.includes('Oportunidade%20Engenharia%20de%20Software%20-%20Vinicius%20Rodrigues%20Silva'),
         'Mailto must contain localized Portuguese subject'
     );
     assert.ok(href.includes('Ol%C3%A1%20Vinicius'), 'Mailto must contain localized Portuguese body');
@@ -566,7 +566,7 @@ test('Language Toggle from PT back to EN reverts all copy cleanly', () => {
     assert.equal(harness.elementsById['mobile-language-toggle'].getAttribute('aria-label'), 'Switch language to Portuguese');
 
     const href = harness.elementsById['hero-mailto'].getAttribute('href');
-    assert.ok(href.includes('Software%20Engineering%20Opportunity'));
+    assert.ok(href.includes('Software%20Engineering%20Opportunity%20-%20Vinicius%20Rodrigues%20Silva'));
 });
 
 test('Antifraud sandbox simulation displays localized badges and velocity alerts in PT', () => {

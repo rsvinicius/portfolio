@@ -10,3 +10,6 @@
 - source_spec: `_bmad-output/specs/spec-portfolio-cv-modernization/stories/4-interactive-antifraud-sandbox-widget.md`
   summary: Legacy components/about.html cleanup.
   evidence: Pre-existing unused template file from before executive portfolio modernization.
+- source_spec: `/home/vinicius/Documents/github/portfolio/_bmad-output/implementation-artifacts/spec-update-name-vinicius-rodrigues-silva.md`
+  summary: Explicit filename on CV download attributes to reflect full name in downloaded file.
+  evidence: Currently hero.html and contact.html have bare download attributes relying on the underlying assets/Vinicius_Silva_Software_Engineer_CV.pdf filename.
