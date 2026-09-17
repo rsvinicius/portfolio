@@ -4,15 +4,15 @@
         <div class="flex items-center justify-between">
             <a href="#" class="text-xl font-bold transition-colors">VR.</a>
             
-            <nav class="hidden md:flex space-x-8">
-                <a href="#experience" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="experience"></a>
-                <a href="#projects" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="projects"></a>
-                <a href="#opensource" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="opensource"></a>
-                <a href="#skills" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="skills"></a>
-                <a href="#education" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="education"></a>
-                <a href="#contact" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="contact"></a>
-                <button id="language-toggle" class="text-sm font-medium hover:text-blue-600 transition-colors"></button>
-                <button id="theme-toggle" class="text-sm font-medium hover:text-blue-600 transition-colors">
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#experience" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="experience">Experience</a>
+                <a href="#projects" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="projects">Projects</a>
+                <a href="#opensource" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="opensource">Open Source</a>
+                <a href="#skills" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="skills">Skills</a>
+                <a href="#education" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="education">Education</a>
+                <a href="#contact" class="text-sm font-medium hover:text-blue-600 transition-colors" data-i18n="contact">Contact</a>
+                <button id="language-toggle" aria-label="Switch language to Portuguese" class="text-xs font-mono font-semibold px-2.5 py-1 rounded border border-[#CBD5E1] dark:border-[#374151] hover:border-[#2563EB] dark:hover:border-[#3B82F6] hover:text-[#2563EB] dark:hover:text-[#3B82F6] transition-colors focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">PT</button>
+                <button id="theme-toggle" class="text-sm font-medium hover:text-blue-600 transition-colors" aria-label="Toggle dark/light theme">
                     <i class="fas fa-moon dark:hidden"></i>
                     <i class="fas fa-sun hidden dark:inline"></i>
                 </button>
@@ -20,12 +20,12 @@
             
             <!-- Mobile menu button -->
             <div class="md:hidden flex items-center space-x-4">
-                <button id="mobile-language-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none"></button>
-                <button id="mobile-theme-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none">
+                <button id="mobile-language-toggle" aria-label="Switch language to Portuguese" class="text-xs font-mono font-semibold px-2.5 py-1 rounded border border-[#CBD5E1] dark:border-[#374151] hover:border-[#2563EB] dark:hover:border-[#3B82F6] hover:text-[#2563EB] dark:hover:text-[#3B82F6] transition-colors focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">PT</button>
+                <button id="mobile-theme-toggle" class="text-gray-800 dark:text-gray-200 focus:outline-none" aria-label="Toggle dark/light theme">
                     <i class="fas fa-moon dark:hidden"></i>
                     <i class="fas fa-sun hidden dark:inline"></i>
                 </button>
-                <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 focus:outline-none">
+                <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 focus:outline-none" aria-label="Open mobile menu">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -35,12 +35,12 @@
         
         <!-- Mobile menu, hidden by default -->
         <div id="mobile-menu" class="hidden md:hidden mt-2 py-2 space-y-2">
-            <a href="#experience" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="experience"></a>
-            <a href="#projects" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="projects"></a>
-            <a href="#opensource" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="opensource"></a>
-            <a href="#skills" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="skills"></a>
-            <a href="#education" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="education"></a>
-            <a href="#contact" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="contact"></a>
+            <a href="#experience" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="experience">Experience</a>
+            <a href="#projects" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="projects">Projects</a>
+            <a href="#opensource" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="opensource">Open Source</a>
+            <a href="#skills" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="skills">Skills</a>
+            <a href="#education" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="education">Education</a>
+            <a href="#contact" class="block text-sm font-medium hover:text-blue-600 transition-colors py-1" data-i18n="contact">Contact</a>
         </div>
     </div>
 </header>

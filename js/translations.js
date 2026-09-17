@@ -89,12 +89,15 @@ const translations = {
         opensourceTitle: "Open Source & Community Ecosystem",
         opensourceSubtitle: "Verified contributions to global open-source libraries, developer productivity CLI tools, and automation frameworks.",
         mockkRole: "Contributor",
+        mockkCategory: "Testing Library",
         mockkDesc: "Core unit testing and mocking library for Kotlin. Fixed state leak in verification mechanisms ensuring hermetic test isolation.",
         mockkLinkText: "View Repository",
         dotmeRole: "Creator & Maintainer",
+        dotmeCategory: "CLI Tool",
         dotmeDesc: "Declarative dotfiles management CLI tool featuring atomic symlink reconciliation, pattern filtering, and syntax validation.",
         dotmeLinkText: "View Repository",
         n8nDocsRole: "Contributor",
+        n8nDocsCategory: "Docs / Ecosystem",
         n8nDocsDesc: "Workflow automation documentation and technical integrations for the open-source n8n workflow platform.",
         n8nDocsLinkText: "View Repository",
 
@@ -230,6 +233,8 @@ const translations = {
         // Language Switcher
         switchToEnglish: "EN",
         switchToPortuguese: "PT",
+        switchToEnglishAria: "Switch language to English",
+        switchToPortugueseAria: "Switch language to Portuguese",
         
         // Form Response
         formResponse: "Thank you, {0}! Your message has been received. I'll get back to you at {1} soon."
@@ -301,7 +306,7 @@ const translations = {
         antifraudDistanceLabel: "Salto de Distância Física",
         antifraudRiskIndex: "Índice de Risco Calibrado",
         antifraudStatusApproved: "APROVADO",
-        antifraudStatusFlagged: "ANALISAR / REVISÃO",
+        antifraudStatusFlagged: "SINALIZADO",
         antifraudStatusRejected: "REJEITADO",
         antifraudTravelVelocity: "Velocidade de Deslocamento",
         antifraudVelocityPenalty: "Penalidade de Velocidade (P_vel)",
@@ -324,12 +329,15 @@ const translations = {
         opensourceTitle: "Ecossistema Open Source & Comunidade",
         opensourceSubtitle: "Contribuições verificadas para bibliotecas open-source globais, ferramentas CLI de produtividade e frameworks de automação.",
         mockkRole: "Contribuidor",
+        mockkCategory: "Biblioteca de Testes",
         mockkDesc: "Biblioteca principal de testes unitários e mocking para Kotlin. Correção de vazamento de estado em verificações para isolamento hermético de testes.",
         mockkLinkText: "Ver Repositório",
         dotmeRole: "Criador & Mantenedor",
+        dotmeCategory: "Ferramenta CLI",
         dotmeDesc: "Ferramenta CLI declarativa para gestão de dotfiles com reconciliação atômica de symlinks, filtros de padrões e validação de sintaxe.",
         dotmeLinkText: "Ver Repositório",
         n8nDocsRole: "Contribuidor",
+        n8nDocsCategory: "Documentação / Ecossistema",
         n8nDocsDesc: "Documentação de automação de fluxos de trabalho e integrações técnicas para a plataforma open-source n8n.",
         n8nDocsLinkText: "Ver Repositório",
 
@@ -465,6 +473,8 @@ const translations = {
         // Language Switcher
         switchToEnglish: "EN",
         switchToPortuguese: "PT",
+        switchToEnglishAria: "Mudar idioma para inglês",
+        switchToPortugueseAria: "Mudar idioma para português",
         
         // Form Response
         formResponse: "Obrigado, {0}! Sua mensagem foi recebida. Entrarei em contato com você em {1} em breve."

@@ -61,8 +61,8 @@ function initializePostLoadFunctionality() {
         .then(([translationsModule, calculatorModule, dotmeDataModule]) => {
             const translations = translationsModule.default;
             const calculateRisk = calculatorModule.calculateRisk;
-            initializeLanguageToggle(translations);
             initializeAntifraudSandbox(translations, calculateRisk);
+            initializeLanguageToggle(translations);
             initializeDotmeTerminal(translations, dotmeDataModule);
         })
         .catch(error => {
@@ -168,7 +168,8 @@ function initializePostLoadFunctionality() {
 function initializeLanguageToggle(translations) {
     let savedLanguage = 'en';
     try {
-        savedLanguage = localStorage.getItem('language') || 'en';
+        const rawLang = localStorage.getItem('language') || localStorage.getItem('lang') || 'en';
+        savedLanguage = (translations && translations[rawLang]) ? rawLang : 'en';
     } catch (e) {
         console.warn('localStorage not accessible for language', e);
     }
@@ -197,21 +198,24 @@ function initializeLanguageToggle(translations) {
     
     if (languageToggle) {
         languageToggle.addEventListener('click', handleLanguageToggle);
-        updateToggleText(languageToggle, savedLanguage, translations);
     }
     
     if (mobileLanguageToggle) {
         mobileLanguageToggle.addEventListener('click', handleLanguageToggle);
-        updateToggleText(mobileLanguageToggle, savedLanguage, translations);
     }
 }
 
 // Update all translatable elements on the page
 function updateLanguage(lang, translations) {
+    if (!translations || !translations[lang]) return;
+
+    // Synchronize document language attribute
+    document.documentElement.lang = lang;
+
     // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations && translations[lang] && translations[lang][key]) {
+        if (translations[lang][key] !== undefined) {
             const val = translations[lang][key];
             if (typeof val === 'string' && /<[a-z][\s\S]*>/i.test(val)) {
                 element.innerHTML = val;
@@ -224,8 +228,16 @@ function updateLanguage(lang, translations) {
     // Update all input placeholders with data-i18n-placeholder
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
-        if (translations && translations[lang] && translations[lang][key]) {
+        if (translations[lang][key] !== undefined) {
             element.placeholder = translations[lang][key];
+        }
+    });
+
+    // Update all elements with data-i18n-aria-label
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+        const key = element.getAttribute('data-i18n-aria-label');
+        if (translations[lang][key] !== undefined) {
+            element.setAttribute('aria-label', translations[lang][key]);
         }
     });
     
@@ -263,13 +275,21 @@ function updateMailtoLinks(lang, translations) {
     });
 }
 
-// Update language toggle button text
+// Update language toggle button text and accessible attributes
 function updateToggleText(element, lang, translations) {
-    if (!translations) return;
+    if (!element || !translations) return;
     if (lang === 'en') {
-        element.textContent = translations.en ? translations.en.switchToPortuguese : 'PT';
+        const label = (translations.en && translations.en.switchToPortuguese) ? translations.en.switchToPortuguese : 'PT';
+        const ariaLabel = (translations.en && translations.en.switchToPortugueseAria) ? translations.en.switchToPortugueseAria : 'Switch language to Portuguese';
+        element.textContent = label;
+        element.setAttribute('aria-label', ariaLabel);
+        element.setAttribute('title', ariaLabel);
     } else {
-        element.textContent = translations.pt ? translations.pt.switchToEnglish : 'EN';
+        const label = (translations.pt && translations.pt.switchToEnglish) ? translations.pt.switchToEnglish : 'EN';
+        const ariaLabel = (translations.pt && translations.pt.switchToEnglishAria) ? translations.pt.switchToEnglishAria : 'Mudar idioma para inglês';
+        element.textContent = label;
+        element.setAttribute('aria-label', ariaLabel);
+        element.setAttribute('title', ariaLabel);
     }
 }
 
@@ -791,3 +811,7 @@ function initializeDotmeTerminal(translations, dotmeDataModule) {
 }
 
 window.initializeDotmeTerminal = initializeDotmeTerminal;
+window.initializeLanguageToggle = initializeLanguageToggle;
+window.updateLanguage = updateLanguage;
+window.updateMailtoLinks = updateMailtoLinks;
+window.updateToggleText = updateToggleText;
