@@ -52,20 +52,23 @@ function loadComponent(containerId, componentPath) {
 
 // Initialize functionality after all components are loaded
 function initializePostLoadFunctionality() {
-    // Import translations and antifraud calculator module
+    // Import translations, antifraud calculator, and dotme data modules
     Promise.all([
         import('./translations.js'),
-        import('./antifraud-calculator.js')
+        import('./antifraud-calculator.js'),
+        import('./dotme-data.js')
     ])
-        .then(([translationsModule, calculatorModule]) => {
+        .then(([translationsModule, calculatorModule, dotmeDataModule]) => {
             const translations = translationsModule.default;
             const calculateRisk = calculatorModule.calculateRisk;
             initializeLanguageToggle(translations);
             initializeAntifraudSandbox(translations, calculateRisk);
+            initializeDotmeTerminal(translations, dotmeDataModule);
         })
         .catch(error => {
             console.error('Error loading modules:', error);
             initializeAntifraudSandbox(null, null);
+            initializeDotmeTerminal(null, null);
         });
 
     // Theme switching functionality (Dark mode by default per DESIGN.md & EXPERIENCE.md)
@@ -542,3 +545,249 @@ function initializeAntifraudSandbox(translations, calculateRiskFn) {
     // Execute initial calculation
     update();
 }
+
+// dotme Autonomous CLI Terminal Loop Widget
+// Runs an autonomous typewriter demo cycle: command typing, output streaming,
+// 5-second completion hold with hover freeze, viewport-based pause/resume, and prefers-reduced-motion fallback.
+function initializeDotmeTerminal(translations, dotmeDataModule) {
+    // Clean up any existing terminal instance to prevent duplicate timers or memory leaks
+    if (window._dotmeTerminalCleanup) {
+        window._dotmeTerminalCleanup();
+    }
+
+    const terminal = document.getElementById('dotme-terminal');
+    const terminalBody = document.getElementById('dotme-terminal-body');
+    const cmdElement = document.getElementById('dotme-cmd');
+    const cursorElement = document.getElementById('dotme-cursor');
+    const outputElement = document.getElementById('dotme-output');
+
+    if (!terminal || !cmdElement || !outputElement) {
+        return;
+    }
+
+    const command = (dotmeDataModule && dotmeDataModule.DOTME_COMMAND) ||
+        'dotme --include=".config*" --exclude=".DS_Store" https://github.com/rsvinicius/dotfiles';
+
+    const outputLines = (dotmeDataModule && dotmeDataModule.DOTME_OUTPUT_LINES) || [
+        { text: '🔄 Cloning repository: https://github.com/rsvinicius/dotfiles', className: 'text-[#8B949E]' },
+        { text: '✅ Repository cloned, using branch: main', className: 'text-[#3FB950]' },
+        { text: '📋 Scanning for dotfiles...', className: 'text-[#8B949E]' },
+        { text: '📦 Summary:', className: 'mt-2 text-[#F9FAFB] font-semibold' },
+        { text: '✅ Copied 1 item:', className: 'text-[#3FB950]' },
+        { text: '   - .config', className: 'text-[#8B949E] pl-4' },
+        { text: '❌ Ignored 7 items:', className: 'mt-1 text-[#F85149]' },
+        { text: '   - disable_mouse_acceleration.sh, firewall.sh, fonts, install.sh (+3 scripts)', className: 'text-[#8B949E] pl-4' },
+        { text: '🔍 Active filters:', className: 'mt-2 text-[#F9FAFB] font-semibold' },
+        { text: '   Include patterns: [.config*]', className: 'text-[#8B949E] pl-4' },
+        { text: '   Exclude patterns: [.DS_Store]', className: 'text-[#8B949E] pl-4' },
+        { text: '🎉 Done! Your dotfiles have been applied successfully.', className: 'mt-2 text-[#3FB950] font-medium' }
+    ];
+
+    const timings = (dotmeDataModule && dotmeDataModule.DOTME_TIMINGS) || {
+        typewriterCadence: 35,
+        streamingLineCadence: 120,
+        holdDuration: 5000,
+        restartDelay: 400
+    };
+
+    function renderFullOutput() {
+        outputElement.innerHTML = '';
+        outputLines.forEach(line => {
+            const div = document.createElement('div');
+            if (line.className) div.className = line.className;
+            div.textContent = line.text;
+            outputElement.appendChild(div);
+        });
+    }
+
+    // Reduced motion check: skip typewriter and render static completed state immediately
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        cmdElement.textContent = command;
+        if (cursorElement) cursorElement.classList.add('hidden');
+        renderFullOutput();
+        return;
+    }
+
+    let isVisible = false;
+    let isHovered = false;
+    let activeTimeout = null;
+    let currentPhase = 'idle'; // 'typing' | 'streaming' | 'holding' | 'resetting' | 'idle'
+    let charIndex = 0;
+    let lineIndex = 0;
+    let holdRemainingMs = timings.holdDuration;
+    let holdStartTime = null;
+
+    function clearTimer() {
+        if (activeTimeout !== null) {
+            clearTimeout(activeTimeout);
+            activeTimeout = null;
+        }
+    }
+
+    function startCycle() {
+        clearTimer();
+        if (terminalBody) {
+            terminalBody.scrollLeft = 0;
+        }
+        cmdElement.textContent = '';
+        outputElement.innerHTML = '';
+        outputElement.style.transition = '';
+        outputElement.style.opacity = '1';
+        if (cursorElement) cursorElement.classList.remove('hidden');
+        charIndex = 0;
+        lineIndex = 0;
+        holdRemainingMs = timings.holdDuration;
+        holdStartTime = null;
+        currentPhase = 'typing';
+
+        if (isVisible) {
+            scheduleNextChar();
+        }
+    }
+
+    function scheduleNextChar() {
+        clearTimer();
+        activeTimeout = setTimeout(typeNextChar, timings.typewriterCadence);
+    }
+
+    function typeNextChar() {
+        if (!isVisible || currentPhase !== 'typing') return;
+
+        if (charIndex < command.length) {
+            cmdElement.textContent += command[charIndex];
+            charIndex++;
+            scheduleNextChar();
+        } else {
+            currentPhase = 'streaming';
+            lineIndex = 0;
+            scheduleNextLine();
+        }
+    }
+
+    function scheduleNextLine() {
+        clearTimer();
+        activeTimeout = setTimeout(streamNextLine, timings.streamingLineCadence);
+    }
+
+    function streamNextLine() {
+        if (!isVisible || currentPhase !== 'streaming') return;
+
+        if (lineIndex < outputLines.length) {
+            const line = outputLines[lineIndex];
+            const div = document.createElement('div');
+            if (line.className) div.className = line.className;
+            div.textContent = line.text;
+            outputElement.appendChild(div);
+            lineIndex++;
+            scheduleNextLine();
+        } else {
+            currentPhase = 'holding';
+            holdRemainingMs = timings.holdDuration;
+            if (!isHovered && isVisible) {
+                holdStartTime = Date.now();
+                clearTimer();
+                activeTimeout = setTimeout(executeReset, holdRemainingMs);
+            } else {
+                holdStartTime = null;
+                clearTimer();
+            }
+        }
+    }
+
+    function executeReset() {
+        if (currentPhase !== 'holding') return;
+        currentPhase = 'resetting';
+        clearTimer();
+        // Add smooth opacity fade-out transition before wiping
+        outputElement.style.transition = 'opacity 300ms ease';
+        outputElement.style.opacity = '0';
+        activeTimeout = setTimeout(() => {
+            outputElement.style.transition = '';
+            outputElement.style.opacity = '1';
+            startCycle();
+        }, timings.restartDelay || 400);
+    }
+
+    function onMouseEnter() {
+        isHovered = true;
+        if (currentPhase === 'holding' && holdStartTime !== null) {
+            clearTimer();
+            const elapsed = Date.now() - holdStartTime;
+            holdRemainingMs = Math.max(0, holdRemainingMs - elapsed);
+            holdStartTime = null;
+        }
+    }
+
+    function onMouseLeave() {
+        isHovered = false;
+        if (currentPhase === 'holding' && isVisible) {
+            holdStartTime = Date.now();
+            clearTimer();
+            activeTimeout = setTimeout(executeReset, holdRemainingMs);
+        }
+    }
+
+    terminal.addEventListener('mouseenter', onMouseEnter);
+    terminal.addEventListener('mouseleave', onMouseLeave);
+
+    // IntersectionObserver to pause when terminal leaves viewport
+    let observer = null;
+    if (typeof IntersectionObserver !== 'undefined') {
+        observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const wasHidden = !isVisible;
+                    isVisible = true;
+                    if (wasHidden) {
+                        if (currentPhase === 'idle') {
+                            startCycle();
+                        } else if (currentPhase === 'typing') {
+                            scheduleNextChar();
+                        } else if (currentPhase === 'streaming') {
+                            scheduleNextLine();
+                        } else if (currentPhase === 'holding' && !isHovered) {
+                            holdStartTime = Date.now();
+                            clearTimer();
+                            activeTimeout = setTimeout(executeReset, holdRemainingMs);
+                        } else if (currentPhase === 'resetting') {
+                            startCycle();
+                        }
+                    }
+                } else {
+                    isVisible = false;
+                    clearTimer();
+                    if (currentPhase === 'holding' && holdStartTime !== null) {
+                        const elapsed = Date.now() - holdStartTime;
+                        holdRemainingMs = Math.max(0, holdRemainingMs - elapsed);
+                        holdStartTime = null;
+                    }
+                }
+            });
+        }, { threshold: 0.15 });
+
+        observer.observe(terminal);
+    } else {
+        // Fallback for environments without IntersectionObserver
+        isVisible = true;
+        startCycle();
+    }
+
+    // Cleanup hook to avoid memory leaks
+    window._dotmeTerminalCleanup = function() {
+        clearTimer();
+        if (observer) {
+            observer.disconnect();
+            observer = null;
+        }
+        terminal.removeEventListener('mouseenter', onMouseEnter);
+        terminal.removeEventListener('mouseleave', onMouseLeave);
+        if (outputElement) {
+            outputElement.style.transition = '';
+            outputElement.style.opacity = '1';
+        }
+        window._dotmeTerminalCleanup = null;
+    };
+}
+
+window.initializeDotmeTerminal = initializeDotmeTerminal;

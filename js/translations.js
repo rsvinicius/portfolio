@@ -82,6 +82,7 @@ const translations = {
         // dotme CLI Project Card
         dotmeTitle: "dotme • Git-Based Dotfiles Manager CLI",
         dotmeSubtitle: "Autonomous Typewriter Loop • Pattern-Based Dotfile Distribution",
+        dotmeSrSummary: "Demonstration of dotme CLI: an autonomous terminal session executing git clone, pattern-based filtering with include and exclude rules, and dotfile distribution with summary metrics.",
 
         // Open Source Section
         opensourceSectionIndex: "04. OPEN SOURCE",
@@ -316,6 +317,7 @@ const translations = {
         // dotme CLI Project Card
         dotmeTitle: "dotme • Gerenciador de Dotfiles Baseado em Git via CLI",
         dotmeSubtitle: "Loop de Digitação Autônomo • Distribuição de Dotfiles por Padrões",
+        dotmeSrSummary: "Demonstração do dotme CLI: uma sessão autônoma de terminal executando git clone, filtragem por padrões com regras de inclusão e exclusão, e distribuição de dotfiles com métricas de resumo.",
 
         // Open Source Section
         opensourceSectionIndex: "04. CÓDIGO ABERTO",
