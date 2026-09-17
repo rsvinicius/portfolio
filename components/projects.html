@@ -1,75 +1,202 @@
 <!-- Projects Section -->
-<section id="projects" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="featuredProjects">
-        </h2>
+<section id="projects" class="py-16 lg:py-24 bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F9FAFB] transition-colors duration-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
+        <!-- Section Header -->
+        <div class="mb-12">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]" data-i18n="projectsSectionIndex">03. PROJECTS</span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="featuredProjects">Interactive Engineering Showcases</h2>
+            <p class="text-base text-[#475569] dark:text-[#9CA3AF] mt-2 max-w-2xl" data-i18n="projectsSubtitle">
+                Active client-side simulations demonstrating mathematical risk scoring and declarative systems automation with zero third-party dependencies or external backend calls.
+            </p>
+        </div>
 
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Project 2: Antifraud System -->
-            <div
-                class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-                    <i class="fas fa-shield-alt text-5xl text-blue-700 dark:text-blue-300"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2" data-i18n="project2Title">
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="project2Desc"></p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white text-xs font-medium px-2.5 py-0.5 rounded">Java</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white text-xs font-medium px-2.5 py-0.5 rounded">Spring
-                            Security</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white text-xs font-medium px-2.5 py-0.5 rounded">REST
-                            API</span>
+        <div class="space-y-8">
+            <!-- Project 1: Antifraud Sandbox Widget -->
+            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-xl p-6 sm:p-7 shadow-sm transition-colors">
+                <!-- Card Header -->
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6 pb-5 border-b border-[#E2E8F0] dark:border-[#1F2937]">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="antifraudTitle">
+                                Antifraud Financial Security Engine • Real-Time Sandbox
+                            </h3>
+                        </div>
+                        <p class="text-xs sm:text-sm font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudSubtitle">
+                            Heuristic transaction evaluation with multi-factor velocity & geo-jump calibration
+                        </p>
                     </div>
-                    <a href="https://github.com/rsvinicius/antifraud-system" target="_blank"
-                        class="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium flex items-center transition-colors">
-                        <i class="fab fa-github mr-2"></i>
-                        <span data-i18n="viewOnGitHub"></span>
-                        <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    <div class="shrink-0 flex items-center">
+                        <div id="antifraud-status-badge" aria-live="polite" class="font-mono text-xs font-bold px-3.5 py-1.5 rounded-full tracking-wider border transition-colors bg-status-flagged-light/15 dark:bg-status-flagged/15 text-status-flagged-light dark:text-status-flagged border-status-flagged-border" data-i18n="antifraudStatusFlagged">
+                            FLAGGED / REVIEW
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sandbox Interactive Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <!-- Left Column: Controls (3 Sliders) -->
+                    <div class="space-y-5">
+                        <!-- Amount Slider -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-xs sm:text-sm">
+                                <label id="antifraud-amount-label" for="antifraud-amount" class="text-[#475569] dark:text-[#9CA3AF] font-medium" data-i18n="antifraudAmountLabel">Transaction Amount</label>
+                                <span id="antifraud-amount-val" class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">$450.00</span>
+                            </div>
+                            <input type="range" id="antifraud-amount" min="10" max="10000" step="10" value="450"
+                                aria-labelledby="antifraud-amount-label" aria-valuemin="10" aria-valuemax="10000" aria-valuenow="450" aria-valuetext="$450.00"
+                                class="w-full h-2 bg-[#F1F5F9] dark:bg-[#1F2937] rounded-lg appearance-none cursor-pointer accent-[#2563EB] dark:accent-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
+                            <div class="flex justify-between text-[11px] font-mono text-[#64748B] dark:text-[#6B7280]">
+                                <span>$10</span>
+                                <span>$10,000</span>
+                            </div>
+                        </div>
+
+                        <!-- Time Delta Slider -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-xs sm:text-sm">
+                                <label id="antifraud-delta-label" for="antifraud-delta" class="text-[#475569] dark:text-[#9CA3AF] font-medium" data-i18n="antifraudDeltaLabel">Time Delta Since Previous</label>
+                                <span id="antifraud-delta-val" class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">15 min</span>
+                            </div>
+                            <input type="range" id="antifraud-delta" min="1" max="300" step="1" value="15"
+                                aria-labelledby="antifraud-delta-label" aria-valuemin="1" aria-valuemax="300" aria-valuenow="15" aria-valuetext="15 min"
+                                class="w-full h-2 bg-[#F1F5F9] dark:bg-[#1F2937] rounded-lg appearance-none cursor-pointer accent-[#2563EB] dark:accent-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
+                            <div class="flex justify-between text-[11px] font-mono text-[#64748B] dark:text-[#6B7280]">
+                                <span>1 min</span>
+                                <span>300 min</span>
+                            </div>
+                        </div>
+
+                        <!-- Distance Slider -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center text-xs sm:text-sm">
+                                <label id="antifraud-distance-label" for="antifraud-distance" class="text-[#475569] dark:text-[#9CA3AF] font-medium" data-i18n="antifraudDistanceLabel">Physical Distance Jump</label>
+                                <span id="antifraud-distance-val" class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">850 km</span>
+                            </div>
+                            <input type="range" id="antifraud-distance" min="0" max="3000" step="10" value="850"
+                                aria-labelledby="antifraud-distance-label" aria-valuemin="0" aria-valuemax="3000" aria-valuenow="850" aria-valuetext="850 km"
+                                class="w-full h-2 bg-[#F1F5F9] dark:bg-[#1F2937] rounded-lg appearance-none cursor-pointer accent-[#2563EB] dark:accent-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
+                            <div class="flex justify-between text-[11px] font-mono text-[#64748B] dark:text-[#6B7280]">
+                                <span>0 km</span>
+                                <span>3,000 km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Diagnostics (Score Gauge & Metric Breakdown) -->
+                    <div id="antifraud-outcome-container" class="bg-[#F8FAFC] dark:bg-[#0B0F19] border border-[#E2E8F0] dark:border-[#1F2937] rounded-lg p-5 sm:p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudRiskIndex">
+                                Calibrated Risk Index
+                            </div>
+                            <div class="flex items-baseline gap-2 my-2">
+                                <span id="antifraud-score-num" aria-live="polite" class="font-mono text-4xl sm:text-5xl font-bold text-status-flagged-light dark:text-status-flagged transition-colors">73.4</span>
+                                <span class="font-mono text-base text-[#64748B] dark:text-[#6B7280]">/ 100</span>
+                            </div>
+                            <!-- Progress Bar Meter -->
+                            <div class="w-full h-2.5 bg-[#E2E8F0] dark:bg-[#1F2937] rounded-full overflow-hidden mb-5">
+                                <div id="antifraud-score-bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="73.4" aria-valuetext="73.4 / 100" class="h-full rounded-full transition-all duration-150 bg-status-flagged-light dark:bg-status-flagged" style="width: 73.4%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Formula Breakdown Diagnostics -->
+                        <div class="border-t border-[#E2E8F0] dark:border-[#1F2937] pt-4 space-y-2.5 font-mono text-xs text-[#475569] dark:text-[#9CA3AF]">
+                            <div class="flex justify-between items-center gap-2">
+                                <span data-i18n="antifraudTravelVelocity">Travel Velocity</span>
+                                <span id="antifraud-velocity-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB] text-right">3,400 km/h (Supersonic Geo-Jump)</span>
+                            </div>
+                            <div class="flex justify-between items-center gap-2">
+                                <span data-i18n="antifraudVelocityPenalty">Velocity Penalty (P_vel)</span>
+                                <span id="antifraud-pvel-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB]">37.5 / 50</span>
+                            </div>
+                            <div class="flex justify-between items-center gap-2">
+                                <span data-i18n="antifraudGeoPenalty">Geo-Jump Penalty (P_geo)</span>
+                                <span id="antifraud-pgeo-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB]">50.0 / 50</span>
+                            </div>
+                            <div class="flex justify-between items-center gap-2">
+                                <span data-i18n="antifraudAmountPenalty">Amount Penalty (P_amount)</span>
+                                <span id="antifraud-pamount-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB]">1.8 / 30</span>
+                            </div>
+                            <div class="flex justify-between items-center gap-2">
+                                <span data-i18n="antifraudDampingRatio">Damping Ratio Applied</span>
+                                <span id="antifraud-damping-val" class="font-semibold text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudDampingVal">0.8 Heuristics + 0.2 Base</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Footer -->
+                <div class="mt-6 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java 21</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Security</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Heuristic Scoring</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">REST API</span>
+                    </div>
+                    <a href="https://github.com/rsvinicius/antifraud-system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="Antifraud System repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-sm" aria-hidden="true"></i>
+                        <span data-i18n="antifraudRepoLink">View Repository</span>
+                        <i class="fas fa-external-link-alt text-[10px]" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Project 3: PrioriTask -->
-            <div
-                class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-                    <i class="fas fa-utensils text-5xl text-blue-700 dark:text-blue-300"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-2" data-i18n="project3Title">
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4" data-i18n="project3Desc"></p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white text-xs font-medium px-2.5 py-0.5 rounded">Java</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white text-xs font-medium px-2.5 py-0.5 rounded">Spring
-                            Boot</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white text-xs font-medium px-2.5 py-0.5 rounded">Microservices</span>
-                        <span
-                            class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white text-xs font-medium px-2.5 py-0.5 rounded">MongoDB</span>
+            <!-- Project 2: dotme Autonomous CLI Terminal -->
+            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-xl p-6 sm:p-7 shadow-sm transition-colors">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]">
+                            dotme • Declarative Dotfiles Manager CLI
+                        </h3>
+                        <p class="text-xs sm:text-sm font-mono text-[#64748B] dark:text-[#6B7280]">
+                            Autonomous Typewriter Loop • Zero Input Required
+                        </p>
                     </div>
-                    <a href="https://github.com/rsvinicius/keepstrong-delivery" target="_blank"
-                        class="text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium flex items-center transition-colors">
-                        <i class="fab fa-github mr-2"></i>
-                        <span data-i18n="viewOnGitHub"></span>
-                        <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                </div>
+
+                <!-- Terminal Window -->
+                <div class="bg-[#0D1117] border border-[#1F2937] rounded-lg overflow-hidden font-mono text-xs sm:text-sm">
+                    <div class="bg-[#161B22] px-3.5 py-2.5 flex items-center justify-between border-b border-white/5">
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
+                        </div>
+                        <div class="text-[11px] text-[#6B7280]">dotme — zsh — 80x24</div>
+                        <div class="w-8"></div>
+                    </div>
+                    <div class="p-4 sm:p-5 text-[#C9D1D9] leading-relaxed min-h-[170px]">
+                        <div class="text-[#F9FAFB] mb-2"><span class="text-[#58A6FF]">$ </span>dotme sync --verbose</div>
+                        <div class="text-[#8B949E]">[info] Scanning configuration manifest...</div>
+                        <div class="text-[#8B949E]">[verify] Checking atomic symlink graph for collisions...</div>
+                        <div class="text-[#8B949E]">[link] ~/.zshrc -&gt; ~/.dotfiles/zsh/zshrc [OK]</div>
+                        <div class="text-[#8B949E]">[link] ~/.gitconfig -&gt; ~/.dotfiles/git/gitconfig [OK]</div>
+                        <div class="text-[#3FB950]">[success] 0 conflicts detected. State safely reconciled.</div>
+                    </div>
+                </div>
+
+                <!-- Terminal Card Footer -->
+                <div class="mt-6 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Shell / POSIX</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">CLI Architecture</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Atomic Symlinks</span>
+                    </div>
+                    <a href="https://github.com/rsvinicius/dotme" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="dotme repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-sm" aria-hidden="true"></i>
+                        <span data-i18n="dotmeLinkText">View Repository</span>
+                        <i class="fas fa-external-link-alt text-[10px]" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
 
         <div class="mt-12 text-center">
-            <a href="https://github.com/rsvinicius?tab=repositories" target="_blank"
-                class="inline-flex items-center text-blue-700 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-400 font-medium transition-colors">
-                <span data-i18n="viewAllProjects"></span>
-                <i class="fas fa-long-arrow-alt-right ml-2"></i>
+            <a href="https://github.com/rsvinicius?tab=repositories" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center font-mono text-sm font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline transition-colors" aria-label="View all projects on GitHub (opens in new tab)">
+                <span data-i18n="viewAllProjects">View All Repositories on GitHub</span>
+                <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
             </a>
         </div>
     </div>

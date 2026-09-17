@@ -50,6 +50,34 @@ const translations = {
         aboutText2: "My experience spans across developing REST APIs, implementing authentication systems, creating microservices architectures, and working with various databases. I am driven by clean code practices and continuously strive to improve my skills and stay updated with the latest technologies.",
         aboutText3: "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.",
         
+        // Projects Section (03. PROJECTS)
+        projectsSectionIndex: "03. PROJECTS",
+        featuredProjects: "Interactive Engineering Showcases",
+        projectsSubtitle: "Active client-side simulations demonstrating mathematical risk scoring and declarative systems automation with zero third-party dependencies or external backend calls.",
+        viewAllProjects: "View All Repositories on GitHub",
+        viewOnGitHub: "View on GitHub",
+
+        // Antifraud Sandbox Widget
+        antifraudTitle: "Antifraud Financial Security Engine • Real-Time Sandbox",
+        antifraudSubtitle: "Heuristic transaction evaluation with multi-factor velocity & geo-jump calibration",
+        antifraudAmountLabel: "Transaction Amount",
+        antifraudDeltaLabel: "Time Delta Since Previous",
+        antifraudDistanceLabel: "Physical Distance Jump",
+        antifraudRiskIndex: "Calibrated Risk Index",
+        antifraudStatusApproved: "APPROVED",
+        antifraudStatusFlagged: "FLAGGED / REVIEW",
+        antifraudStatusRejected: "REJECTED",
+        antifraudTravelVelocity: "Travel Velocity",
+        antifraudVelocityPenalty: "Velocity Penalty (P_vel)",
+        antifraudGeoPenalty: "Geo-Jump Penalty (P_geo)",
+        antifraudAmountPenalty: "Amount Penalty (P_amount)",
+        antifraudDampingRatio: "Damping Ratio Applied",
+        antifraudDampingVal: "0.8 Heuristics + 0.2 Base",
+        antifraudSupersonicAlert: "Supersonic Geo-Jump",
+        antifraudImpossibleSpeedAlert: "High Speed Geo-Jump",
+        antifraudNormalSpeed: "Normal Transit",
+        antifraudRepoLink: "View Repository",
+
         // Open Source Section
         opensourceSectionIndex: "04. OPEN SOURCE",
         opensourceTitle: "Open Source & Community Ecosystem",
@@ -251,6 +279,34 @@ const translations = {
         aboutText2: "Minha experiência se estende pelo desenvolvimento de APIs REST, implementação de sistemas de autenticação, criação de arquiteturas de microsserviços e trabalho com diversos bancos de dados. Sou guiado por práticas de código limpo e busco continuamente melhorar minhas habilidades e me manter atualizado com as mais recentes tecnologias.",
         aboutText3: "Quando não estou codificando, gosto de explorar novas tecnologias, contribuir para projetos open-source e compartilhar conhecimento com a comunidade de desenvolvedores.",
         
+        // Projects Section (03. PROJETOS)
+        projectsSectionIndex: "03. PROJETOS",
+        featuredProjects: "Demonstrações Interativas de Engenharia",
+        projectsSubtitle: "Simulações ativas no cliente demonstrando pontuação matemática de risco e automação declarativa de sistemas com zero dependências externas ou chamadas de backend.",
+        viewAllProjects: "Ver Todos os Repositórios no GitHub",
+        viewOnGitHub: "Ver no GitHub",
+
+        // Antifraud Sandbox Widget
+        antifraudTitle: "Motor de Segurança Financeira Antifraude • Sandbox em Tempo Real",
+        antifraudSubtitle: "Avaliação heurística de transações com calibragem de velocidade multifatorial e salto geográfico",
+        antifraudAmountLabel: "Valor da Transação",
+        antifraudDeltaLabel: "Intervalo de Tempo da Anterior",
+        antifraudDistanceLabel: "Salto de Distância Física",
+        antifraudRiskIndex: "Índice de Risco Calibrado",
+        antifraudStatusApproved: "APROVADO",
+        antifraudStatusFlagged: "ANALISAR / REVISÃO",
+        antifraudStatusRejected: "REJEITADO",
+        antifraudTravelVelocity: "Velocidade de Deslocamento",
+        antifraudVelocityPenalty: "Penalidade de Velocidade (P_vel)",
+        antifraudGeoPenalty: "Penalidade Salto Geográfico (P_geo)",
+        antifraudAmountPenalty: "Penalidade de Valor (P_amount)",
+        antifraudDampingRatio: "Taxa de Amortecimento Aplicada",
+        antifraudDampingVal: "0.8 Heurísticas + 0.2 Base",
+        antifraudSupersonicAlert: "Salto Geográfico Supersônico",
+        antifraudImpossibleSpeedAlert: "Salto em Alta Velocidade",
+        antifraudNormalSpeed: "Trânsito Normal",
+        antifraudRepoLink: "Ver Repositório",
+
         // Open Source Section
         opensourceSectionIndex: "04. CÓDIGO ABERTO",
         opensourceTitle: "Ecossistema Open Source & Comunidade",
