@@ -19,7 +19,7 @@ context:
 
 **Problem:** Describing a declarative CLI tool and developer environment manager through bulleted text alone fails to convey craft, execution velocity, and reliability to systems engineering leaders.
 
-**Approach:** Implement a macOS-style dark terminal demo widget inside the dotme project card in `components/projects.html` and `js/script.js` per `EXPERIENCE.md.ComponentPatterns` and `mockups/interactive-showcase.html`. The terminal runs an autonomous typewriter loop typing `dotme sync --verbose`, outputs symlink reconciliation and atomic rollback checks, holds for 5 seconds, and cleanly resets without requiring visitor typing.
+**Approach:** Implement a macOS-style dark terminal demo widget inside the dotme project card in `components/projects.html` and `js/script.js` per `EXPERIENCE.md.ComponentPatterns` and `mockups/interactive-showcase.html`. The terminal runs an autonomous typewriter loop typing `dotme --include=".git*,.zsh*" --exclude=".DS_Store" https://github.com/rsvinicius/dotfiles`, outputs repository cloning, pattern-based filtering, dotfile distribution, and summary metrics, holds for 5 seconds, and cleanly resets without requiring visitor typing.
 
 ## Boundaries & Constraints
 
@@ -27,16 +27,21 @@ context:
 - Use the terminal styling from `DESIGN.md`: surface `{colors.surface-terminal}` (`#0D1117`), header `{colors.surface-terminal-header}` (`#161B22`), and JetBrains Mono monospace font.
 - Include macOS window controls (traffic light dots: `#FF5F56`, `#FFBD2E`, `#27C93F`).
 - Autonomous execution cycle:
-  1. Prompt: `vinicius@workstation:~$ `
-  2. Typewriter typing `dotme sync --verbose` at ~40ms/character.
+  1. Prompt: `[vinicius@CachyOS ~]$ `
+  2. Typewriter typing `dotme --include=".config*" --exclude=".DS_Store" https://github.com/rsvinicius/dotfiles` at ~35ms/character.
   3. Output lines streamed with realistic terminal delay (~120ms/line):
-     - `[INFO] Parsing dotme.yaml manifest...`
-     - `[CHECK] Validating symlinks integrity (32 targets)`
-     - `[LINK]  ~/.config/nvim -> ~/.dotfiles/nvim [OK]`
-     - `[LINK]  ~/.zshrc       -> ~/.dotfiles/zshrc [OK]`
-     - `[LINK]  ~/.gitconfig   -> ~/.dotfiles/gitconfig [OK]`
-     - `[WARN]  Conflict detected: ~/.tmux.conf (backup created: ~/.tmux.conf.bak)`
-     - `[SYNC]  Reconciled 32/32 targets with atomic rollback safety [SUCCESS]`
+     - `🔄 Cloning repository: https://github.com/rsvinicius/dotfiles`
+     - `✅ Repository cloned, using branch: main`
+     - `📋 Scanning for dotfiles...`
+     - `📦 Summary:`
+     - `✅ Copied 1 item:`
+     - `   - .config`
+     - `❌ Ignored 7 items:`
+     - `   - disable_mouse_acceleration.sh, firewall.sh, fonts, install.sh (+3 scripts)`
+     - `🔍 Active filters:`
+     - `   Include patterns: [.config*]`
+     - `   Exclude patterns: [.DS_Store]`
+     - `🎉 Done! Your dotfiles have been applied successfully.`
   4. Hold terminal display for 5000ms.
   5. Clear and smoothly repeat loop.
 - Use `IntersectionObserver` to pause typewriter loop when terminal is outside the viewport to prevent background battery/CPU drain.

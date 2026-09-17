@@ -109,7 +109,10 @@ const requiredKeys = [
     'antifraudSupersonicAlert',
     'antifraudImpossibleSpeedAlert',
     'antifraudNormalSpeed',
-    'antifraudRepoLink'
+    'antifraudRepoLink',
+    'antifraudArchitectureNote',
+    'dotmeTitle',
+    'dotmeSubtitle'
 ];
 
 for (const key of requiredKeys) {

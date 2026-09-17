@@ -53,13 +53,14 @@ const translations = {
         // Projects Section (03. PROJECTS)
         projectsSectionIndex: "03. PROJECTS",
         featuredProjects: "Interactive Engineering Showcases",
-        projectsSubtitle: "Active client-side simulations demonstrating mathematical risk scoring and declarative systems automation with zero third-party dependencies or external backend calls.",
+        projectsSubtitle: "Interactive showcases and developer tooling demonstrating backend systems architecture, real-time risk heuristics, and command-line automation.",
         viewAllProjects: "View All Repositories on GitHub",
         viewOnGitHub: "View on GitHub",
 
         // Antifraud Sandbox Widget
         antifraudTitle: "Antifraud Financial Security Engine • Real-Time Sandbox",
-        antifraudSubtitle: "Heuristic transaction evaluation with multi-factor velocity & geo-jump calibration",
+        antifraudSubtitle: "Spring Boot REST API • Real-time visual sandbox of transaction risk heuristics & adaptive feedback",
+        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Architecture Context:</strong> The underlying project is an enterprise Spring Boot REST API featuring a 4-tier RBAC role model (Anonymous, Merchant, Admin, Support), IP/stolen card blocklists, regional correlation rules, and a dynamic feedback loop that tunes fraud limits (0.8 × limit ± 0.2 × amount). The widget below provides a real-time visual demonstration of the core heuristic risk evaluation.",
         antifraudAmountLabel: "Transaction Amount",
         antifraudDeltaLabel: "Time Delta Since Previous",
         antifraudDistanceLabel: "Physical Distance Jump",
@@ -77,6 +78,10 @@ const translations = {
         antifraudImpossibleSpeedAlert: "High Speed Geo-Jump",
         antifraudNormalSpeed: "Normal Transit",
         antifraudRepoLink: "View Repository",
+
+        // dotme CLI Project Card
+        dotmeTitle: "dotme • Git-Based Dotfiles Manager CLI",
+        dotmeSubtitle: "Autonomous Typewriter Loop • Pattern-Based Dotfile Distribution",
 
         // Open Source Section
         opensourceSectionIndex: "04. OPEN SOURCE",
@@ -282,13 +287,14 @@ const translations = {
         // Projects Section (03. PROJETOS)
         projectsSectionIndex: "03. PROJETOS",
         featuredProjects: "Demonstrações Interativas de Engenharia",
-        projectsSubtitle: "Simulações ativas no cliente demonstrando pontuação matemática de risco e automação declarativa de sistemas com zero dependências externas ou chamadas de backend.",
+        projectsSubtitle: "Demonstrações interativas e ferramentas para desenvolvedores evidenciando arquitetura de sistemas backend, heurísticas de risco em tempo real e automação CLI.",
         viewAllProjects: "Ver Todos os Repositórios no GitHub",
         viewOnGitHub: "Ver no GitHub",
 
         // Antifraud Sandbox Widget
         antifraudTitle: "Motor de Segurança Financeira Antifraude • Sandbox em Tempo Real",
-        antifraudSubtitle: "Avaliação heurística de transações com calibragem de velocidade multifatorial e salto geográfico",
+        antifraudSubtitle: "API REST em Spring Boot • Sandbox visual em tempo real de heurísticas de risco transacional e feedback adaptativo",
+        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Contexto Arquitetural:</strong> O projeto original é uma API REST corporativa em Spring Boot com RBAC em 4 níveis (Anonymous, Merchant, Admin, Support), listas de bloqueio de IP/cartões roubados, correlação regional e loop de feedback adaptativo dinâmico (0.8 × limite ± 0.2 × valor). O widget abaixo é uma simulação visual em tempo real das heurísticas de avaliação de risco.",
         antifraudAmountLabel: "Valor da Transação",
         antifraudDeltaLabel: "Intervalo de Tempo da Anterior",
         antifraudDistanceLabel: "Salto de Distância Física",
@@ -306,6 +312,10 @@ const translations = {
         antifraudImpossibleSpeedAlert: "Salto em Alta Velocidade",
         antifraudNormalSpeed: "Trânsito Normal",
         antifraudRepoLink: "Ver Repositório",
+
+        // dotme CLI Project Card
+        dotmeTitle: "dotme • Gerenciador de Dotfiles Baseado em Git via CLI",
+        dotmeSubtitle: "Loop de Digitação Autônomo • Distribuição de Dotfiles por Padrões",
 
         // Open Source Section
         opensourceSectionIndex: "04. CÓDIGO ABERTO",

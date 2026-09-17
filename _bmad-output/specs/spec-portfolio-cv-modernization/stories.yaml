@@ -30,7 +30,7 @@
   description: >-
     Implement the client-side financial risk scoring widget in the Antifraud card with reactive sliders for amount, time delta, and distance per CAP-3 and EXPERIENCE.md. Render real-time risk scores (<2ms), WCAG AA decision badges (APPROVED, FLAGGED, REJECTED), and heuristic breakdowns per mockups/interactive-showcase.html.
   spec_checkpoint: false
-  done_checkpoint: false
+  done_checkpoint: true
   invoke_dev_with: >-
     Strictly use the mathematical formulas and WCAG AA status colors defined in EXPERIENCE.md and DESIGN.md. Zero external libraries.
 

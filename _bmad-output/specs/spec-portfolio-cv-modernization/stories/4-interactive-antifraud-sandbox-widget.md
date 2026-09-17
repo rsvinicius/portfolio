@@ -116,6 +116,9 @@ context:
 - finding: Legacy components/about.html presence
   verdict: low
   evidence: Pre-existing legacy artifact from before executive modernization; deferred.
+- finding: Calibrate projects section subtitle, Antifraud REST API architecture context, and dotme real CLI behavior per walkthrough review
+  verdict: low
+  evidence: Walkthrough review highlighted that projectsSubtitle overly generalized Antifraud specifics, Antifraud card needed clarification that the repository is a Spring Boot REST API (with RBAC, blacklists, and adaptive limit feedback) and the widget is an interactive visual simulation, and dotme terminal needed to reflect actual git clone + pattern filtering CLI behavior.
 
 ## Design Notes
 

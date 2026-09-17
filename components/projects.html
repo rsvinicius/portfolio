@@ -8,7 +8,7 @@
             </div>
             <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="featuredProjects">Interactive Engineering Showcases</h2>
             <p class="text-base text-[#475569] dark:text-[#9CA3AF] mt-2 max-w-2xl" data-i18n="projectsSubtitle">
-                Active client-side simulations demonstrating mathematical risk scoring and declarative systems automation with zero third-party dependencies or external backend calls.
+                Interactive showcases and developer tooling demonstrating backend systems architecture, real-time risk heuristics, and command-line automation.
             </p>
         </div>
 
@@ -24,12 +24,22 @@
                             </h3>
                         </div>
                         <p class="text-xs sm:text-sm font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudSubtitle">
-                            Heuristic transaction evaluation with multi-factor velocity & geo-jump calibration
+                            Spring Boot REST API • Real-time visual sandbox of transaction risk heuristics & adaptive feedback
                         </p>
                     </div>
                     <div class="shrink-0 flex items-center">
                         <div id="antifraud-status-badge" aria-live="polite" class="font-mono text-xs font-bold px-3.5 py-1.5 rounded-full tracking-wider border transition-colors bg-status-flagged-light/15 dark:bg-status-flagged/15 text-status-flagged-light dark:text-status-flagged border-status-flagged-border" data-i18n="antifraudStatusFlagged">
                             FLAGGED / REVIEW
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Architecture Context Disclaimer / Full Feature Summary -->
+                <div class="mb-6 p-4 rounded-lg bg-[#F1F5F9] dark:bg-[#1E293B]/60 border border-[#E2E8F0] dark:border-[#334155] text-xs leading-relaxed text-[#475569] dark:text-[#94A3B8]">
+                    <div class="flex items-start gap-2.5">
+                        <i class="fas fa-info-circle text-[#2563EB] dark:text-[#3B82F6] text-sm mt-0.5 shrink-0" aria-hidden="true"></i>
+                        <div data-i18n="antifraudArchitectureNote">
+                            <strong class="text-[#0F172A] dark:text-[#F9FAFB]">Architecture Context:</strong> The underlying project is an enterprise Spring Boot REST API featuring a 4-tier RBAC role model (Anonymous, Merchant, Admin, Support), IP/stolen card blocklists, regional correlation rules, and a dynamic feedback loop that tunes fraud limits (0.8 × limit ± 0.2 × amount). The widget below provides a real-time visual demonstration of the core heuristic risk evaluation.
                         </div>
                     </div>
                 </div>
@@ -129,10 +139,11 @@
                 <!-- Card Footer -->
                 <div class="mt-6 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java 21</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Security</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Heuristic Scoring</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java 11+ / Spring Boot</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Security (4-Tier RBAC)</span>
                         <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">REST API</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Heuristic & Adaptive Feedback</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Interactive Sandbox</span>
                     </div>
                     <a href="https://github.com/rsvinicius/antifraud-system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="Antifraud System repository on GitHub (opens in new tab)">
                         <i class="fab fa-github text-sm" aria-hidden="true"></i>
@@ -146,11 +157,11 @@
             <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-xl p-6 sm:p-7 shadow-sm transition-colors">
                 <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
-                        <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]">
-                            dotme • Declarative Dotfiles Manager CLI
+                        <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="dotmeTitle">
+                            dotme • Git-Based Dotfiles Manager CLI
                         </h3>
-                        <p class="text-xs sm:text-sm font-mono text-[#64748B] dark:text-[#6B7280]">
-                            Autonomous Typewriter Loop • Zero Input Required
+                        <p class="text-xs sm:text-sm font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="dotmeSubtitle">
+                            Autonomous Typewriter Loop • Pattern-Based Dotfile Distribution
                         </p>
                     </div>
                 </div>
@@ -163,16 +174,23 @@
                             <div class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
                             <div class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
                         </div>
-                        <div class="text-[11px] text-[#6B7280]">dotme — zsh — 80x24</div>
+                        <div class="text-[11px] text-[#6B7280]">dotme — bash/zsh — 80x24</div>
                         <div class="w-8"></div>
                     </div>
-                    <div class="p-4 sm:p-5 text-[#C9D1D9] leading-relaxed min-h-[170px]">
-                        <div class="text-[#F9FAFB] mb-2"><span class="text-[#58A6FF]">$ </span>dotme sync --verbose</div>
-                        <div class="text-[#8B949E]">[info] Scanning configuration manifest...</div>
-                        <div class="text-[#8B949E]">[verify] Checking atomic symlink graph for collisions...</div>
-                        <div class="text-[#8B949E]">[link] ~/.zshrc -&gt; ~/.dotfiles/zsh/zshrc [OK]</div>
-                        <div class="text-[#8B949E]">[link] ~/.gitconfig -&gt; ~/.dotfiles/git/gitconfig [OK]</div>
-                        <div class="text-[#3FB950]">[success] 0 conflicts detected. State safely reconciled.</div>
+                    <div class="p-4 sm:p-5 text-[#C9D1D9] leading-relaxed text-xs sm:text-[13px]">
+                        <div class="text-[#F9FAFB] mb-2"><span class="text-[#58A6FF]">[vinicius@CachyOS ~]$ </span>dotme --include=".config*" --exclude=".DS_Store" https://github.com/rsvinicius/dotfiles</div>
+                        <div class="text-[#8B949E]">🔄 Cloning repository: https://github.com/rsvinicius/dotfiles</div>
+                        <div class="text-[#3FB950]">✅ Repository cloned, using branch: main</div>
+                        <div class="text-[#8B949E]">📋 Scanning for dotfiles...</div>
+                        <div class="mt-2 text-[#F9FAFB] font-semibold">📦 Summary:</div>
+                        <div class="text-[#3FB950]">✅ Copied 1 item:</div>
+                        <div class="text-[#8B949E] pl-4">- .config</div>
+                        <div class="mt-1 text-[#F85149]">❌ Ignored 7 items:</div>
+                        <div class="text-[#8B949E] pl-4">- disable_mouse_acceleration.sh, firewall.sh, fonts, install.sh (+3 scripts)</div>
+                        <div class="mt-2 text-[#F9FAFB] font-semibold">🔍 Active filters:</div>
+                        <div class="text-[#8B949E] pl-4">Include patterns: [.config*]</div>
+                        <div class="text-[#8B949E] pl-4">Exclude patterns: [.DS_Store]</div>
+                        <div class="mt-2 text-[#3FB950] font-medium">🎉 Done! Your dotfiles have been applied successfully.</div>
                     </div>
                 </div>
 
@@ -180,8 +198,9 @@
                 <div class="mt-6 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-3">
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Shell / POSIX</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">CLI Architecture</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Atomic Symlinks</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">CLI Tool</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Pattern-Based Filtering</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Git Automation</span>
                     </div>
                     <a href="https://github.com/rsvinicius/dotme" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="dotme repository on GitHub (opens in new tab)">
                         <i class="fab fa-github text-sm" aria-hidden="true"></i>
