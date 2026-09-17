@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load all components
     loadComponent('header-container', 'components/header.html');
     loadComponent('hero-container', 'components/hero.html');
-    loadComponent('about-container', 'components/about.html');
-    loadComponent('skills-container', 'components/skills.html');
     loadComponent('experience-container', 'components/experience.html');
     loadComponent('projects-container', 'components/projects.html');
+    loadComponent('opensource-container', 'components/opensource.html');
+    loadComponent('skills-container', 'components/skills.html');
     loadComponent('education-container', 'components/education.html');
     loadComponent('contact-container', 'components/contact.html');
     loadComponent('footer-container', 'components/footer.html');
@@ -34,10 +34,10 @@ function loadComponent(containerId, componentPath) {
             const allComponents = [
                 'header-container',
                 'hero-container',
-                'about-container',
-                'skills-container',
                 'experience-container',
                 'projects-container',
+                'opensource-container',
+                'skills-container',
                 'education-container',
                 'contact-container',
                 'footer-container'

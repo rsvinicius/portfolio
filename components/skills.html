@@ -1,166 +1,188 @@
 <!-- Skills Section -->
-<section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300 mb-8 text-center" data-i18n="technicalSkills">Technical Skills</h2>
-        
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Backend -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="backendDev">Backend Development</h3>
-                <ul class="space-y-2">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Java</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Kotlin</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Spring Framework</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Microservices</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">JUnit / Testing</span>
-                    </li>
-                </ul>
+<section id="skills" class="py-16 lg:py-24 bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F9FAFB] transition-colors duration-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
+        <!-- Section Header -->
+        <div class="mb-12">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]" data-i18n="skillsSectionIndex">05. SKILLS</span>
             </div>
-            
-            <!-- Databases -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="databases">Databases</h3>
-                <ul class="space-y-2">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">PostgreSQL</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">MongoDB</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Redis</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Oracle</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">MySql</span>
-                    </li>
-                </ul>
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="technicalSkills">Architectural Competencies & Technical Skills</h2>
+            <p class="text-base text-[#475569] dark:text-[#9CA3AF] mt-2 max-w-2xl" data-i18n="skillsSubtitle">
+                Categorized engineering competencies structured across 4 architectural layers of modern software systems.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <!-- Layer 1: Backend Core & JVM Ecosystem -->
+            <div class="skills-layer-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#F1F5F9] dark:bg-[#1F2937] text-[#2563EB] dark:text-[#3B82F6] border border-[#CBD5E1] dark:border-[#374151]" data-i18n="layer1Badge">
+                            LAYER 01
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="layer1Scope">JVM Ecosystem</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2" data-i18n="backendCore">Backend Core & JVM Ecosystem</h3>
+                    <p class="text-sm text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="backendCoreDesc">
+                        High-concurrency JVM runtimes, reactive streams, enterprise dependency injection, and polyglot framework design.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="backendCoreLangs">Languages & Runtimes</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Kotlin</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="backendCoreFrameworks">Frameworks & Dependency Injection</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Boot</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Webflux</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Batch</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Javalite</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Google Guice</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="backendCoreExecution">Execution Engineering</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Concurrency</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Multithreading</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Thread Pools</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Non-blocking I/O</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Reactive Streams</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- DevOps & Tools -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="devOpsTools">DevOps & Tools</h3>
-                <ul class="space-y-2">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Azure DevOps</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">GitHub</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Docker</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">CI/CD Pipelines</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Linux</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Kubernetes (basic)</span>
-                    </li>
-                </ul>
+
+            <!-- Layer 2: Distributed Systems, Data & Scale -->
+            <div class="skills-layer-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#F1F5F9] dark:bg-[#1F2937] text-[#2563EB] dark:text-[#3B82F6] border border-[#CBD5E1] dark:border-[#374151]" data-i18n="layer2Badge">
+                            LAYER 02
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="layer2Scope">Data & Scale</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2" data-i18n="distributedSystems">Distributed Systems, Data & Scale</h3>
+                    <p class="text-sm text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="distributedSystemsDesc">
+                        Microservices architecture, distributed data persistence, asynchronous messaging, and high-volume batch processing.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="distributedSystemsArch">Architecture & Patterns</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Microservices</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Distributed Systems</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="distributedSystemsDb">Databases & Storage</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">PostgreSQL</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">MongoDB</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Redis</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="distributedSystemsMsg">Messaging & Processing</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">RabbitMQ</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">ActiveMQ</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Batch</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Quartz Scheduler</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">File Streaming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Frontend -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="frontend">Frontend</h3>
-                <ul class="space-y-2">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">HTML5 & CSS3</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">JavaScript</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Tailwind CSS</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Responsive Design</span>
-                    </li>
-                </ul>
+
+            <!-- Layer 3: Cloud, DevOps & Infrastructure Architecture -->
+            <div class="skills-layer-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#F1F5F9] dark:bg-[#1F2937] text-[#2563EB] dark:text-[#3B82F6] border border-[#CBD5E1] dark:border-[#374151]" data-i18n="layer3Badge">
+                            LAYER 03
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="layer3Scope">Cloud & Infra</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2" data-i18n="cloudDevOps">Cloud, DevOps & Infrastructure Architecture</h3>
+                    <p class="text-sm text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="cloudDevOpsDesc">
+                        Cloud infrastructure orchestration, low-overhead containerization, CI/CD automation, and secure transport protocols.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="cloudDevOpsCloud">Cloud Infrastructure (AWS)</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">AWS S3</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">AWS Lambda</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="cloudDevOpsProtocols">Protocols & Pipelines</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">SFTP pipelines</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">RESTful APIs</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="cloudDevOpsContainers">Containers & CI/CD</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Docker</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">GitHub Actions CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Message Brokers & Integration -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="integration">Integration</h3>
-                <ul class="space-y-2">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Apache ActiveMQ</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Spring WebFlux</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">API Gateway</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300">Service Discovery</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- Soft Skills -->
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 class="text-xl font-semibold mb-4 text-blue-800 dark:text-blue-300" data-i18n="softSkills"></h3>
-                <ul class="space-y-2">
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300" data-i18n="softSkills1"></span>
-                        <!-- <span class="dark:text-gray-300">Problem Solving</span> -->
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300" data-i18n="softSkills2"></span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300"  data-i18n="softSkills3"></span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300" data-i18n="softSkills4"></span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-check-circle text-green-600 dark:text-green-400 mr-2"></i>
-                        <span class="dark:text-gray-300" data-i18n="softSkills5"></span>
-                    </li>
-                </ul>
+
+            <!-- Layer 4: AI-Augmented Engineering & Modern SDLC -->
+            <div class="skills-layer-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#F1F5F9] dark:bg-[#1F2937] text-[#2563EB] dark:text-[#3B82F6] border border-[#CBD5E1] dark:border-[#374151]" data-i18n="layer4Badge">
+                            LAYER 04
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="layer4Scope">Modern SDLC</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2" data-i18n="aiAugmented">AI-Augmented Engineering & Modern SDLC</h3>
+                    <p class="text-sm text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="aiAugmentedDesc">
+                        Agentic orchestration, retrieval context systems, generative developer tooling, and AI-assisted regression testing.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="aiAugmentedContext">AI Systems & Context</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Retrieval-Augmented Generation (RAG)</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Model Context Protocol (MCP)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="aiAugmentedAgentic">Agentic Orchestration</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Multi-agent architectures</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">BMAD</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280] mb-2" data-i18n="aiAugmentedTooling">Modern Development Tooling</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Claude Code</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Gemini CLI</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Opencode</span>
+                                <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">AI-assisted regression testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

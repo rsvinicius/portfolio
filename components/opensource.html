@@ -1,0 +1,129 @@
+<!-- Open Source Section -->
+<section id="opensource" class="py-16 lg:py-24 bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F9FAFB] transition-colors duration-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
+        <!-- Section Header -->
+        <div class="mb-12">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]" data-i18n="opensourceSectionIndex">04. OPEN SOURCE</span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="opensourceTitle">Open Source & Community Ecosystem</h2>
+            <p class="text-base text-[#475569] dark:text-[#9CA3AF] mt-2 max-w-2xl" data-i18n="opensourceSubtitle">
+                Verified contributions to global open-source libraries, developer productivity CLI tools, and automation frameworks.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <!-- MockK Card -->
+            <div class="opensource-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[rgba(37,99,235,0.1)] dark:bg-[rgba(59,130,246,0.15)] border border-[#2563EB]/30 dark:border-[#3B82F6]/30 text-[#2563EB] dark:text-[#3B82F6]" data-i18n="mockkRole">
+                            Contributor (Merged PR)
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]">v1.14.0</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2 font-mono">MockK</h3>
+                    <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="mockkDesc">
+                        Core unit testing and mocking library for Kotlin. Fixed state leak in verification mechanisms ensuring hermetic test isolation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Kotlin</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Mocking</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Testing</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <a href="https://github.com/mockk/mockk/pull/1367" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="MockK Merged PR on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-base" aria-hidden="true"></i>
+                        <span data-i18n="mockkLinkText">View Merged PR #1367</span>
+                        <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- dotme Card -->
+            <div class="opensource-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[rgba(16,185,129,0.12)] dark:bg-[rgba(16,185,129,0.15)] border border-[#059669]/30 text-[#047857] dark:text-[#10B981]" data-i18n="dotmeRole">
+                            Creator & Maintainer
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]">CLI Tool</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2 font-mono">dotme</h3>
+                    <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="dotmeDesc">
+                        Declarative dotfiles management CLI tool featuring atomic symlink reconciliation, pattern filtering, and syntax validation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Shell / CLI</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Dev Productivity</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Symlinks</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <a href="https://github.com/rsvinicius/dotme" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="dotme repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-base" aria-hidden="true"></i>
+                        <span data-i18n="dotmeLinkText">View Repository</span>
+                        <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- n8n-docs Card -->
+            <div class="opensource-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[rgba(37,99,235,0.1)] dark:bg-[rgba(59,130,246,0.15)] border border-[#2563EB]/30 dark:border-[#3B82F6]/30 text-[#2563EB] dark:text-[#3B82F6]" data-i18n="n8nDocsRole">
+                            Contributor
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]">Docs / Ecosystem</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2 font-mono">n8n-docs</h3>
+                    <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="n8nDocsDesc">
+                        Workflow automation documentation and technical integrations for the open-source n8n workflow platform.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Automation</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Documentation</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Workflow</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <a href="https://github.com/n8n-io/n8n-docs" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="n8n-docs repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-base" aria-hidden="true"></i>
+                        <span data-i18n="n8nDocsLinkText">View Repository</span>
+                        <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- microbot Card -->
+            <div class="opensource-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[rgba(16,185,129,0.12)] dark:bg-[rgba(16,185,129,0.15)] border border-[#059669]/30 text-[#047857] dark:text-[#10B981]" data-i18n="microbotRole">
+                            Creator & Maintainer
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]">Automation</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2 font-mono">microbot</h3>
+                    <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="microbotDesc">
+                        Developer productivity automation tooling designed for task orchestration and routine development workflows.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Task Runner</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Developer Tools</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Productivity</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <a href="https://github.com/rsvinicius/microbot" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="microbot repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-base" aria-hidden="true"></i>
+                        <span data-i18n="microbotLinkText">View Repository</span>
+                        <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

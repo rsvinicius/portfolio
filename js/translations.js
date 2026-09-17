@@ -5,6 +5,7 @@ const translations = {
         skills: "Skills",
         experience: "Experience",
         projects: "Projects",
+        opensource: "Open Source",
         education: "Education",
         contact: "Contact",
         
@@ -22,7 +23,7 @@ const translations = {
         sendDirectEmail: "Send Direct Email",
         copyEmail: "Copy Email",
         emailCopied: "Email copied to clipboard",
-        contactSectionIndex: "05. CONTACT",
+        contactSectionIndex: "07. CONTACT",
         resumeLabel: "Resume",
         contactConnect: "Connect",
         contactInspect: "Inspect Code",
@@ -49,8 +50,65 @@ const translations = {
         aboutText2: "My experience spans across developing REST APIs, implementing authentication systems, creating microservices architectures, and working with various databases. I am driven by clean code practices and continuously strive to improve my skills and stay updated with the latest technologies.",
         aboutText3: "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.",
         
-        // Skills Section
-        technicalSkills: "Technical Skills",
+        // Open Source Section
+        opensourceSectionIndex: "04. OPEN SOURCE",
+        opensourceTitle: "Open Source & Community Ecosystem",
+        opensourceSubtitle: "Verified contributions to global open-source libraries, developer productivity CLI tools, and automation frameworks.",
+        mockkRole: "Contributor (Merged PR)",
+        mockkDesc: "Core unit testing and mocking library for Kotlin. Fixed state leak in verification mechanisms ensuring hermetic test isolation.",
+        mockkLinkText: "View Merged PR #1367",
+        dotmeRole: "Creator & Maintainer",
+        dotmeDesc: "Declarative dotfiles management CLI tool featuring atomic symlink reconciliation, pattern filtering, and syntax validation.",
+        dotmeLinkText: "View Repository",
+        n8nDocsRole: "Contributor",
+        n8nDocsDesc: "Workflow automation documentation and technical integrations for the open-source n8n workflow platform.",
+        n8nDocsLinkText: "View Repository",
+        microbotRole: "Creator & Maintainer",
+        microbotDesc: "Developer productivity automation tooling designed for task orchestration and routine development workflows.",
+        microbotLinkText: "View Repository",
+
+        // Skills Section (4-Layer Architectural Taxonomy)
+        skillsSectionIndex: "05. SKILLS",
+        technicalSkills: "Architectural Competencies & Technical Skills",
+        skillsSubtitle: "Categorized engineering competencies structured across 4 architectural layers of modern software systems.",
+        
+        // Layer 1
+        layer1Badge: "LAYER 01",
+        layer1Scope: "JVM Ecosystem",
+        backendCore: "Backend Core & JVM Ecosystem",
+        backendCoreDesc: "High-concurrency JVM runtimes, reactive streams, enterprise dependency injection, and polyglot framework design.",
+        backendCoreLangs: "Languages & Runtimes",
+        backendCoreFrameworks: "Frameworks & Dependency Injection",
+        backendCoreExecution: "Execution Engineering",
+
+        // Layer 2
+        layer2Badge: "LAYER 02",
+        layer2Scope: "Data & Scale",
+        distributedSystems: "Distributed Systems, Data & Scale",
+        distributedSystemsDesc: "Microservices architecture, distributed data persistence, asynchronous messaging, and high-volume batch processing.",
+        distributedSystemsArch: "Architecture & Patterns",
+        distributedSystemsDb: "Databases & Storage",
+        distributedSystemsMsg: "Messaging & Processing",
+
+        // Layer 3
+        layer3Badge: "LAYER 03",
+        layer3Scope: "Cloud & Infra",
+        cloudDevOps: "Cloud, DevOps & Infrastructure Architecture",
+        cloudDevOpsDesc: "Cloud infrastructure orchestration, low-overhead containerization, CI/CD automation, and secure transport protocols.",
+        cloudDevOpsCloud: "Cloud Infrastructure (AWS)",
+        cloudDevOpsProtocols: "Protocols & Pipelines",
+        cloudDevOpsContainers: "Containers & CI/CD",
+
+        // Layer 4
+        layer4Badge: "LAYER 04",
+        layer4Scope: "Modern SDLC",
+        aiAugmented: "AI-Augmented Engineering & Modern SDLC",
+        aiAugmentedDesc: "Agentic orchestration, retrieval context systems, generative developer tooling, and AI-assisted regression testing.",
+        aiAugmentedContext: "AI Systems & Context",
+        aiAugmentedAgentic: "Agentic Orchestration",
+        aiAugmentedTooling: "Modern Development Tooling",
+
+        // Legacy compatibility
         backendDev: "Backend Development",
         databases: "Databases",
         devOpsTools: "DevOps & Tools",
@@ -100,7 +158,7 @@ const translations = {
         juniorDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
 
         // Education Section
-        educationSectionIndex: "04. EDUCATION",
+        educationSectionIndex: "06. EDUCATION",
         education: "Education",
         educationTitle: "Academic Credentials",
         educationSubtitle: "Formal higher education, concluded postgraduate specializations, and verified engineering degrees.",
@@ -151,6 +209,7 @@ const translations = {
         skills: "Habilidades",
         experience: "Experiência",
         projects: "Projetos",
+        opensource: "Open Source",
         education: "Formação",
         contact: "Contato",
         
@@ -168,7 +227,7 @@ const translations = {
         sendDirectEmail: "Enviar E-mail Direto",
         copyEmail: "Copiar E-mail",
         emailCopied: "E-mail copiado para a área de transferência",
-        contactSectionIndex: "05. CONTATO",
+        contactSectionIndex: "07. CONTATO",
         resumeLabel: "Currículo",
         contactConnect: "Conectar",
         contactInspect: "Inspecionar Código",
@@ -195,8 +254,65 @@ const translations = {
         aboutText2: "Minha experiência se estende pelo desenvolvimento de APIs REST, implementação de sistemas de autenticação, criação de arquiteturas de microsserviços e trabalho com diversos bancos de dados. Sou guiado por práticas de código limpo e busco continuamente melhorar minhas habilidades e me manter atualizado com as mais recentes tecnologias.",
         aboutText3: "Quando não estou codificando, gosto de explorar novas tecnologias, contribuir para projetos open-source e compartilhar conhecimento com a comunidade de desenvolvedores.",
         
-        // Skills Section
-        technicalSkills: "Habilidades Técnicas",
+        // Open Source Section
+        opensourceSectionIndex: "04. CÓDIGO ABERTO",
+        opensourceTitle: "Ecossistema Open Source & Comunidade",
+        opensourceSubtitle: "Contribuições verificadas para bibliotecas open-source globais, ferramentas CLI de produtividade e frameworks de automação.",
+        mockkRole: "Contribuidor (PR Integrado)",
+        mockkDesc: "Biblioteca principal de testes unitários e mocking para Kotlin. Correção de vazamento de estado em verificações para isolamento hermético de testes.",
+        mockkLinkText: "Ver PR Integrado #1367",
+        dotmeRole: "Criador & Mantenedor",
+        dotmeDesc: "Ferramenta CLI declarativa para gestão de dotfiles com reconciliação atômica de symlinks, filtros de padrões e validação de sintaxe.",
+        dotmeLinkText: "Ver Repositório",
+        n8nDocsRole: "Contribuidor",
+        n8nDocsDesc: "Documentação de automação de fluxos de trabalho e integrações técnicas para a plataforma open-source n8n.",
+        n8nDocsLinkText: "Ver Repositório",
+        microbotRole: "Criador & Mantenedor",
+        microbotDesc: "Ferramentas de automação e produtividade para orquestração de tarefas e rotinas de desenvolvimento.",
+        microbotLinkText: "Ver Repositório",
+
+        // Skills Section (4-Layer Architectural Taxonomy)
+        skillsSectionIndex: "05. HABILIDADES",
+        technicalSkills: "Competências Arquiteturais & Habilidades Técnicas",
+        skillsSubtitle: "Competências de engenharia estruturadas em 4 camadas arquiteturais de sistemas modernos de software.",
+        
+        // Layer 1
+        layer1Badge: "CAMADA 01",
+        layer1Scope: "Ecossistema JVM",
+        backendCore: "Backend Core & Ecossistema JVM",
+        backendCoreDesc: "Runtimes JVM de alta concorrência, fluxos reativos, injeção de dependência corporativa e arquitetura poliglota.",
+        backendCoreLangs: "Linguagens & Runtimes",
+        backendCoreFrameworks: "Frameworks & Injeção de Dependências",
+        backendCoreExecution: "Engenharia de Execução",
+
+        // Layer 2
+        layer2Badge: "CAMADA 02",
+        layer2Scope: "Dados & Escala",
+        distributedSystems: "Sistemas Distribuídos, Dados & Escala",
+        distributedSystemsDesc: "Arquitetura de microsserviços, persistência distribuída de dados, mensageria assíncrona e processamento em lote de alto volume.",
+        distributedSystemsArch: "Arquitetura & Padrões",
+        distributedSystemsDb: "Bancos de Dados & Armazenamento",
+        distributedSystemsMsg: "Mensageria & Processamento",
+
+        // Layer 3
+        layer3Badge: "CAMADA 03",
+        layer3Scope: "Cloud & Infra",
+        cloudDevOps: "Arquitetura de Cloud, DevOps & Infraestrutura",
+        cloudDevOpsDesc: "Orquestração de infraestrutura em nuvem, conteinerização de baixo overhead, automação CI/CD e protocolos de transporte seguro.",
+        cloudDevOpsCloud: "Infraestrutura Cloud (AWS)",
+        cloudDevOpsProtocols: "Protocolos & Pipelines",
+        cloudDevOpsContainers: "Contêineres & CI/CD",
+
+        // Layer 4
+        layer4Badge: "CAMADA 04",
+        layer4Scope: "SDLC Moderno",
+        aiAugmented: "Engenharia Aumentada por IA & SDLC Moderno",
+        aiAugmentedDesc: "Orquestração de agentes autônomos, sistemas de contexto de recuperação (RAG/MCP), ferramentas de desenvolvimento generativas e testes de regressão assistidos por IA.",
+        aiAugmentedContext: "Sistemas de IA & Contexto",
+        aiAugmentedAgentic: "Orquestração de Agentes",
+        aiAugmentedTooling: "Ferramentas Modernas de Desenvolvimento",
+
+        // Legacy compatibility
         backendDev: "Desenvolvimento Backend",
         databases: "Bancos de Dados",
         devOpsTools: "DevOps & Ferramentas",
@@ -246,7 +362,7 @@ const translations = {
         juniorDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
 
         // Education Section
-        educationSectionIndex: "04. FORMAÇÃO",
+        educationSectionIndex: "06. FORMAÇÃO",
         education: "Formação",
         educationTitle: "Formação Acadêmica",
         educationSubtitle: "Formação acadêmica formal, pós-graduação concluída e diplomas verificados de engenharia.",
