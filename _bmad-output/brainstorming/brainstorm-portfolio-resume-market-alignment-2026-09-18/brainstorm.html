@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Alignment & Gap Analysis — Senior Backend & Distributed Systems</title>
+  <style>
+    :root {
+      --bg-base: #090d16;
+      --bg-surface: #0f172a;
+      --bg-card: #141e33;
+      --bg-card-hover: #1a2744;
+      --border: #233252;
+      --border-focus: #3b82f6;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --accent-cyan: #06b6d4;
+      --accent-cyan-glow: rgba(6, 182, 212, 0.15);
+      --accent-emerald: #10b981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.15);
+      --accent-amber: #f59e0b;
+      --accent-amber-glow: rgba(245, 158, 11, 0.15);
+      --accent-indigo: #6366f1;
+      --accent-indigo-glow: rgba(99, 102, 241, 0.15);
+      --accent-rose: #f43f5e;
+      --accent-rose-glow: rgba(244, 63, 94, 0.15);
+
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 2rem 1rem 4rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* Header & Meta */
+    header {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 0.85) 100%);
+      border-radius: 12px;
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo), var(--accent-emerald));
+    }
+
+    .header-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+      background: var(--accent-cyan-glow);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .header-tagline .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 8px var(--accent-cyan);
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #f8fafc;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    .header-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .meta-item strong {
+      color: var(--text-main);
+    }
+
+    /* Nav Tabs */
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 1rem;
+      z-index: 50;
+      background: rgba(9, 13, 22, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 0.55rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: var(--font-sans);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: var(--bg-surface);
+      border-color: var(--border);
+    }
+
+    .tab-btn.active {
+      background: var(--bg-card);
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .tab-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+    }
+
+    /* Technique Section Styling */
+    .technique-section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .technique-number {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: var(--accent-cyan-glow);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      letter-spacing: -0.015em;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Attribution Badges */
+    .attribution {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.18rem 0.55rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .attr-user {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .attr-coach {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .attr-decision {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .attr-synthesis {
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    /* Card Systems */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.35rem;
+      position: relative;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #334e7a;
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.85rem;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.55;
+    }
+
+    /* Technique 1: Role Playing Cards */
+    .role-persona {
+      border-top: 3px solid;
+    }
+    .persona-recruiter { border-top-color: var(--accent-cyan); }
+    .persona-staff { border-top-color: var(--accent-rose); }
+    .persona-hm { border-top-color: var(--accent-emerald); }
+
+    .persona-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-bottom: 0.25rem;
+    }
+
+    .lens-point {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .lens-point strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.88rem;
+    }
+
+    /* Technique 2: Assumption Reversal */
+    .reversal-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .reversal-side {
+      padding: 1rem;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .reversal-before {
+      background: rgba(244, 63, 94, 0.08);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+    }
+
+    .reversal-after {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .reversal-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .reversal-before .reversal-label { color: #fb7185; }
+    .reversal-after .reversal-label { color: #34d399; }
+
+    .strikethrough-claim {
+      color: #94a3b8;
+      text-decoration: line-through;
+      text-decoration-color: #f43f5e;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .reversal-truth {
+      color: #f1f5f9;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    /* Technique 3: JTBD & Surgery */
+    .jtbd-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .jtbd-grid { grid-template-columns: 1fr; }
+    }
+
+    .jtbd-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .jtbd-head {
+      background: var(--bg-card);
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .jtbd-head h3 {
+      font-size: 1rem;
+      color: #f8fafc;
+      font-family: var(--font-mono);
+    }
+
+    .jtbd-content {
+      padding: 1.25rem;
+    }
+
+    .bullet-surgery-block {
+      background: #0b1120;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.15rem;
+      margin-top: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    .diff-line {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .diff-del {
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      text-decoration: line-through;
+    }
+
+    .diff-add {
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    .guardrail-box {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 0.88rem;
+    }
+
+    .guardrail-box strong {
+      color: #fbbf24;
+      font-family: var(--font-mono);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Technique 4: Impact-Effort 2x2 Matrix */
+    .matrix-controls {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-main);
+      border-color: #475569;
+    }
+
+    .filter-btn.active {
+      background: var(--border-focus);
+      color: white;
+      border-color: var(--border-focus);
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.25rem;
+      position: relative;
+    }
+
+    @media (max-width: 860px) {
+      .matrix-grid { grid-template-columns: 1fr; }
+    }
+
+    .matrix-quadrant {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+
+    .matrix-quadrant.dimmed {
+      opacity: 0.25;
+      filter: grayscale(80%);
+    }
+
+    .quadrant-quickwins { border-top: 3px solid var(--accent-emerald); }
+    .quadrant-strategic { border-top: 3px solid var(--accent-cyan); }
+    .quadrant-fillins { border-top: 3px solid var(--accent-indigo); }
+    .quadrant-parked { border-top: 3px solid var(--accent-amber); }
+
+    .quadrant-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .quadrant-title {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .quadrant-quickwins .quadrant-title { color: #34d399; }
+    .quadrant-strategic .quadrant-title { color: #38bdf8; }
+    .quadrant-fillins .quadrant-title { color: #a5b4fc; }
+    .quadrant-parked .quadrant-title { color: #fbbf24; }
+
+    .matrix-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex: 1;
+    }
+
+    .matrix-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.85rem;
+      font-size: 0.88rem;
+      transition: transform 0.15s ease;
+    }
+
+    .matrix-item:hover {
+      transform: translateX(3px);
+      border-color: #3b82f6;
+    }
+
+    .matrix-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.35rem;
+    }
+
+    .matrix-item-title {
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    /* Technique 5: Synthesis & The Dual Pillar */
+    .pillar-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .pillar-layout { grid-template-columns: 1fr; }
+    }
+
+    .pillar-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pillar-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .pillar-alelo::before {
+      background: linear-gradient(90deg, #10b981, #06b6d4);
+    }
+
+    .pillar-trustly::before {
+      background: linear-gradient(90deg, #6366f1, #3b82f6);
+    }
+
+    .pillar-header {
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+
+    .pillar-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.35rem;
+    }
+
+    .pillar-alelo .pillar-eyebrow { color: var(--accent-emerald); }
+    .pillar-trustly .pillar-eyebrow { color: var(--accent-indigo); }
+
+    .pillar-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 0.25rem;
+    }
+
+    .pillar-core-narrative {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .pillar-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      flex: 1;
+    }
+
+    .diagram-terminal {
+      background: #050811;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      overflow-x: auto;
+      line-height: 1.45;
+    }
+
+    .diagram-terminal .accent-text { color: #38bdf8; }
+    .diagram-terminal .green-text { color: #34d399; }
+    .diagram-terminal .amber-text { color: #fbbf24; }
+    .diagram-terminal .dim-text { color: #64748b; }
+
+    .mechanism-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .mechanism-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    .mechanism-list li::before {
+      content: "▹";
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    /* Stack Synthesis Table */
+    .synthesis-summary {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .synthesis-summary h3 {
+      font-size: 1.2rem;
+      color: #f8fafc;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .spec-table th, .spec-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .spec-table th {
+      background: var(--bg-card);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .spec-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+      margin-right: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .badge-approved {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+
+    .badge-dropped {
+      background: rgba(244, 63, 94, 0.15);
+      border-color: rgba(244, 63, 94, 0.3);
+      color: #fb7185;
+      text-decoration: line-through;
+    }
+
+    /* Attribution Log */
+    .attribution-ledger {
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-surface);
+      padding: 1.5rem;
+    }
+
+    .attribution-ledger h3 {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ledger-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+    }
+
+    .ledger-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .ledger-row:hover {
+      background: var(--bg-card);
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <div class="header-tagline">
+      <span class="pulse"></span>
+      BMad Brainstorming Artifact &bull; Market Alignment &bull; Complete
+    </div>
+    <h1>Portfolio & Resume Market Alignment & Gap Analysis</h1>
+    <p class="header-desc">
+      Rigorous gap analysis and positioning strategy for a Senior Backend & Distributed Systems Engineer. 
+      Eliminating hyperbole, anchoring defensible production reality, and establishing a high-credibility dual-pillar narrative across Alelo and Trustly.
+    </p>
+
+    <div class="meta-bar">
+      <div class="meta-item"><span>Topic:</span> <strong>Resume & Portfolio Market Fit</strong></div>
+      <div class="meta-item"><span>Target:</span> <strong>Senior Backend / Systems Engineer</strong></div>
+      <div class="meta-item"><span>Mode:</span> <strong>Partner (User &times; Coach)</strong></div>
+      <div class="meta-item"><span>Convergence Date:</span> <strong>2026-09-18</strong></div>
+      <div class="meta-item"><span>Core Tech:</span> <strong>Java &bull; Kotlin &bull; AWS &bull; SQL</strong></div>
+    </div>
+  </header>
+
+  <!-- Sticky Navigation Tabs -->
+  <nav class="nav-tabs" id="tabNav">
+    <button class="tab-btn active" onclick="scrollToSection('role-playing')">
+      <span>1. Role Playing</span>
+      <span class="tab-badge">3 Perspectives</span>
+    </button>
+    <button class="tab-btn" onclick="scrollToSection('assumption-reversal')">
+      <span>2. Assumption Reversal</span>
+      <span class="tab-badge">4 Inversions</span>
+    </button>
+    <button class="tab-btn" onclick="scrollToSection('jtbd')">
+      <span>3. Job to Be Done</span>
+      <span class="tab-badge">CV vs Portfolio</span>
+    </button>
+    <button class="tab-btn" onclick="scrollToSection('matrix')">
+      <span>4. Impact-Effort Matrix</span>
+      <span class="tab-badge">Interactive 2x2</span>
+    </button>
+    <button class="tab-btn" onclick="scrollToSection('synthesis')">
+      <span>5. Dual Pillar Synthesis</span>
+      <span class="tab-badge">Alelo &times; Trustly</span>
+    </button>
+  </nav>
+
+  <!-- SECTION 1: ROLE PLAYING -->
+  <section id="role-playing" class="technique-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <span class="technique-number">01</span>
+        <div>
+          <h2>Role Playing & Multi-Stakeholder Vetting</h2>
+          <div class="section-subtitle">Evaluating the candidate profile through three distinct screening lenses</div>
+        </div>
+      </div>
+      <span class="attribution attr-coach">Technique: Role Playing</span>
+    </div>
+
+    <div class="card-grid">
+      <!-- Persona 1: Tech Recruiter -->
+      <div class="card role-persona persona-recruiter">
+        <div class="card-header">
+          <div>
+            <div class="persona-tag">SCREENING & MATCHING LENS</div>
+            <div class="card-title">The Technical Recruiter</div>
+          </div>
+          <span class="attribution attr-user">User Directives</span>
+        </div>
+        <p>Looks for instant alignment with headcount specs, language calibration, and standard keyword hygiene without friction or red flags.</p>
+
+        <div class="lens-point">
+          <strong>English Calibration (B2 / Intermediate-Advanced)</strong>
+          <p>Avoids the "native speaker" trap; sets honest expectations that match verbal interview reality and international team communication.</p>
+        </div>
+        <div class="lens-point">
+          <strong>Language Generalization: "Java"</strong>
+          <p>Pruned hyper-specific "Java (17/21)" labeling down to "Java". Prevents ATS keyword mis-matches and reads like standard senior seniority.</p>
+        </div>
+        <div class="lens-point">
+          <strong>Explicit Cloud & Messaging Signals</strong>
+          <p>Added <code>AWS SQS</code> and <code>AWS SNS</code> directly into the Cloud/Messaging skill section for automated parser pass-through.</p>
+        </div>
+      </div>
+
+      <!-- Persona 2: Staff / Principal Engineer -->
+      <div class="card role-persona persona-staff">
+        <div class="card-header">
+          <div>
+            <div class="persona-tag">TECHNICAL INTEGRITY LENS</div>
+            <div class="card-title">The Staff / Principal Engineer</div>
+          </div>
+          <span class="attribution attr-coach">Coach Reframing</span>
+        </div>
+        <p>The "BS Detector": Flags claims that violate distributed systems physics, impossible SLAs, or academic absolutes that invite skepticism.</p>
+
+        <div class="lens-point">
+          <strong>The "Zero Ledger Discrepancy" Red Flag</strong>
+          <span class="attribution attr-user" style="margin-bottom:0.4rem;">User Insight</span>
+          <p>Absolute claims like "with zero ledger discrepancy" trigger immediate skepticism during technical grilling.</p>
+        </div>
+        <div class="lens-point">
+          <strong>Engineering Mechanism Replacement</strong>
+          <span class="attribution attr-coach" style="margin-bottom:0.4rem;">Coach Idea</span>
+          <p>Replaced absolute boasts with real engineering: <em>automated reconciliation routines, idempotent consumer semantics</em>, and audit-proof financial pipelines.</p>
+        </div>
+        <div class="lens-point">
+          <strong>Preserving High-Credibility Signals</strong>
+          <p>Identified active open-source contribution to <code>MockK</code> as a genuine tier-1 differentiator, separating real builders from resume polishers.</p>
+        </div>
+      </div>
+
+      <!-- Persona 3: Engineering Hiring Manager -->
+      <div class="card role-persona persona-hm">
+        <div class="card-header">
+          <div>
+            <div class="persona-tag">BUSINESS IMPACT LENS</div>
+            <div class="card-title">The Engineering Hiring Manager</div>
+          </div>
+          <span class="attribution attr-user">Production Reality</span>
+        </div>
+        <p>Cares about high-stress operational resilience, uptime under financial surges, and unblocking cross-functional business workflows.</p>
+
+        <div class="lens-point">
+          <strong>Alelo Payday Traffic Spikes (B2C Reality)</strong>
+          <span class="attribution attr-user" style="margin-bottom:0.4rem;">User Grounding</span>
+          <p>Real-world focus: Survive payday surges on the 1st and 15th via circuit breakers, aggressive caching, and sync-to-async refactoring.</p>
+        </div>
+        <div class="lens-point">
+          <strong>Trustly Asynchronous Workflows (B2B Reality)</strong>
+          <span class="attribution attr-user" style="margin-bottom:0.4rem;">User Grounding</span>
+          <p>Real-world focus: Mass asynchronous merchant event pipelines, reconciliation batch engines, and handling complex business rules over fake sub-second SLAs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ASSUMPTION REVERSAL -->
+  <section id="assumption-reversal" class="technique-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <span class="technique-number">02</span>
+        <div>
+          <h2>Assumption Reversal: Cutting Bloat, Establishing Truth</h2>
+          <div class="section-subtitle">Challenging conventional CV dogma to replace exaggeration with defensible seniority</div>
+        </div>
+      </div>
+      <span class="attribution attr-coach">Technique: Assumption Reversal</span>
+    </div>
+
+    <div class="card-grid">
+      <!-- Inversion 1 -->
+      <div class="card reversal-card">
+        <div class="card-header">
+          <div class="card-title">Inversion 1: Stack Exhaustion vs Curation</div>
+          <span class="attribution attr-decision">User Decision</span>
+        </div>
+        <div class="reversal-side reversal-before">
+          <div class="reversal-label">Conventional Fallacy</div>
+          <div class="strikethrough-claim">"List every linter, testing library, patch version (Java 17/21), and tool ever touched to maximize keyword hits."</div>
+        </div>
+        <div class="reversal-side reversal-after">
+          <div class="reversal-label">Reversed Truth</div>
+          <div class="reversal-truth">Curated, high-signal stack: Clean <strong>Java, Kotlin, SQL, AWS (SQS/SNS/Lambda/S3)</strong>. Drop niche tooling and linter bloat to showcase mature focus.</div>
+        </div>
+      </div>
+
+      <!-- Inversion 2 -->
+      <div class="card reversal-card">
+        <div class="card-header">
+          <div class="card-title">Inversion 2: Impossible Absolutes vs Mechanisms</div>
+          <span class="attribution attr-coach">Coach Idea</span>
+        </div>
+        <div class="reversal-side reversal-before">
+          <div class="reversal-label">Conventional Fallacy</div>
+          <div class="strikethrough-claim">"Claim 'zero ledger discrepancy', unyielding instant consistency, and astronomical TPS to sound like an elite architect."</div>
+        </div>
+        <div class="reversal-side reversal-after">
+          <div class="reversal-label">Reversed Truth</div>
+          <div class="reversal-truth">Describe the failure-tolerant engineering: <strong>Automated reconciliation engines, idempotent consumers, and audit-proof event streaming</strong>.</div>
+        </div>
+      </div>
+
+      <!-- Inversion 3 -->
+      <div class="card reversal-card">
+        <div class="card-header">
+          <div class="card-title">Inversion 3: Toy Projects vs Production Anchor</div>
+          <span class="attribution attr-coach">Coach &times; User</span>
+        </div>
+        <div class="reversal-side reversal-before">
+          <div class="reversal-label">Conventional Fallacy</div>
+          <div class="strikethrough-claim">"Fill the CV with pet repositories (dotme, toy antifraud) to prove continuous extracurricular coding passion."</div>
+        </div>
+        <div class="reversal-side reversal-after">
+          <div class="reversal-label">Reversed Truth</div>
+          <div class="reversal-truth">Toy projects dilute senior enterprise gravity. Anchor on Alelo & Trustly production scale; preserve <strong>MockK</strong> as genuine open-source proof.</div>
+        </div>
+      </div>
+
+      <!-- Inversion 4 -->
+      <div class="card reversal-card">
+        <div class="card-header">
+          <div class="card-title">Inversion 4: Portfolio Purpose</div>
+          <span class="attribution attr-decision">User Decision</span>
+        </div>
+        <div class="reversal-side reversal-before">
+          <div class="reversal-label">Conventional Fallacy</div>
+          <div class="strikethrough-claim">"The portfolio is just a glorified resume hosted on the web with duplicate bullet points."</div>
+        </div>
+        <div class="reversal-side reversal-after">
+          <div class="reversal-label">Reversed Truth</div>
+          <div class="reversal-truth">Keep the interactive UI polish, but elevate it with <strong>high-density architecture & system design breakdowns</strong> of actual enterprise scale.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: JOB TO BE DONE -->
+  <section id="jtbd" class="technique-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <span class="technique-number">03</span>
+        <div>
+          <h2>Job to Be Done (JTBD) & Precision Bullet Surgery</h2>
+          <div class="section-subtitle">Delineating channel responsibilities and enforcing surgical resume boundaries</div>
+        </div>
+      </div>
+      <span class="attribution attr-coach">Technique: Job to Be Done</span>
+    </div>
+
+    <div class="jtbd-grid">
+      <!-- CV JTBD -->
+      <div class="jtbd-container">
+        <div class="jtbd-head">
+          <h3>Channel 1: The Curriculum Vitae</h3>
+          <span class="attribution attr-user">6-Sec ATS Scan</span>
+        </div>
+        <div class="jtbd-content">
+          <p><strong>Primary Job:</strong> Pass automated parsing, survive high-speed recruiter screening, and provide 100% defensible ammunition for live technical interviews without trapping the candidate.</p>
+          
+          <div class="bullet-surgery-block">
+            <div style="color:var(--text-dim); margin-bottom:0.5rem;">// Alelo Resilience Refactoring</div>
+            <div class="diff-line">
+              <span class="diff-del">&minus; Engineered microservices handling thousands of requests per second with high availability...</span>
+            </div>
+            <div class="diff-line">
+              <span class="diff-add">+ Mitigated extreme payday traffic surges across B2C financial apps by implementing circuit breakers, aggressive Redis caching, and refactoring sync HTTP calls to async messaging.</span>
+            </div>
+          </div>
+
+          <div class="guardrail-box">
+            <strong>User Boundary Decision: CV Projects Section</strong>
+            <p>Decision by user: Keep the Projects section on the CV untouched as-is for now to avoid premature churn while focusing updates on core work experience bullets.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio JTBD -->
+      <div class="jtbd-container">
+        <div class="jtbd-head">
+          <h3>Channel 2: The Interactive Portfolio</h3>
+          <span class="attribution attr-coach">Deep System Design</span>
+        </div>
+        <div class="jtbd-content">
+          <p><strong>Primary Job:</strong> Provide deep-dive technical credibility. Showcase interactive frontend polish while proving backend architectural chops with system diagrams and trade-off analyses.</p>
+
+          <div class="bullet-surgery-block">
+            <div style="color:var(--text-dim); margin-bottom:0.5rem;">// Trustly Narrative Calibration</div>
+            <div class="diff-line">
+              <span class="diff-del">&minus; Achieved zero ledger discrepancy and tuned PostgreSQL locking queries...</span>
+            </div>
+            <div class="diff-line">
+              <span class="diff-add">+ Built automated reconciliation pipelines and batch processing engines to guarantee financial data integrity across high-volume asynchronous merchant settlement workflows.</span>
+            </div>
+          </div>
+
+          <div class="guardrail-box">
+            <strong>User Boundary Decision: Trustly Scope Guardrails</strong>
+            <ul style="padding-left:1.1rem; margin-top:0.35rem; color:#cbd5e1;">
+              <li><strong>SQL Query Tuning:</strong> Removed claims from Trustly experience; retain SQL strictly under Skills &amp; Technologies.</li>
+              <li><strong>SQS/SNS Placement:</strong> Do not cite SQS/SNS inside Trustly experience bullets; maintain exclusively in Cloud/Messaging skill lists.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: IMPACT-EFFORT MATRIX -->
+  <section id="matrix" class="technique-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <span class="technique-number">04</span>
+        <div>
+          <h2>Impact-Effort Prioritization Matrix</h2>
+          <div class="section-subtitle">Tactical prioritization for immediate market alignment vs long-term portfolio polish</div>
+        </div>
+      </div>
+      <span class="attribution attr-decision">Converged Strategy</span>
+    </div>
+
+    <!-- Matrix Filter Controls -->
+    <div class="matrix-controls">
+      <button class="filter-btn active" onclick="filterMatrix('all', this)">View All Quadrants</button>
+      <button class="filter-btn" onclick="filterMatrix('quickwins', this)">Quick Wins (Sprint 1)</button>
+      <button class="filter-btn" onclick="filterMatrix('strategic', this)">Strategic Upgrades</button>
+      <button class="filter-btn" onclick="filterMatrix('fillins', this)">Low Priority / As-Is</button>
+      <button class="filter-btn" onclick="filterMatrix('parked', this)">Deferred / Roadmap</button>
+    </div>
+
+    <div class="matrix-grid" id="matrixGrid">
+      <!-- Quadrant 1: Quick Wins -->
+      <div class="matrix-quadrant quadrant-quickwins" data-quadrant="quickwins">
+        <div class="quadrant-header">
+          <span class="quadrant-title">Q1: Quick Wins (High Impact &bull; Low Effort)</span>
+          <span class="attribution attr-decision">Sprint 1 Priority</span>
+        </div>
+        <div class="matrix-items">
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">English Level Calibration</span>
+              <span class="attribution attr-user">User Directive</span>
+            </div>
+            <p>Calibrate English to B2 / Intermediate-Advanced for honest interview alignment and ATS realism.</p>
+          </div>
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Java Stack Cleanup</span>
+              <span class="attribution attr-user">User Directive</span>
+            </div>
+            <p>Simplify "Java (17/21)" down to "Java". Clean, standard, and removes version pigeonholing.</p>
+          </div>
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">AWS Messaging Skills</span>
+              <span class="attribution attr-user">User Directive</span>
+            </div>
+            <p>Add AWS SQS &amp; SNS explicitly to Cloud/Messaging skillset without bloating job bullets.</p>
+          </div>
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Eliminate "Zero Discrepancy"</span>
+              <span class="attribution attr-coach">Coach Rec</span>
+            </div>
+            <p>Remove exaggerated claim and purge SQL query tuning boast from Trustly experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quadrant 2: Strategic Pillars -->
+      <div class="matrix-quadrant quadrant-strategic" data-quadrant="strategic">
+        <div class="quadrant-header">
+          <span class="quadrant-title">Q2: Strategic Narrative (High Impact &bull; High Effort)</span>
+          <span class="attribution attr-synthesis">Core Identity</span>
+        </div>
+        <div class="matrix-items">
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Alelo Payday Traffic Rewrite</span>
+              <span class="attribution attr-coach">Coach &times; User</span>
+            </div>
+            <p>Anchor high-concurrency B2C resilience: 1st/15th surges, circuit breakers, Redis caching, sync-to-async refactor.</p>
+          </div>
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Trustly Async Reconciliation</span>
+              <span class="attribution attr-coach">Coach &times; User</span>
+            </div>
+            <p>Anchor B2B financial pipelines: automated reconciliation, batch jobs, and audit-proof event ingestion.</p>
+          </div>
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Dual-Pillar CV Refactoring</span>
+              <span class="attribution attr-decision">Strategic Axis</span>
+            </div>
+            <p>Unify resume narrative around the dual-engine: synchronous resilience + asynchronous batch integrity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quadrant 3: Low Impact / Low Effort -->
+      <div class="matrix-quadrant quadrant-fillins" data-quadrant="fillins">
+        <div class="quadrant-header">
+          <span class="quadrant-title">Q3: Hold / Low Priority (Low Impact &bull; Low Effort)</span>
+          <span class="attribution attr-user">Hold As-Is</span>
+        </div>
+        <div class="matrix-items">
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Keep Projects Section Intact</span>
+              <span class="attribution attr-user">User Decision</span>
+            </div>
+            <p>Keep Projects section on CV untouched as-is for now to prevent unnecessary rewrite churn.</p>
+          </div>
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Maintain MockK Contribution</span>
+              <span class="attribution attr-coach">Coach Note</span>
+            </div>
+            <p>Keep existing MockK open-source contributor mention as an effortless credibility anchor.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quadrant 4: Deferred -->
+      <div class="matrix-quadrant quadrant-parked" data-quadrant="parked">
+        <div class="quadrant-header">
+          <span class="quadrant-title">Q4: Deferred Roadmap (High Effort &bull; Parked)</span>
+          <span class="attribution attr-decision">Future Sprint</span>
+        </div>
+        <div class="matrix-items">
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">System Design Architecture Diagrams</span>
+              <span class="attribution attr-coach">Coach Idea</span>
+            </div>
+            <p>High-density visual architecture diagrams for Alelo &amp; Trustly on portfolio. Parked for future portfolio sprint.</p>
+          </div>
+          <div class="matrix-item">
+            <div class="matrix-item-header">
+              <span class="matrix-item-title">Interactive Pipeline Simulators</span>
+              <span class="attribution attr-dim">Exploration</span>
+            </div>
+            <p>Interactive web simulation of reconciliation pipelines. Reserved for dedicated portfolio overhaul.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: SYNTHESIS & THE DUAL PILLAR -->
+  <section id="synthesis" class="technique-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <span class="technique-number">05</span>
+        <div>
+          <h2>Synthesis &amp; The Dual Pillar Architecture</h2>
+          <div class="section-subtitle">The definitive senior backend positioning: High-Concurrency Resilience &times; Asynchronous Data Pipelines</div>
+        </div>
+      </div>
+      <span class="attribution attr-synthesis">Final Convergence</span>
+    </div>
+
+    <div class="pillar-layout">
+      <!-- Pillar 1: Alelo -->
+      <div class="pillar-box pillar-alelo">
+        <div class="pillar-header">
+          <div class="pillar-eyebrow">Pillar One &bull; High-Concurrency B2C Resilience</div>
+          <div class="pillar-title">Alelo (Corporate Benefits)</div>
+          <div class="pillar-core-narrative">Surviving payday transaction surges through fault isolation and caching</div>
+        </div>
+        <div class="pillar-body">
+          <p>
+            Anchors candidate expertise in high-concurrency consumer traffic. On the 1st and 15th of each month, millions of Brazilian cardholders hit the platform concurrently to check balances, meal allowances, and transact.
+          </p>
+
+          <div class="diagram-terminal">
+            <div class="dim-text">// Payday Traffic Surge Isolation Pipeline</div>
+            <div>[Cardholders] &rarr; <span class="accent-text">[API Gateway / CDN]</span></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green-text">[Redis Multi-Tier Cache]</span> &larr; (90%+ Read Hit Rate)</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr; (Cache Miss)</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="amber-text">[Circuit Breaker: Resilience4j]</span> &larr; (Network Call Reduction)</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="accent-text">[Sync-to-Async Worker Queue]</span> &rarr; [Core Ledger System]</div>
+          </div>
+
+          <ul class="mechanism-list">
+            <li><strong>Traffic Surge Mitigation:</strong> Designed for extreme spikes during monthly payday windows.</li>
+            <li><strong>Circuit Breakers &amp; Fallbacks:</strong> Isolated downstream service failures to protect overall core uptime.</li>
+            <li><strong>Aggressive Caching:</strong> Multi-layer Redis strategy eliminating redundant backend inquiries.</li>
+            <li><strong>Sync-to-Async Refactoring:</strong> Decoupled blocking REST transactions into asynchronous event queues.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Trustly -->
+      <div class="pillar-box pillar-trustly">
+        <div class="pillar-header">
+          <div class="pillar-eyebrow">Pillar Two &bull; Asynchronous B2B Event &amp; Data Pipelines</div>
+          <div class="pillar-title">Trustly (Open Banking Payments)</div>
+          <div class="pillar-core-narrative">Auditable financial reconciliation &amp; resilient merchant event processing</div>
+        </div>
+        <div class="pillar-body">
+          <p>
+            Anchors candidate expertise in enterprise data integrity and asynchronous workflows. Focuses on high-volume financial settlement, cross-institution transaction flows, and merchant reporting engines.
+          </p>
+
+          <div class="diagram-terminal">
+            <div class="dim-text">// B2B Asynchronous Event & Reconciliation Flow</div>
+            <div>[Bank Gateways] &rarr; <span class="accent-text">[SFTP / S3 Streaming]</span></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="amber-text">[AWS Lambda / Event Schedulers]</span></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green-text">[Automated Reconciliation Engine]</span> &larr; (Spring Batch Mass Processing)</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="accent-text">[Audit-Proof Ledger &amp; Merchant Feeds]</span> &rarr; [Reporting &amp; Settlement]</div>
+          </div>
+
+          <ul class="mechanism-list">
+            <li><strong>Automated Reconciliation:</strong> Built pipelines that systematically detect and resolve balance discrepancies.</li>
+            <li><strong>Idempotent Event Ingestion:</strong> Guaranteed exactly-once business processing over asynchronous channels.</li>
+            <li><strong>Mass Batch Processing:</strong> Robust Spring Batch architectures ingesting bulk merchant transaction feeds.</li>
+            <li><strong>S3 &amp; Lambda Streaming:</strong> Cloud-native event pipelines powering scheduled settlements and audits.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Synthesis Spec Table -->
+    <div class="synthesis-summary">
+      <h3>
+        <span class="technique-number" style="font-size:0.75rem;">SPEC</span>
+        Final Candidate Profile Specification
+      </h3>
+      <p style="color:var(--text-muted); font-size:0.92rem;">
+        The precise, calibrated positioning agreed upon across the brainstorming session:
+      </p>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Dimension</th>
+            <th style="width: 45%;">Market-Aligned Specification</th>
+            <th style="width: 30%;">Pruned / Guardrailed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Core Languages</strong></td>
+            <td>
+              <span class="badge badge-approved">Java</span>
+              <span class="badge badge-approved">Kotlin</span>
+              <span class="badge badge-approved">SQL (PostgreSQL)</span>
+            </td>
+            <td>
+              <span class="badge badge-dropped">Java (17/21)</span>
+              <span class="badge badge-dropped">Niche linters</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Cloud &amp; Messaging</strong></td>
+            <td>
+              <span class="badge badge-approved">AWS SQS</span>
+              <span class="badge badge-approved">AWS SNS</span>
+              <span class="badge badge-approved">AWS Lambda</span>
+              <span class="badge badge-approved">AWS S3</span>
+              <span class="badge badge-approved">Redis</span>
+            </td>
+            <td>
+              <span class="badge badge-dropped">SQS/SNS inside Trustly</span>
+              <span class="badge badge-dropped">Overstated K8s ops</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Communication</strong></td>
+            <td>
+              <span class="badge badge-approved">B2 &bull; Intermediate-Advanced English</span>
+              <span style="display:block; font-size:0.8rem; color:var(--text-dim); margin-top:0.2rem;">Matches live interview reality and technical clarity</span>
+            </td>
+            <td>
+              <span class="badge badge-dropped">Overstated Native/C2</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Financial Narrative</strong></td>
+            <td>
+              <span class="badge badge-approved">Automated Reconciliation</span>
+              <span class="badge badge-approved">Idempotent Pipelines</span>
+              <span class="badge badge-approved">Audit-Proof Processing</span>
+            </td>
+            <td>
+              <span class="badge badge-dropped">"Zero ledger discrepancy"</span>
+              <span class="badge badge-dropped">PostgreSQL lock claims</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Alelo Focus</strong></td>
+            <td>
+              <span class="badge badge-approved">Payday Traffic Spikes</span>
+              <span class="badge badge-approved">Circuit Breakers</span>
+              <span class="badge badge-approved">Sync-to-Async HTTP Refactor</span>
+            </td>
+            <td>
+              <span class="badge badge-dropped">Generic microservices</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Trustly Focus</strong></td>
+            <td>
+              <span class="badge badge-approved">B2B Async Event Pipelines</span>
+              <span class="badge badge-approved">Spring Batch Reconciliation</span>
+            </td>
+            <td>
+              <span class="badge badge-dropped">SQL query tuning boast</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Portfolio Roadmap</strong></td>
+            <td>
+              <span class="badge badge-approved">Interactive UI</span>
+              <span class="badge badge-approved">High-Density System Design</span>
+            </td>
+            <td>
+              <span class="badge badge-dropped">Immediate diagram churn</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Attribution Ledger -->
+    <div class="attribution-ledger">
+      <h3>Author Attribution Ledger (Extracted from Memlog)</h3>
+      <div class="ledger-list">
+        <div class="ledger-row">
+          <span class="attribution attr-user">User</span>
+          <span>Recent experiences are the critical anchor; absolutes like "zero ledger discrepancy" trigger skepticism.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-coach">Coach</span>
+          <span>Replace absolute claims with mechanisms: automated reconciliation, idempotent processing, audit-proof pipelines.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-user">User</span>
+          <span>Alelo reality: B2C payday traffic spikes required circuit breakers, network call reduction, caching, and sync-to-async refactor.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-user">User</span>
+          <span>Trustly reality: B2B async workflows, event processing, complex merchant business rules, mass reporting engines.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-coach">Coach</span>
+          <span>Reframe Alelo as "High-Concurrency B2C Resilience" and Trustly as "B2B Event-Driven Pipelines & Complex Data Processing".</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-user">User</span>
+          <span>Current projects/open-source sections feel like filler and lack direct alignment with core enterprise backend narrative.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-coach">Coach</span>
+          <span>On CV, prune toy projects (dotme, toy antifraud) to expand high-impact bullets; preserve MockK as high-credibility open source.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-decision">User</span>
+          <span>Adopt curated stack: clean Java/Kotlin/SQL, AWS SQS/SNS/Lambda/S3, dropping linter/niche tool stuffing.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-decision">User</span>
+          <span>Remove SQL query tuning claims from Trustly experience; retain SQL purely under Skills & Technologies.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-decision">User</span>
+          <span>Do not cite SQS/SNS inside Trustly experience bullets; maintain SQS/SNS exclusively in Cloud/Messaging skill lists.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-decision">User</span>
+          <span>Keep Projects section on CV untouched as-is for now.</span>
+        </div>
+        <div class="ledger-row">
+          <span class="attribution attr-decision">Coach</span>
+          <span>Converged via Impact-Effort Matrix: Quick Wins (English B2, Java cleanup, SQS/SNS, drop zero-discrepancy & SQL tuning) + Core Narrative.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Market Alignment & Gap Analysis &bull; Generated from <code>.memlog.md</code> &bull; Built with zero external dependencies
+  </footer>
+
+</div>
+
+<script>
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Update active tab on scroll
+  window.addEventListener('scroll', () => {
+    const sections = ['role-playing', 'assumption-reversal', 'jtbd', 'matrix', 'synthesis'];
+    const scrollPos = window.scrollY + 140;
+
+    for (const sectionId of sections) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+          const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => 
+            btn.getAttribute('onclick')?.includes(sectionId)
+          );
+          if (targetBtn) targetBtn.classList.add('active');
+          break;
+        }
+      }
+    }
+  });
+
+  // Interactive 2x2 Matrix Filter
+  function filterMatrix(quadrant, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const quadrants = document.querySelectorAll('.matrix-quadrant');
+    quadrants.forEach(q => {
+      if (quadrant === 'all') {
+        q.classList.remove('dimmed');
+      } else {
+        if (q.getAttribute('data-quadrant') === quadrant) {
+          q.classList.remove('dimmed');
+        } else {
+          q.classList.add('dimmed');
+        }
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
