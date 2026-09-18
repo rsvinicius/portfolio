@@ -290,7 +290,7 @@ function createLocalizationHarness(initialLocalStorage = {}) {
 
     // Experience elements with HTML markup
     addElement('trustly-bullet-1', 'span', { 'data-i18n': 'trustlyBullet1' },
-        'Engineered and maintained B2B merchant billing and financial settlement pipelines processing multi-billion-dollar transaction volume (<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+$100B</strong>), ensuring financial data integrity through automated reconciliation and robust batch execution.'
+        'Architected and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.'
     );
 
     // Open source category badges
@@ -639,7 +639,7 @@ test('HTML strings update via innerHTML preserving strong tags, plain text via t
 
     const trustlyElem = harness.elementsById['trustly-bullet-1'];
     assert.ok(
-        trustlyElem.innerHTML.includes('<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+$100B</strong>'),
+        trustlyElem.innerHTML.includes('<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500 TPS</strong>'),
         'HTML markup must be preserved via innerHTML when string contains HTML tags'
     );
     assert.ok(
