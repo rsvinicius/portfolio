@@ -23,7 +23,7 @@ const translations = {
         sendDirectEmail: "Send Direct Email",
         copyEmail: "Copy Email",
         emailCopied: "Email copied to clipboard",
-        contactSectionIndex: "07. CONTACT",
+        contactSectionIndex: "06. CONTACT",
         resumeLabel: "Resume",
         contactConnect: "Connect",
         contactInspect: "Inspect Code",
@@ -31,13 +31,13 @@ const translations = {
         // Metric Stat Cards
         metric1Num: "+500M",
         metric1Label: "B2C Scale Throughput",
-        metric1Sub: "Microservices scale across 10M+ users",
+        metric1Sub: "Monthly requests at <strong class=\"text-[#0F172A] dark:text-[#F9FAFB] font-semibold\">Alelo</strong> scale across 10M+ users",
         metric2Num: "+$100B",
         metric2Label: "B2B Financial Volume",
-        metric2Sub: "Global processed volume & reconciliation",
+        metric2Sub: "Annual settlement volume processed at <strong class=\"text-[#0F172A] dark:text-[#F9FAFB] font-semibold\">Trustly</strong>",
         metric3Num: "+500 TPS",
         metric3Label: "Peak Processing Rate",
-        metric3Sub: "High-scale transaction volume & streaming",
+        metric3Sub: "Peak transaction processing rate at <strong class=\"text-[#0F172A] dark:text-[#F9FAFB] font-semibold\">Trustly</strong>",
 
         // Contact Pre-filled Email Strings
         contactEmailSubject: "Software Engineering Opportunity - Vinicius Rodrigues Silva",
@@ -51,7 +51,7 @@ const translations = {
         aboutText3: "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.",
         
         // Projects Section (03. PROJECTS)
-        projectsSectionIndex: "03. PROJECTS",
+        projectsSectionIndex: "02. PROJECTS",
         featuredProjects: "Interactive Engineering Showcases",
         projectsSubtitle: "Interactive showcases and developer tooling demonstrating backend systems architecture, real-time risk heuristics, and command-line automation.",
         viewAllProjects: "View All Repositories on GitHub",
@@ -60,7 +60,7 @@ const translations = {
         // Antifraud Sandbox Widget
         antifraudTitle: "Antifraud Financial Security Engine • Real-Time Sandbox",
         antifraudSubtitle: "Spring Boot REST API • Real-time visual sandbox of transaction risk heuristics & adaptive feedback",
-        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Architecture Context:</strong> The underlying project is an enterprise Spring Boot REST API featuring a 4-tier RBAC role model (Anonymous, Merchant, Admin, Support), IP/stolen card blocklists, regional correlation rules, and a dynamic feedback loop that tunes fraud limits (0.8 × limit ± 0.2 × amount). The widget below provides a real-time visual demonstration of the core heuristic risk evaluation.",
+        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Architecture Context:</strong> The underlying project is a production-grade Spring Boot REST API featuring a 4-tier RBAC role model (Anonymous, Merchant, Admin, Support), IP/stolen card blocklists, regional correlation rules, and a dynamic feedback loop that tunes fraud limits (0.8 × limit ± 0.2 × amount). The widget below provides a real-time visual demonstration of the core heuristic risk evaluation.",
         antifraudAmountLabel: "Transaction Amount",
         antifraudDeltaLabel: "Time Delta Since Previous",
         antifraudDistanceLabel: "Physical Distance Jump",
@@ -85,13 +85,14 @@ const translations = {
         dotmeSrSummary: "Demonstration of dotme CLI: an autonomous terminal session executing git clone, pattern-based filtering with include and exclude rules, and dotfile distribution with summary metrics.",
 
         // Open Source Section
-        opensourceSectionIndex: "04. OPEN SOURCE",
+        opensourceSectionIndex: "03. OPEN SOURCE",
         opensourceTitle: "Open Source & Community Ecosystem",
         opensourceSubtitle: "Verified contributions to global open-source libraries, developer productivity CLI tools, and automation frameworks.",
         mockkRole: "Contributor",
         mockkCategory: "Testing Library",
         mockkDesc: "Core unit testing and mocking library for Kotlin. Fixed state leak in verification mechanisms ensuring hermetic test isolation.",
         mockkLinkText: "View Repository",
+        mockkReleaseText: "v1.14.0 Release Notes",
         dotmeRole: "Creator & Maintainer",
         dotmeCategory: "CLI Tool",
         dotmeDesc: "Declarative dotfiles management CLI tool featuring atomic symlink reconciliation, pattern filtering, and syntax validation.",
@@ -102,7 +103,7 @@ const translations = {
         n8nDocsLinkText: "View Repository",
 
         // Skills Section (4-Layer Architectural Taxonomy)
-        skillsSectionIndex: "05. SKILLS",
+        skillsSectionIndex: "04. SKILLS",
         technicalSkills: "Architectural Competencies & Technical Skills",
         skillsSubtitle: "Categorized engineering competencies structured across 4 architectural layers of modern software systems.",
         
@@ -132,6 +133,7 @@ const translations = {
         cloudDevOpsCloud: "Cloud Infrastructure (AWS)",
         cloudDevOpsProtocols: "Protocols & Pipelines",
         cloudDevOpsContainers: "Containers & CI/CD",
+        cloudDevOpsObservability: "Observability & Monitoring",
 
         // Layer 4
         layer4Badge: "LAYER 04",
@@ -156,7 +158,7 @@ const translations = {
         softSkills5: "Continuous Learning",
         
         // Experience Section
-        experienceSectionIndex: "02. EXPERIENCE",
+        experienceSectionIndex: "01. EXPERIENCE",
         workExperience: "Career Narrative & Enterprise Impact",
         experienceSubtitle: "High-throughput JVM architectures, financial settlement pipelines, and large-scale distributed systems.",
         
@@ -165,8 +167,8 @@ const translations = {
         trustlyCompany: "Trustly",
         trustlySector: "• Global Pay-by-Bank & Open Banking Leader",
         trustlyPeriod: "Jan 2026 – Present",
-        trustlyDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.",
-        trustlyBullet1: "Architected and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.",
+        trustlyDesc: "Engineering mission-critical B2B billing engines and mass financial reporting systems processing multi-billion-dollar volume and high-throughput transaction flows with zero ledger discrepancy.",
+        trustlyBullet1: "Engineered and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.",
         trustlyBullet2: "Designed mass reports and reconciliation pipelines using <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong>, extracting and consolidating millions of daily transaction records.",
         trustlyBullet3: "Engineered low-memory file streaming mechanisms for massive report payloads (PDF, ZIP, CSV), integrating <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong>, and automated secure delivery via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> to partner financial institutions.",
         trustlyBullet4: "Developed across resilient polyglot JVM frameworks (Spring Boot, Javalite, Google Guice) and optimized complex <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong> queries and table locking, significantly reducing analytical execution times.",
@@ -175,8 +177,8 @@ const translations = {
         aleloRole: "Software Engineer Progression (Intern to Mid-Level)",
         aleloCompany: "Alelo Brasil",
         aleloSector: "• Corporate Benefits & Payments (Bradesco & Banco do Brasil)",
-        aleloPeriod: "2021 – Jan 2026 (~5 Years)",
-        aleloDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
+        aleloPeriod: "May 2021 – Jan 2026 (4 yrs 9 mos)",
+        aleloDesc: "4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
         aleloBullet1: "Scaled core card transaction processing and benefits microservices in Java/Kotlin (Spring Boot), sustaining <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mo</strong> serving <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ users</strong> across <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">150k</strong> enterprise clients under <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% availability</strong>.",
         aleloBullet2: "Architected decoupled asynchronous microservices utilizing <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> with <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong> distributed caching, mitigating latency spikes during peak retail shopping hours.",
         aleloBullet3: "Engineered secure authentication and authorization flows (OAuth2, JWT, RBAC), ensuring transactional integrity and zero-trust identity verification across client endpoints.",
@@ -192,7 +194,7 @@ const translations = {
         juniorDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
 
         // Education Section
-        educationSectionIndex: "06. EDUCATION",
+        educationSectionIndex: "05. EDUCATION",
         education: "Education",
         educationTitle: "Academic Credentials",
         educationSubtitle: "Formal higher education, concluded postgraduate specializations, and verified engineering degrees.",
@@ -263,7 +265,7 @@ const translations = {
         sendDirectEmail: "Enviar E-mail Direto",
         copyEmail: "Copiar E-mail",
         emailCopied: "E-mail copiado para a área de transferência",
-        contactSectionIndex: "07. CONTATO",
+        contactSectionIndex: "06. CONTATO",
         resumeLabel: "Currículo",
         contactConnect: "Conectar",
         contactInspect: "Inspecionar Código",
@@ -271,13 +273,13 @@ const translations = {
         // Metric Stat Cards
         metric1Num: "+500M",
         metric1Label: "Vazão em Escala B2C",
-        metric1Sub: "Escala de microsserviços para 10M+ usuários",
+        metric1Sub: "Requisições mensais na escala <strong class=\"text-[#0F172A] dark:text-[#F9FAFB] font-semibold\">Alelo</strong> para 10M+ usuários",
         metric2Num: "+$100B",
         metric2Label: "Volume Financeiro B2B",
-        metric2Sub: "Volume global processado e reconciliação",
+        metric2Sub: "Volume anual de liquidação processado na <strong class=\"text-[#0F172A] dark:text-[#F9FAFB] font-semibold\">Trustly</strong>",
         metric3Num: "+500 TPS",
         metric3Label: "Taxa de Pico de Processamento",
-        metric3Sub: "Processamento transacional e streaming de alta escala",
+        metric3Sub: "Taxa de pico de processamento de transações na <strong class=\"text-[#0F172A] dark:text-[#F9FAFB] font-semibold\">Trustly</strong>",
 
         // Contact Pre-filled Email Strings
         contactEmailSubject: "Oportunidade Engenharia de Software - Vinicius Rodrigues Silva",
@@ -290,8 +292,8 @@ const translations = {
         aboutText2: "Minha experiência se estende pelo desenvolvimento de APIs REST, implementação de sistemas de autenticação, criação de arquiteturas de microsserviços e trabalho com diversos bancos de dados. Sou guiado por práticas de código limpo e busco continuamente melhorar minhas habilidades e me manter atualizado com as mais recentes tecnologias.",
         aboutText3: "Quando não estou codificando, gosto de explorar novas tecnologias, contribuir para projetos open-source e compartilhar conhecimento com a comunidade de desenvolvedores.",
         
-        // Projects Section (03. PROJETOS)
-        projectsSectionIndex: "03. PROJETOS",
+        // Projects Section (02. PROJETOS)
+        projectsSectionIndex: "02. PROJETOS",
         featuredProjects: "Demonstrações Interativas de Engenharia",
         projectsSubtitle: "Demonstrações interativas e ferramentas para desenvolvedores evidenciando arquitetura de sistemas backend, heurísticas de risco em tempo real e automação CLI.",
         viewAllProjects: "Ver Todos os Repositórios no GitHub",
@@ -300,7 +302,7 @@ const translations = {
         // Antifraud Sandbox Widget
         antifraudTitle: "Motor de Segurança Financeira Antifraude • Sandbox em Tempo Real",
         antifraudSubtitle: "API REST em Spring Boot • Sandbox visual em tempo real de heurísticas de risco transacional e feedback adaptativo",
-        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Contexto Arquitetural:</strong> O projeto original é uma API REST corporativa em Spring Boot com RBAC em 4 níveis (Anonymous, Merchant, Admin, Support), listas de bloqueio de IP/cartões roubados, correlação regional e loop de feedback adaptativo dinâmico (0.8 × limite ± 0.2 × valor). O widget abaixo é uma simulação visual em tempo real das heurísticas de avaliação de risco.",
+        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Contexto Arquitetural:</strong> O projeto original é uma API REST de alto desempenho em Spring Boot com RBAC em 4 níveis (Anonymous, Merchant, Admin, Support), listas de bloqueio de IP/cartões roubados, correlação regional e loop de feedback adaptativo dinâmico (0.8 × limite ± 0.2 × valor). O widget abaixo é uma simulação visual em tempo real das heurísticas de avaliação de risco.",
         antifraudAmountLabel: "Valor da Transação",
         antifraudDeltaLabel: "Intervalo de Tempo da Anterior",
         antifraudDistanceLabel: "Salto de Distância Física",
@@ -325,13 +327,14 @@ const translations = {
         dotmeSrSummary: "Demonstração do dotme CLI: uma sessão autônoma de terminal executando git clone, filtragem por padrões com regras de inclusão e exclusão, e distribuição de dotfiles com métricas de resumo.",
 
         // Open Source Section
-        opensourceSectionIndex: "04. CÓDIGO ABERTO",
+        opensourceSectionIndex: "03. CÓDIGO ABERTO",
         opensourceTitle: "Ecossistema Open Source & Comunidade",
         opensourceSubtitle: "Contribuições verificadas para bibliotecas open-source globais, ferramentas CLI de produtividade e frameworks de automação.",
         mockkRole: "Contribuidor",
         mockkCategory: "Biblioteca de Testes",
         mockkDesc: "Biblioteca principal de testes unitários e mocking para Kotlin. Correção de vazamento de estado em verificações para isolamento hermético de testes.",
         mockkLinkText: "Ver Repositório",
+        mockkReleaseText: "Notas de Release v1.14.0",
         dotmeRole: "Criador & Mantenedor",
         dotmeCategory: "Ferramenta CLI",
         dotmeDesc: "Ferramenta CLI declarativa para gestão de dotfiles com reconciliação atômica de symlinks, filtros de padrões e validação de sintaxe.",
@@ -342,7 +345,7 @@ const translations = {
         n8nDocsLinkText: "Ver Repositório",
 
         // Skills Section (4-Layer Architectural Taxonomy)
-        skillsSectionIndex: "05. HABILIDADES",
+        skillsSectionIndex: "04. HABILIDADES",
         technicalSkills: "Competências Arquiteturais & Habilidades Técnicas",
         skillsSubtitle: "Competências de engenharia estruturadas em 4 camadas arquiteturais de sistemas modernos de software.",
         
@@ -372,6 +375,7 @@ const translations = {
         cloudDevOpsCloud: "Infraestrutura Cloud (AWS)",
         cloudDevOpsProtocols: "Protocolos & Pipelines",
         cloudDevOpsContainers: "Contêineres & CI/CD",
+        cloudDevOpsObservability: "Observabilidade & Monitoramento",
 
         // Layer 4
         layer4Badge: "CAMADA 04",
@@ -396,7 +400,7 @@ const translations = {
         softSkills5: "Aprendizado Contínuo",
         
         // Experience Section
-        experienceSectionIndex: "02. EXPERIÊNCIA",
+        experienceSectionIndex: "01. EXPERIÊNCIA",
         workExperience: "Trajetória Profissional & Escala Corporativa",
         experienceSubtitle: "Arquiteturas JVM de alta vazão, liquidação financeira e sistemas distribuídos em larga escala.",
         
@@ -405,7 +409,7 @@ const translations = {
         trustlyCompany: "Trustly",
         trustlySector: "• Líder Global em Pay-by-Bank & Open Banking",
         trustlyPeriod: "Jan 2026 – Presente",
-        trustlyDesc: "Desenvolvimento de sistemas de billing B2B de missão crítica e relatórios financeiros em larga escala, processando mais de $100B em volume transacional e +500 TPS com rigorosa consistência contábil.",
+        trustlyDesc: "Desenvolvimento de sistemas de billing B2B de missão crítica e relatórios financeiros em larga escala, processando volumes multibilionários e fluxos transacionais de alta vazão com consistência contábil.",
         trustlyBullet1: "Engenharia e sustentação de pipelines de faturamento B2B e liquidação financeira de merchants lidando com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> e volumes bilionários com tolerância zero a divergências contábeis.",
         trustlyBullet2: "Arquitetura de pipelines assíncronos e batch em larga escala com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> e <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong> para extração, consolidação e reconciliação contábil de milhões de eventos transacionais diários.",
         trustlyBullet3: "Implementação de streaming de arquivos com baixo consumo de memória para relatórios pesados (PDF, ZIP, CSV), integrando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong> e despacho seguro automatizado via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> para bancos parceiros.",
@@ -415,8 +419,8 @@ const translations = {
         aleloRole: "Trajetória em Engenharia de Software (Estágio a Pleno)",
         aleloCompany: "Alelo Brasil",
         aleloSector: "• Benefícios Corporativos & Pagamentos (Bradesco & Banco do Brasil)",
-        aleloPeriod: "2021 – Jan 2026 (~5 Anos)",
-        aleloDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
+        aleloPeriod: "Mai 2021 – Jan 2026 (4 anos 9 meses)",
+        aleloDesc: "Mais de 4 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas corporativas.",
         aleloBullet1: "Evolução da malha de microsserviços em Java/Kotlin (Spring Boot), sustentando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mês</strong> para <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">10M+ usuários</strong> ativos em <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">150k</strong> empresas com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% de disponibilidade</strong>.",
         aleloBullet2: "Concepção de microsserviços desacoplados com mensageria assíncrona (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong>) e processamento em lote com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong>, além de cache distribuído (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Redis</strong>), eliminando gargalos de throughput nos horários de pico comercial.",
         aleloBullet3: "Implementação de fluxos de autenticação e autorização robustos (OAuth2, JWT, RBAC), garantindo estrita integridade transacional contra fraudes de identidade.",
@@ -432,7 +436,7 @@ const translations = {
         juniorDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
 
         // Education Section
-        educationSectionIndex: "06. FORMAÇÃO",
+        educationSectionIndex: "05. FORMAÇÃO",
         education: "Formação",
         educationTitle: "Formação Acadêmica",
         educationSubtitle: "Formação acadêmica formal, pós-graduação concluída e diplomas verificados de engenharia.",

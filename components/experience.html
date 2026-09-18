@@ -2,14 +2,33 @@
 <section id="experience" class="py-16 lg:py-24 bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F9FAFB] transition-colors duration-200">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         <!-- Section Header -->
-        <div class="mb-12">
+        <div class="mb-10">
             <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]" data-i18n="experienceSectionIndex">02. EXPERIENCE</span>
+                <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]" data-i18n="experienceSectionIndex">01. EXPERIENCE</span>
             </div>
             <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="workExperience">Career Narrative & Enterprise Impact</h2>
             <p class="text-base text-[#475569] dark:text-[#9CA3AF] mt-2 max-w-2xl" data-i18n="experienceSubtitle">
                 High-throughput JVM architectures, financial settlement pipelines, and large-scale distributed systems.
             </p>
+        </div>
+
+        <!-- Metric Stat Cards (Enterprise Impact Banner) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-12">
+            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 transition-colors shadow-sm">
+                <div class="text-[11px] font-mono uppercase tracking-wider text-[#64748B] dark:text-[#6B7280]" data-i18n="metric1Label">B2C Scale Throughput</div>
+                <div class="font-mono text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB] mb-1" data-i18n="metric1Num">+500M</div>
+                <div class="text-sm text-[#475569] dark:text-[#9CA3AF]" data-i18n="metric1Sub">Monthly requests at <strong class="text-[#0F172A] dark:text-[#F9FAFB] font-semibold">Alelo</strong> scale across 10M+ users</div>
+            </div>
+            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 transition-colors shadow-sm">
+                <div class="text-[11px] font-mono uppercase tracking-wider text-[#64748B] dark:text-[#6B7280]" data-i18n="metric2Label">B2B Financial Volume</div>
+                <div class="font-mono text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB] mb-1" data-i18n="metric2Num">+$100B</div>
+                <div class="text-sm text-[#475569] dark:text-[#9CA3AF]" data-i18n="metric2Sub">Annual settlement volume processed at <strong class="text-[#0F172A] dark:text-[#F9FAFB] font-semibold">Trustly</strong></div>
+            </div>
+            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 transition-colors shadow-sm">
+                <div class="text-[11px] font-mono uppercase tracking-wider text-[#64748B] dark:text-[#6B7280]" data-i18n="metric3Label">Peak Processing Rate</div>
+                <div class="font-mono text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB] mb-1" data-i18n="metric3Num">+500 TPS</div>
+                <div class="text-sm text-[#475569] dark:text-[#9CA3AF]" data-i18n="metric3Sub">Peak transaction processing rate at <strong class="text-[#0F172A] dark:text-[#F9FAFB] font-semibold">Trustly</strong></div>
+            </div>
         </div>
 
         <div class="space-y-8">
@@ -38,14 +57,14 @@
 
                 <!-- Role Summary -->
                 <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="trustlyDesc">
-                    Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.
+                    Engineering mission-critical B2B billing engines and mass financial reporting systems processing multi-billion-dollar volume and high-throughput transaction flows with zero ledger discrepancy.
                 </p>
 
                 <!-- Quantitative Achievements -->
                 <ul class="space-y-3.5 mb-6 text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed">
                     <li class="flex items-start gap-3">
                         <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
-                        <span data-i18n="trustlyBullet1">Architected and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.</span>
+                        <span data-i18n="trustlyBullet1">Engineered and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <i class="fas fa-check-circle text-[#2563EB] dark:text-[#3B82F6] mt-1 text-sm shrink-0" aria-hidden="true"></i>
@@ -92,14 +111,30 @@
                     </div>
                     <div class="shrink-0">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#CBD5E1] dark:border-[#374151]" data-i18n="aleloPeriod">
-                            2021 – Jan 2026 (~5 Years)
+                            May 2021 – Jan 2026 (4 yrs 9 mos)
                         </span>
                     </div>
                 </div>
 
+                <!-- Career Promotion Progression Sub-timeline -->
+                <div class="flex flex-wrap gap-2 mb-5 font-mono text-xs">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F1F5F9] dark:bg-[#1F2937] text-[#0F172A] dark:text-[#F9FAFB] border border-[#E2E8F0] dark:border-[#374151]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                        <strong>Software Engineer (Pleno):</strong> Mar 2025 – Jan 2026
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F1F5F9] dark:bg-[#1F2937] text-[#0F172A] dark:text-[#F9FAFB] border border-[#E2E8F0] dark:border-[#374151]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6]"></span>
+                        <strong>Junior Software Engineer:</strong> Nov 2022 – Mar 2025
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F1F5F9] dark:bg-[#1F2937] text-[#0F172A] dark:text-[#F9FAFB] border border-[#E2E8F0] dark:border-[#374151]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#6B7280]"></span>
+                        <strong>Software Engineering Intern:</strong> May 2021 – Nov 2022
+                    </span>
+                </div>
+
                 <!-- Role Summary -->
                 <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="aleloDesc">
-                    Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.
+                    4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.
                 </p>
 
                 <!-- Quantitative Achievements -->
@@ -131,11 +166,12 @@
                     <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java / Kotlin</span>
                     <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Boot</span>
                     <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Batch</span>
-                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Microservices</span>
                     <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">ActiveMQ</span>
                     <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Redis</span>
                     <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Oracle</span>
-                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Docker</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">OpenShift (OCP4)</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Azure DevOps</span>
+                    <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Datadog / Dynatrace</span>
                 </div>
             </div>
         </div>
