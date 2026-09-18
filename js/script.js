@@ -244,6 +244,9 @@ function updateLanguage(lang, translations) {
     // Synchronize pre-filled mailto URIs with localized subject and body
     updateMailtoLinks(lang, translations);
 
+    // Synchronize CV download links with localized CV assets
+    updateCvLinks(lang);
+
     // Update dynamic Antifraud Sandbox readouts preserving current slider positions
     if (typeof window.updateAntifraudSandbox === 'function') {
         window.updateAntifraudSandbox(lang, translations);
@@ -272,6 +275,19 @@ function updateMailtoLinks(lang, translations) {
     
     document.querySelectorAll('a[href^="mailto:vrodrigues.code@gmail.com"]').forEach(link => {
         link.setAttribute('href', mailtoUri);
+    });
+}
+
+// Synchronize CV download links with localized CV assets
+function updateCvLinks(lang) {
+    const cvFile = (lang === 'pt') ? 'Vinicius_Silva_CV_PT.pdf' : 'Vinicius_Silva_CV_EN.pdf';
+    const cvPath = `assets/${cvFile}`;
+    
+    document.querySelectorAll('a[href*="Vinicius_Silva_CV_"]').forEach(link => {
+        link.setAttribute('href', cvPath);
+        if (link.getAttribute('download') !== null || (typeof link.hasAttribute === 'function' && link.hasAttribute('download'))) {
+            link.setAttribute('download', cvFile);
+        }
     });
 }
 
@@ -814,4 +830,5 @@ window.initializeDotmeTerminal = initializeDotmeTerminal;
 window.initializeLanguageToggle = initializeLanguageToggle;
 window.updateLanguage = updateLanguage;
 window.updateMailtoLinks = updateMailtoLinks;
+window.updateCvLinks = updateCvLinks;
 window.updateToggleText = updateToggleText;

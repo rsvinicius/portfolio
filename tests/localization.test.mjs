@@ -212,6 +212,10 @@ class MockDOMNode {
         return this.attributes.get(name) || null;
     }
 
+    hasAttribute(name) {
+        return this.attributes.has(name);
+    }
+
     removeAttribute(name) {
         this.attributes.delete(name);
     }
@@ -290,7 +294,7 @@ function createLocalizationHarness(initialLocalStorage = {}) {
 
     // Experience elements with HTML markup
     addElement('trustly-bullet-1', 'span', { 'data-i18n': 'trustlyBullet1' },
-        'Architected and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.'
+        'Engineered and maintained B2B merchant billing and financial settlement pipelines processing multi-billion-dollar transaction volume (<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+$100B</strong>), ensuring financial data integrity through automated reconciliation and robust batch execution.'
     );
 
     // Open source category badges
@@ -352,6 +356,12 @@ function createLocalizationHarness(initialLocalStorage = {}) {
         href: 'mailto:vrodrigues.code@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20Vinicius%20Rodrigues%20Silva&body=Hi%20Vinicius,%0D%0A%0D%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20Software%20Engineer%20role%20at...'
     });
 
+    // CV Download link
+    const cvLink = addElement('hero-cv-link', 'a', {
+        href: 'assets/Vinicius_Silva_CV_EN.pdf',
+        download: 'Vinicius_Silva_CV_EN.pdf'
+    });
+
     const documentMock = {
         documentElement,
         getElementById: (id) => elementsById[id] || null,
@@ -377,6 +387,9 @@ function createLocalizationHarness(initialLocalStorage = {}) {
             }
             if (selector.startsWith('a[href^="mailto:vrodrigues.code@gmail.com"]')) {
                 return allNodes.filter(n => n.tagName === 'A' && (n.getAttribute('href') || '').startsWith('mailto:vrodrigues.code@gmail.com'));
+            }
+            if (selector.includes('Vinicius_Silva_CV_')) {
+                return allNodes.filter(n => n.tagName === 'A' && (n.getAttribute('href') || '').includes('Vinicius_Silva_CV_'));
             }
             return [];
         }
@@ -449,6 +462,10 @@ test('Cold Load: initializes to English by default when no preference in localSt
     const href = harness.elementsById['hero-mailto'].getAttribute('href');
     assert.ok(href.includes('Software%20Engineering%20Opportunity'));
     assert.ok(href.includes('Hi%20Vinicius'));
+
+    // CV link is in English
+    assert.equal(harness.elementsById['hero-cv-link'].getAttribute('href'), 'assets/Vinicius_Silva_CV_EN.pdf');
+    assert.equal(harness.elementsById['hero-cv-link'].getAttribute('download'), 'Vinicius_Silva_CV_EN.pdf');
 });
 
 test('Language Toggle to PT updates DOM in <50ms without page reload', () => {
@@ -491,6 +508,10 @@ test('Language Toggle to PT updates DOM in <50ms without page reload', () => {
         'Mailto must contain localized Portuguese subject'
     );
     assert.ok(href.includes('Ol%C3%A1%20Vinicius'), 'Mailto must contain localized Portuguese body');
+
+    // Verify CV download link adapted to Portuguese
+    assert.equal(harness.elementsById['hero-cv-link'].getAttribute('href'), 'assets/Vinicius_Silva_CV_PT.pdf');
+    assert.equal(harness.elementsById['hero-cv-link'].getAttribute('download'), 'Vinicius_Silva_CV_PT.pdf');
 });
 
 test('Mobile language toggle button click interaction switches language seamlessly', () => {
@@ -564,6 +585,9 @@ test('Language Toggle from PT back to EN reverts all copy cleanly', () => {
     assert.equal(harness.elementsById['language-toggle'].getAttribute('aria-label'), 'Switch language to Portuguese');
     assert.equal(harness.elementsById['mobile-language-toggle'].textContent, 'PT');
     assert.equal(harness.elementsById['mobile-language-toggle'].getAttribute('aria-label'), 'Switch language to Portuguese');
+
+    assert.equal(harness.elementsById['hero-cv-link'].getAttribute('href'), 'assets/Vinicius_Silva_CV_EN.pdf');
+    assert.equal(harness.elementsById['hero-cv-link'].getAttribute('download'), 'Vinicius_Silva_CV_EN.pdf');
 
     const href = harness.elementsById['hero-mailto'].getAttribute('href');
     assert.ok(href.includes('Software%20Engineering%20Opportunity%20-%20Vinicius%20Rodrigues%20Silva'));
@@ -639,7 +663,7 @@ test('HTML strings update via innerHTML preserving strong tags, plain text via t
 
     const trustlyElem = harness.elementsById['trustly-bullet-1'];
     assert.ok(
-        trustlyElem.innerHTML.includes('<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+500 TPS</strong>'),
+        trustlyElem.innerHTML.includes('<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+$100B</strong>'),
         'HTML markup must be preserved via innerHTML when string contains HTML tags'
     );
     assert.ok(

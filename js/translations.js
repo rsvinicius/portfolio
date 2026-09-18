@@ -167,11 +167,10 @@ const translations = {
         trustlyCompany: "Trustly",
         trustlySector: "• Global Pay-by-Bank & Open Banking Leader",
         trustlyPeriod: "Jan 2026 – Present",
-        trustlyDesc: "Engineering mission-critical B2B billing engines and mass financial reporting systems processing multi-billion-dollar volume and high-throughput transaction flows with zero ledger discrepancy.",
-        trustlyBullet1: "Engineered and maintained high-criticality B2B merchant billing and financial settlement pipelines handling <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> and multi-billion-dollar transaction volume with zero ledger discrepancy.",
+        trustlyDesc: "Engineering mission-critical B2B billing engines and mass financial reporting systems, processing high-volume transaction records and automated settlement pipelines.",
+        trustlyBullet1: "Engineered and maintained B2B merchant billing and financial settlement pipelines processing multi-billion-dollar transaction volume (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+$100B</strong>), ensuring financial data integrity through automated reconciliation and robust batch execution.",
         trustlyBullet2: "Designed mass reports and reconciliation pipelines using <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong>, extracting and consolidating millions of daily transaction records.",
         trustlyBullet3: "Engineered low-memory file streaming mechanisms for massive report payloads (PDF, ZIP, CSV), integrating <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong>, and automated secure delivery via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> to partner financial institutions.",
-        trustlyBullet4: "Developed across resilient polyglot JVM frameworks (Spring Boot, Javalite, Google Guice) and optimized complex <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong> queries and table locking, significantly reducing analytical execution times.",
 
         // Alelo Consolidated Experience
         aleloRole: "Software Engineer Progression (Intern to Mid-Level)",
@@ -188,7 +187,7 @@ const translations = {
         // Legacy compatibility mappings
         developer: "Software Engineer",
         developerCompany: "Trustly • Jan 2026 - Present",
-        developerDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume and +500 TPS with zero ledger discrepancy.",
+        developerDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume, ensuring financial data integrity through automated reconciliation.",
         juniorDeveloper: "Software Engineer Progression (Intern to Mid-Level)",
         juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
         juniorDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
@@ -409,11 +408,10 @@ const translations = {
         trustlyCompany: "Trustly",
         trustlySector: "• Líder Global em Pay-by-Bank & Open Banking",
         trustlyPeriod: "Jan 2026 – Presente",
-        trustlyDesc: "Desenvolvimento de sistemas de billing B2B de missão crítica e relatórios financeiros em larga escala, processando volumes multibilionários e fluxos transacionais de alta vazão com consistência contábil.",
-        trustlyBullet1: "Engenharia e sustentação de pipelines de faturamento B2B e liquidação financeira de merchants lidando com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500 TPS</strong> e volumes bilionários com tolerância zero a divergências contábeis.",
-        trustlyBullet2: "Arquitetura de pipelines assíncronos e batch em larga escala com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> e <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong> para extração, consolidação e reconciliação contábil de milhões de eventos transacionais diários.",
+        trustlyDesc: "Desenvolvimento de sistemas de faturamento B2B de missão crítica e relatórios financeiros em larga escala, processando volumes multibilionários e pipelines automatizados de liquidação.",
+        trustlyBullet1: "Engenharia e sustentação de pipelines de faturamento B2B e liquidação financeira processando volume multibilionário (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+$100B</strong>), garantindo a integridade dos dados contábeis por meio de conciliação automatizada e processamento batch resiliente.",
+        trustlyBullet2: "Arquitetura de pipelines batch em larga escala com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> e <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong> para extração, consolidação e conciliação contábil de milhões de registros transacionais diários.",
         trustlyBullet3: "Implementação de streaming de arquivos com baixo consumo de memória para relatórios pesados (PDF, ZIP, CSV), integrando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong> e despacho seguro automatizado via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> para bancos parceiros.",
-        trustlyBullet4: "Desenvolvimento em arquiteturas resilientes com JVM poliglota (Spring Boot, Javalite, Google Guice) e refatoração com tuning de consultas complexas em <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">PostgreSQL</strong>, reduzindo contenção de locks e tempos analíticos.",
 
         // Alelo Consolidated Experience
         aleloRole: "Trajetória em Engenharia de Software (Estágio a Pleno)",
@@ -430,7 +428,7 @@ const translations = {
         // Legacy compatibility mappings
         developer: "Engenheiro de Software",
         developerCompany: "Trustly • Jan 2026 - Presente",
-        developerDesc: "Desenvolvimento de sistemas de billing B2B de missão crítica e relatórios financeiros em larga escala, processando mais de $100B em volume transacional e +500 TPS com rigorosa consistência contábil.",
+        developerDesc: "Desenvolvimento de sistemas de faturamento B2B de missão crítica e relatórios financeiros processando volumes de +$100B, garantindo a integridade dos dados contábeis por meio de conciliação automatizada.",
         juniorDeveloper: "Trajetória em Engenharia de Software (Estágio a Pleno)",
         juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
         juniorDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
