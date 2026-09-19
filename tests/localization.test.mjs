@@ -12,10 +12,6 @@ const projectRoot = path.resolve(__dirname, '..');
 const translationsModule = await import(path.join(projectRoot, 'js/translations.js'));
 const translations = translationsModule.default;
 
-// Load antifraud calculator
-const calculatorModule = await import(path.join(projectRoot, 'js/antifraud-calculator.js'));
-const calculateRisk = calculatorModule.calculateRisk;
-
 // ---------------------------------------------------------------------------
 // 1. Dictionary Key Parity Tests
 // ---------------------------------------------------------------------------
@@ -66,7 +62,6 @@ test('all HTML data-i18n and data-i18n-placeholder references exist in dictionar
         'components/hero.html',
         'components/experience.html',
         'components/projects.html',
-        'components/opensource.html',
         'components/skills.html',
         'components/education.html',
         'components/contact.html',
@@ -137,32 +132,9 @@ test('all HTML data-i18n and data-i18n-placeholder references exist in dictionar
 });
 
 // ---------------------------------------------------------------------------
-// 3. Dynamic Script Keys Coverage Tests
+// 3. Dynamic Script Keys & Section Index Coverage Tests
 // ---------------------------------------------------------------------------
-test('dynamic script keys and Antifraud decision badges adhere to spec', () => {
-    // Dynamic Antifraud decision badges per story spec lines 30, 45, 70:
-    // APPROVED / APROVADO, FLAGGED / SINALIZADO, REJECTED / REJEITADO
-    assert.equal(translations.en.antifraudStatusApproved, 'APPROVED');
-    assert.equal(translations.pt.antifraudStatusApproved, 'APROVADO');
-
-    assert.ok(
-        translations.en.antifraudStatusFlagged === 'FLAGGED / REVIEW' ||
-        translations.en.antifraudStatusFlagged === 'FLAGGED',
-        `en.antifraudStatusFlagged must be FLAGGED / REVIEW or FLAGGED, got ${translations.en.antifraudStatusFlagged}`
-    );
-    assert.equal(translations.pt.antifraudStatusFlagged, 'SINALIZADO');
-
-    assert.equal(translations.en.antifraudStatusRejected, 'REJECTED');
-    assert.equal(translations.pt.antifraudStatusRejected, 'REJEITADO');
-
-    // Dynamic velocity alerts
-    assert.equal(translations.en.antifraudSupersonicAlert, 'Supersonic Geo-Jump');
-    assert.equal(translations.pt.antifraudSupersonicAlert, 'Salto Geográfico Supersônico');
-    assert.equal(translations.en.antifraudImpossibleSpeedAlert, 'High Speed Geo-Jump');
-    assert.equal(translations.pt.antifraudImpossibleSpeedAlert, 'Salto em Alta Velocidade');
-    assert.equal(translations.en.antifraudNormalSpeed, 'Normal Transit');
-    assert.equal(translations.pt.antifraudNormalSpeed, 'Trânsito Normal');
-
+test('dynamic script keys and section indices adhere to spec', () => {
     // Dynamic contact mailto strings
     assert.equal(translations.en.contactEmailSubject, 'Software Engineering Opportunity - Vinicius Rodrigues Silva');
     assert.equal(translations.pt.contactEmailSubject, 'Oportunidade Engenharia de Software - Vinicius Rodrigues Silva');
@@ -176,6 +148,22 @@ test('dynamic script keys and Antifraud decision badges adhere to spec', () => {
     assert.equal(translations.pt.switchToPortuguese, 'PT');
     assert.ok(translations.en.switchToPortugueseAria);
     assert.ok(translations.pt.switchToEnglishAria);
+
+    // Section indices
+    assert.equal(translations.en.experienceSectionIndex, '01. EXPERIENCE');
+    assert.equal(translations.pt.experienceSectionIndex, '01. EXPERIÊNCIA');
+    assert.equal(translations.en.projectsSectionIndex, '02. PROJECTS');
+    assert.equal(translations.pt.projectsSectionIndex, '02. PROJETOS');
+    assert.equal(translations.en.skillsSectionIndex, '03. SKILLS');
+    assert.equal(translations.pt.skillsSectionIndex, '03. HABILIDADES');
+    assert.equal(translations.en.educationSectionIndex, '04. EDUCATION');
+    assert.equal(translations.pt.educationSectionIndex, '04. FORMAÇÃO');
+    assert.equal(translations.en.contactSectionIndex, '05. CONTACT');
+    assert.equal(translations.pt.contactSectionIndex, '05. CONTATO');
+
+    // Section title
+    assert.equal(translations.en.featuredProjects, 'Featured Projects');
+    assert.equal(translations.pt.featuredProjects, 'Projetos em Destaque');
 });
 
 // ---------------------------------------------------------------------------
@@ -285,7 +273,6 @@ function createLocalizationHarness(initialLocalStorage = {}) {
     // Navigation links
     addElement('nav-exp', 'a', { 'data-i18n': 'experience', href: '#experience' }, 'Experience');
     addElement('nav-proj', 'a', { 'data-i18n': 'projects', href: '#projects' }, 'Projects');
-    addElement('nav-open', 'a', { 'data-i18n': 'opensource', href: '#opensource' }, 'Open Source');
 
     // Hero section elements
     addElement('hero-role', 'h2', { 'data-i18n': 'heroRole' }, 'Software Engineer • Backend');
@@ -297,59 +284,18 @@ function createLocalizationHarness(initialLocalStorage = {}) {
         'Engineered and maintained B2B merchant billing and financial settlement pipelines processing multi-billion-dollar transaction volume (<strong class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">+$100B</strong>), ensuring financial data integrity through automated reconciliation and robust batch execution.'
     );
 
-    // Open source category badges
+    // Unified Project showcase cards elements
+    addElement('antifraud-role', 'span', { 'data-i18n': 'antifraudRole' }, 'Production System');
+    addElement('antifraud-cat', 'span', { 'data-i18n': 'antifraudCategory' }, 'Backend Security');
+    addElement('antifraud-title', 'h3', { 'data-i18n': 'antifraudTitle' }, 'Antifraud System');
+
+    addElement('mockk-role', 'span', { 'data-i18n': 'mockkRole' }, 'Contributor');
     addElement('mockk-cat', 'span', { 'data-i18n': 'mockkCategory' }, 'Testing Library');
-    addElement('dotme-cat', 'span', { 'data-i18n': 'dotmeCategory' }, 'CLI Tool');
+    addElement('mockk-title', 'h3', { 'data-i18n': 'mockkTitle' }, 'MockK');
 
-    // Antifraud Sandbox elements
-    const amountSlider = addElement('antifraud-amount', 'input', {
-        type: 'range',
-        min: '10',
-        max: '10000',
-        step: '10',
-        value: '450',
-        'aria-valuetext': '$450.00'
-    });
-    amountSlider.value = '450';
-
-    const deltaSlider = addElement('antifraud-delta', 'input', {
-        type: 'range',
-        min: '1',
-        max: '300',
-        step: '1',
-        value: '15',
-        'aria-valuetext': '15 min'
-    });
-    deltaSlider.value = '15';
-
-    const distanceSlider = addElement('antifraud-distance', 'input', {
-        type: 'range',
-        min: '0',
-        max: '3000',
-        step: '10',
-        value: '850',
-        'aria-valuetext': '850 km'
-    });
-    distanceSlider.value = '850';
-
-    const amountVal = addElement('antifraud-amount-val', 'span', {}, '$450.00');
-    const deltaVal = addElement('antifraud-delta-val', 'span', {}, '15 min');
-    const distanceVal = addElement('antifraud-distance-val', 'span', {}, '850 km');
-
-    const scoreNum = addElement('antifraud-score-num', 'span', {}, '73.4');
-    const scoreBar = addElement('antifraud-score-bar', 'div', {
-        role: 'meter',
-        'aria-valuenow': '73.4',
-        'aria-valuetext': '73.4 / 100'
-    });
-    const statusBadge = addElement('antifraud-status-badge', 'div', {
-        'data-i18n': 'antifraudStatusFlagged'
-    }, 'FLAGGED / REVIEW');
-
-    const velocityVal = addElement('antifraud-velocity-val', 'span', {}, '3,400 km/h (Supersonic Geo-Jump)');
-    const pvelVal = addElement('antifraud-pvel-val', 'span', {}, '37.5 / 50');
-    const pgeoVal = addElement('antifraud-pgeo-val', 'span', {}, '50.0 / 50');
-    const pamountVal = addElement('antifraud-pamount-val', 'span', {}, '1.8 / 30');
+    addElement('dotme-role', 'span', { 'data-i18n': 'dotmeRole' }, 'Creator & Maintainer');
+    addElement('dotme-cat', 'span', { 'data-i18n': 'dotmeCategory' }, 'Developer CLI');
+    addElement('dotme-title', 'h3', { 'data-i18n': 'dotmeTitle' }, 'dotme');
 
     // Mailto link
     const mailtoLink = addElement('hero-mailto', 'a', {
@@ -401,32 +347,32 @@ function createLocalizationHarness(initialLocalStorage = {}) {
         location: {
             reload: () => { reloadsTriggered++; }
         },
-        updateAntifraudSandbox: null,
         initializeLanguageToggle: null,
         updateLanguage: null,
         updateMailtoLinks: null,
+        updateCvLinks: null,
         updateToggleText: null
     };
 
     // Load production functions from js/script.js into our mock sandbox
     const scriptContent = fs.readFileSync(path.join(projectRoot, 'js/script.js'), 'utf-8');
 
-    // Extract initializeLanguageToggle, updateLanguage, updateMailtoLinks, updateToggleText, initializeAntifraudSandbox
+    // Extract initializeLanguageToggle, updateLanguage, updateMailtoLinks, updateCvLinks, updateToggleText
     const runner = new Function(
-        'window', 'document', 'localStorage', 'calculateRiskModule',
+        'window', 'document', 'localStorage',
         `
         ${scriptContent}
         return {
             initializeLanguageToggle,
             updateLanguage,
             updateMailtoLinks,
-            updateToggleText,
-            initializeAntifraudSandbox
+            updateCvLinks,
+            updateToggleText
         };
         `
     );
 
-    const fns = runner(windowMock, documentMock, localStorageMock, { calculateRisk });
+    const fns = runner(windowMock, documentMock, localStorageMock);
 
     return {
         store,
@@ -494,6 +440,8 @@ test('Language Toggle to PT updates DOM in <50ms without page reload', () => {
     assert.equal(harness.elementsById['hero-cv'].textContent, 'Baixar CV ATS (PDF)');
     assert.equal(harness.elementsById['mockk-cat'].textContent, 'Biblioteca de Testes');
     assert.equal(harness.elementsById['dotme-cat'].textContent, 'Ferramenta CLI');
+    assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Segurança Backend');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Sistema em Produção');
 
     // Verify both desktop and mobile buttons switch indicator to EN
     assert.equal(harness.elementsById['language-toggle'].textContent, 'EN');
@@ -561,8 +509,8 @@ test('Global window exports are verified', () => {
     assert.equal(typeof harness.windowMock.initializeLanguageToggle, 'function', 'window.initializeLanguageToggle must be exported');
     assert.equal(typeof harness.windowMock.updateLanguage, 'function', 'window.updateLanguage must be exported');
     assert.equal(typeof harness.windowMock.updateMailtoLinks, 'function', 'window.updateMailtoLinks must be exported');
+    assert.equal(typeof harness.windowMock.updateCvLinks, 'function', 'window.updateCvLinks must be exported');
     assert.equal(typeof harness.windowMock.updateToggleText, 'function', 'window.updateToggleText must be exported');
-    assert.equal(typeof harness.windowMock.initializeDotmeTerminal, 'function', 'window.initializeDotmeTerminal must be exported');
 });
 
 test('Language Toggle from PT back to EN reverts all copy cleanly', () => {
@@ -593,65 +541,38 @@ test('Language Toggle from PT back to EN reverts all copy cleanly', () => {
     assert.ok(href.includes('Software%20Engineering%20Opportunity%20-%20Vinicius%20Rodrigues%20Silva'));
 });
 
-test('Antifraud sandbox simulation displays localized badges and velocity alerts in PT', () => {
+test('Unified showcase cards localize cleanly between EN and PT', () => {
     const harness = createLocalizationHarness();
     harness.fns.initializeLanguageToggle(translations);
-    harness.fns.initializeAntifraudSandbox(translations, calculateRisk);
 
-    // Switch to Portuguese
+    // Initial state is EN
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Production System');
+    assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Backend Security');
+    assert.equal(harness.elementsById['antifraud-title'].textContent, 'Antifraud System');
+    assert.equal(harness.elementsById['mockk-role'].textContent, 'Contributor');
+    assert.equal(harness.elementsById['mockk-title'].textContent, 'MockK');
+    assert.equal(harness.elementsById['dotme-role'].textContent, 'Creator & Maintainer');
+    assert.equal(harness.elementsById['dotme-title'].textContent, 'dotme');
+
+    // Switch to PT
     harness.elementsById['language-toggle'].dispatchEvent('click');
     assert.equal(harness.documentMock.documentElement.lang, 'pt');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Sistema em Produção');
+    assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Segurança Backend');
+    assert.equal(harness.elementsById['antifraud-title'].textContent, 'Sistema Antifraude');
+    assert.equal(harness.elementsById['mockk-role'].textContent, 'Contribuidor');
+    assert.equal(harness.elementsById['mockk-title'].textContent, 'MockK');
+    assert.equal(harness.elementsById['dotme-role'].textContent, 'Criador & Mantenedor');
+    assert.equal(harness.elementsById['dotme-title'].textContent, 'dotme');
 
-    // Initial default state: 450, 15, 850 -> FLAGGED tier
-    // In PT mode, must display "SINALIZADO"
-    assert.equal(
-        harness.elementsById['antifraud-status-badge'].textContent,
-        'SINALIZADO',
-        'Default initial state in PT mode must display "SINALIZADO"'
-    );
-    assert.ok(
-        harness.elementsById['antifraud-velocity-val'].textContent.includes('Salto Geográfico Supersônico'),
-        'Supersonic velocity must be translated in PT'
-    );
-
-    // Test Scenario A: Low risk -> APPROVED -> "APROVADO" in PT
-    harness.elementsById['antifraud-amount'].value = '50';
-    harness.elementsById['antifraud-delta'].value = '120';
-    harness.elementsById['antifraud-distance'].value = '10';
-    harness.elementsById['antifraud-amount'].dispatchEvent('input');
-
-    assert.equal(
-        harness.elementsById['antifraud-status-badge'].textContent,
-        'APROVADO',
-        'Low-risk simulation in PT mode must display "APROVADO"'
-    );
-    assert.ok(
-        harness.elementsById['antifraud-velocity-val'].textContent.includes('Trânsito Normal'),
-        'Normal speed transit must be translated in PT'
-    );
-
-    // Test Scenario B: High speed jump (e.g. 900 km/h) -> "Salto em Alta Velocidade"
-    harness.elementsById['antifraud-amount'].value = '100';
-    harness.elementsById['antifraud-delta'].value = '60';
-    harness.elementsById['antifraud-distance'].value = '900'; // 900 km/h
-    harness.elementsById['antifraud-amount'].dispatchEvent('input');
-
-    assert.ok(
-        harness.elementsById['antifraud-velocity-val'].textContent.includes('Salto em Alta Velocidade'),
-        'High speed jump must display "Salto em Alta Velocidade" in PT'
-    );
-
-    // Test Scenario C: Extreme risk -> REJECTED -> "REJEITADO" in PT
-    harness.elementsById['antifraud-amount'].value = '8000';
-    harness.elementsById['antifraud-delta'].value = '5';
-    harness.elementsById['antifraud-distance'].value = '2500';
-    harness.elementsById['antifraud-amount'].dispatchEvent('input');
-
-    assert.equal(
-        harness.elementsById['antifraud-status-badge'].textContent,
-        'REJEITADO',
-        'Extreme risk simulation in PT mode must display "REJEITADO"'
-    );
+    // Switch back to EN
+    harness.elementsById['language-toggle'].dispatchEvent('click');
+    assert.equal(harness.documentMock.documentElement.lang, 'en');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Production System');
+    assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Backend Security');
+    assert.equal(harness.elementsById['antifraud-title'].textContent, 'Antifraud System');
+    assert.equal(harness.elementsById['mockk-title'].textContent, 'MockK');
+    assert.equal(harness.elementsById['dotme-title'].textContent, 'dotme');
 });
 
 test('HTML strings update via innerHTML preserving strong tags, plain text via textContent', () => {
@@ -671,3 +592,66 @@ test('HTML strings update via innerHTML preserving strong tags, plain text via t
         'Portuguese text must be rendered inside HTML-preserving node'
     );
 });
+
+test('allComponents barrier in js/script.js exactly matches mounted containers in index.html', () => {
+    const indexHtml = fs.readFileSync(path.join(projectRoot, 'index.html'), 'utf-8');
+    const scriptJs = fs.readFileSync(path.join(projectRoot, 'js/script.js'), 'utf-8');
+
+    // Extract mounted container IDs in index.html
+    const mountedContainers = [];
+    for (const match of indexHtml.matchAll(/<div\s+id="([^"]+-container)"/g)) {
+        mountedContainers.push(match[1]);
+    }
+
+    // Extract allComponents barrier in js/script.js
+    const arrayMatch = scriptJs.match(/const\s+allComponents\s*=\s*\[([\s\S]*?)\];/);
+    assert.ok(arrayMatch, 'allComponents array must exist in js/script.js');
+
+    const barrierComponents = Array.from(arrayMatch[1].matchAll(/['"]([^'"]+)['"]/g)).map(m => m[1]);
+
+    assert.ok(mountedContainers.length > 0, 'index.html must have mounted containers');
+    assert.deepEqual(
+        barrierComponents,
+        mountedContainers,
+        `allComponents barrier array (${barrierComponents.join(', ')}) must match index.html containers (${mountedContainers.join(', ')})`
+    );
+});
+
+test('projects.html contains required production data-i18n attributes for all 3 cards', () => {
+    const projectsHtml = fs.readFileSync(path.join(projectRoot, 'components/projects.html'), 'utf-8');
+    const requiredKeys = [
+        'projectsSectionIndex',
+        'featuredProjects',
+        'projectsSubtitle',
+        'antifraudRole',
+        'antifraudCategory',
+        'antifraudTitle',
+        'antifraudDesc',
+        'antifraudRepoLink',
+        'mockkRole',
+        'mockkCategory',
+        'mockkTitle',
+        'mockkDesc',
+        'mockkLinkText',
+        'mockkReleaseText',
+        'dotmeRole',
+        'dotmeCategory',
+        'dotmeTitle',
+        'dotmeDesc',
+        'dotmeLinkText',
+        'viewAllProjects'
+    ];
+
+    for (const key of requiredKeys) {
+        const regex = new RegExp(`data-i18n=["']${key}["']`);
+        assert.ok(
+            regex.test(projectsHtml),
+            `components/projects.html must contain data-i18n="${key}" attribute`
+        );
+        assert.ok(
+            translations.en[key] && translations.pt[key],
+            `Key "${key}" must exist in both translations.en and translations.pt`
+        );
+    }
+});
+

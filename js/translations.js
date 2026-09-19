@@ -5,7 +5,6 @@ const translations = {
         skills: "Skills",
         experience: "Experience",
         projects: "Projects",
-        opensource: "Open Source",
         education: "Education",
         contact: "Contact",
         
@@ -23,7 +22,6 @@ const translations = {
         sendDirectEmail: "Send Direct Email",
         copyEmail: "Copy Email",
         emailCopied: "Email copied to clipboard",
-        contactSectionIndex: "06. CONTACT",
         resumeLabel: "Resume",
         contactConnect: "Connect",
         contactInspect: "Inspect Code",
@@ -50,60 +48,72 @@ const translations = {
         aboutText2: "My experience spans across developing REST APIs, implementing authentication systems, creating microservices architectures, and working with various databases. I am driven by clean code practices and continuously strive to improve my skills and stay updated with the latest technologies.",
         aboutText3: "When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.",
         
-        // Projects Section (03. PROJECTS)
+        // Experience Section (01. EXPERIENCE)
+        experienceSectionIndex: "01. EXPERIENCE",
+        workExperience: "Career Narrative & Enterprise Impact",
+        experienceSubtitle: "High-throughput JVM architectures, financial settlement pipelines, and large-scale distributed systems.",
+        
+        // Trustly Experience
+        trustlyRole: "Software Engineer",
+        trustlyCompany: "Trustly",
+        trustlySector: "• Global Pay-by-Bank & Open Banking Leader",
+        trustlyPeriod: "Jan 2026 – Present",
+        trustlyDesc: "Engineering mission-critical B2B billing engines and mass financial reporting systems, processing high-volume transaction records and automated settlement pipelines.",
+        trustlyBullet1: "Engineered and maintained B2B merchant billing and financial settlement pipelines processing multi-billion-dollar transaction volume (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+$100B</strong>), ensuring financial data integrity through automated reconciliation and robust batch execution.",
+        trustlyBullet2: "Designed mass reports and reconciliation pipelines using <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong>, extracting and consolidating millions of daily transaction records.",
+        trustlyBullet3: "Engineered low-memory file streaming mechanisms for massive report payloads (PDF, ZIP, CSV), integrating <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong>, and automated secure delivery via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> to partner financial institutions.",
+
+        // Alelo Consolidated Experience
+        aleloRole: "Software Engineer Progression (Intern to Mid-Level)",
+        aleloCompany: "Alelo Brasil",
+        aleloSector: "• Corporate Benefits & Payments (Bradesco & Banco do Brasil)",
+        aleloPeriod: "May 2021 – Jan 2026 (4 yrs 9 mos)",
+        aleloDesc: "4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
+        aleloBullet1: "Scaled core card transaction processing and benefits microservices in Java/Kotlin (Spring Boot), implementing circuit breakers, distributed caching (Redis), and connection pooling to sustain <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% availability</strong> during month-end payday traffic spikes (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mo</strong> across 10M+ users).",
+        aleloBullet2: "Architected decoupled asynchronous microservices utilizing <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong>, refactoring high-latency synchronous calls to eliminate throughput bottlenecks during peak retail shopping hours.",
+        aleloBullet3: "Engineered secure authentication and authorization flows (OAuth2, JWT, RBAC), ensuring transactional integrity and zero-trust identity verification across client endpoints.",
+        aleloBullet4: "Conducted zero-downtime database schema refactoring and data migrations on high-volume relational and NoSQL databases (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Oracle</strong>, MongoDB) across tables with hundreds of millions of records.",
+        aleloBullet5: "Led technical code reviews, fostered clean architecture standards, and mentored junior engineers, substantially increasing automated unit and integration test coverage.",
+
+        // Legacy experience compatibility mappings
+        developer: "Software Engineer",
+        developerCompany: "Trustly • Jan 2026 - Present",
+        developerDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume, ensuring financial data integrity through automated reconciliation.",
+        juniorDeveloper: "Software Engineer Progression (Intern to Mid-Level)",
+        juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
+        juniorDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
+
+        // Projects Section (02. PROJECTS)
         projectsSectionIndex: "02. PROJECTS",
-        featuredProjects: "Interactive Engineering Showcases",
-        projectsSubtitle: "Interactive showcases and developer tooling demonstrating backend systems architecture, real-time risk heuristics, and command-line automation.",
+        featuredProjects: "Featured Projects",
+        projectsSubtitle: "Production systems, developer tooling, and open-source contributions demonstrating backend architecture and distributed engineering.",
         viewAllProjects: "View All Repositories on GitHub",
         viewOnGitHub: "View on GitHub",
 
-        // Antifraud Sandbox Widget
-        antifraudTitle: "Antifraud Financial Security Engine • Real-Time Sandbox",
-        antifraudSubtitle: "Spring Boot REST API • Real-time visual sandbox of transaction risk heuristics & adaptive feedback",
-        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Architecture Context:</strong> The underlying project is a production-grade Spring Boot REST API featuring a 4-tier RBAC role model (Anonymous, Merchant, Admin, Support), IP/stolen card blocklists, regional correlation rules, and a dynamic feedback loop that tunes fraud limits (0.8 × limit ± 0.2 × amount). The widget below provides a real-time visual demonstration of the core heuristic risk evaluation.",
-        antifraudAmountLabel: "Transaction Amount",
-        antifraudDeltaLabel: "Time Delta Since Previous",
-        antifraudDistanceLabel: "Physical Distance Jump",
-        antifraudRiskIndex: "Calibrated Risk Index",
-        antifraudStatusApproved: "APPROVED",
-        antifraudStatusFlagged: "FLAGGED / REVIEW",
-        antifraudStatusRejected: "REJECTED",
-        antifraudTravelVelocity: "Travel Velocity",
-        antifraudVelocityPenalty: "Velocity Penalty (P_vel)",
-        antifraudGeoPenalty: "Geo-Jump Penalty (P_geo)",
-        antifraudAmountPenalty: "Amount Penalty (P_amount)",
-        antifraudDampingRatio: "Damping Ratio Applied",
-        antifraudDampingVal: "0.8 Heuristics + 0.2 Base",
-        antifraudSupersonicAlert: "Supersonic Geo-Jump",
-        antifraudImpossibleSpeedAlert: "High Speed Geo-Jump",
-        antifraudNormalSpeed: "Normal Transit",
+        // Card 1: Antifraud System
+        antifraudRole: "Production System",
+        antifraudCategory: "Backend Security",
+        antifraudTitle: "Antifraud System",
+        antifraudDesc: "Production-grade Spring Boot REST API featuring a 4-tier RBAC role model, IP/card blocklists, and dynamic feedback loops that automatically tune fraud limits.",
         antifraudRepoLink: "View Repository",
 
-        // dotme CLI Project Card
-        dotmeTitle: "dotme • Git-Based Dotfiles Manager CLI",
-        dotmeSubtitle: "Autonomous Typewriter Loop • Pattern-Based Dotfile Distribution",
-        dotmeSrSummary: "Demonstration of dotme CLI: an autonomous terminal session executing git clone, pattern-based filtering with include and exclude rules, and dotfile distribution with summary metrics.",
-
-        // Open Source Section
-        opensourceSectionIndex: "03. OPEN SOURCE",
-        opensourceTitle: "Open Source & Community Ecosystem",
-        opensourceSubtitle: "Verified contributions to global open-source libraries, developer productivity CLI tools, and automation frameworks.",
+        // Card 2: MockK
         mockkRole: "Contributor",
         mockkCategory: "Testing Library",
+        mockkTitle: "MockK",
         mockkDesc: "Core unit testing and mocking library for Kotlin. Fixed state leak in verification mechanisms ensuring hermetic test isolation.",
         mockkLinkText: "View Repository",
         mockkReleaseText: "v1.14.0 Release Notes",
+
+        // Card 3: dotme
         dotmeRole: "Creator & Maintainer",
-        dotmeCategory: "CLI Tool",
+        dotmeCategory: "Developer CLI",
+        dotmeTitle: "dotme",
         dotmeDesc: "Declarative dotfiles management CLI tool featuring atomic symlink reconciliation, pattern filtering, and syntax validation.",
         dotmeLinkText: "View Repository",
-        n8nDocsRole: "Contributor",
-        n8nDocsCategory: "Docs / Ecosystem",
-        n8nDocsDesc: "Workflow automation documentation and technical integrations for the open-source n8n workflow platform.",
-        n8nDocsLinkText: "View Repository",
 
-        // Skills Section (4-Layer Architectural Taxonomy)
-        skillsSectionIndex: "04. SKILLS",
+        // Skills Section (03. SKILLS)
+        skillsSectionIndex: "03. SKILLS",
         technicalSkills: "Architectural Competencies & Technical Skills",
         skillsSubtitle: "Categorized engineering competencies structured across 4 architectural layers of modern software systems.",
         
@@ -144,7 +154,7 @@ const translations = {
         aiAugmentedAgentic: "Agentic Orchestration",
         aiAugmentedTooling: "Modern Development Tooling",
 
-        // Legacy compatibility
+        // Legacy skills compatibility
         backendDev: "Backend Development",
         databases: "Databases",
         devOpsTools: "DevOps & Tools",
@@ -156,44 +166,9 @@ const translations = {
         softSkills3: "Agile Methodologies",
         softSkills4: "Time Management",
         softSkills5: "Continuous Learning",
-        
-        // Experience Section
-        experienceSectionIndex: "01. EXPERIENCE",
-        workExperience: "Career Narrative & Enterprise Impact",
-        experienceSubtitle: "High-throughput JVM architectures, financial settlement pipelines, and large-scale distributed systems.",
-        
-        // Trustly Experience
-        trustlyRole: "Software Engineer",
-        trustlyCompany: "Trustly",
-        trustlySector: "• Global Pay-by-Bank & Open Banking Leader",
-        trustlyPeriod: "Jan 2026 – Present",
-        trustlyDesc: "Engineering mission-critical B2B billing engines and mass financial reporting systems, processing high-volume transaction records and automated settlement pipelines.",
-        trustlyBullet1: "Engineered and maintained B2B merchant billing and financial settlement pipelines processing multi-billion-dollar transaction volume (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+$100B</strong>), ensuring financial data integrity through automated reconciliation and robust batch execution.",
-        trustlyBullet2: "Designed mass reports and reconciliation pipelines using <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong>, extracting and consolidating millions of daily transaction records.",
-        trustlyBullet3: "Engineered low-memory file streaming mechanisms for massive report payloads (PDF, ZIP, CSV), integrating <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong>, and automated secure delivery via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> to partner financial institutions.",
 
-        // Alelo Consolidated Experience
-        aleloRole: "Software Engineer Progression (Intern to Mid-Level)",
-        aleloCompany: "Alelo Brasil",
-        aleloSector: "• Corporate Benefits & Payments (Bradesco & Banco do Brasil)",
-        aleloPeriod: "May 2021 – Jan 2026 (4 yrs 9 mos)",
-        aleloDesc: "4+ year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
-        aleloBullet1: "Scaled core card transaction processing and benefits microservices in Java/Kotlin (Spring Boot), implementing circuit breakers, distributed caching (Redis), and connection pooling to sustain <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% availability</strong> during month-end payday traffic spikes (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mo</strong> across 10M+ users).",
-        aleloBullet2: "Architected decoupled asynchronous microservices utilizing <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong> and <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong>, refactoring high-latency synchronous calls to eliminate throughput bottlenecks during peak retail shopping hours.",
-        aleloBullet3: "Engineered secure authentication and authorization flows (OAuth2, JWT, RBAC), ensuring transactional integrity and zero-trust identity verification across client endpoints.",
-        aleloBullet4: "Conducted zero-downtime database schema refactoring and data migrations on high-volume relational and NoSQL databases (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Oracle</strong>, MongoDB) across tables with hundreds of millions of records.",
-        aleloBullet5: "Led technical code reviews, fostered clean architecture standards, and mentored junior engineers, substantially increasing automated unit and integration test coverage.",
-
-        // Legacy compatibility mappings
-        developer: "Software Engineer",
-        developerCompany: "Trustly • Jan 2026 - Present",
-        developerDesc: "Architecting mission-critical B2B billing engines and mass financial reporting systems processing +$100B volume, ensuring financial data integrity through automated reconciliation.",
-        juniorDeveloper: "Software Engineer Progression (Intern to Mid-Level)",
-        juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
-        juniorDesc: "Consolidated ~5-year engineering progression driving core payments, benefits card processing, and distributed architecture across 150k enterprise clients.",
-
-        // Education Section
-        educationSectionIndex: "05. EDUCATION",
+        // Education Section (04. EDUCATION)
+        educationSectionIndex: "04. EDUCATION",
         education: "Education",
         educationTitle: "Academic Credentials",
         educationSubtitle: "Formal higher education, concluded postgraduate specializations, and verified engineering degrees.",
@@ -221,7 +196,8 @@ const translations = {
         certification3: "AWS Certified Developer - Associate",
         certification4: "Docker Certified Associate",
         
-        // Contact Section Form Keys
+        // Contact Section (05. CONTACT)
+        contactSectionIndex: "05. CONTACT",
         name: "Name",
         email: "Email",
         message: "Message",
@@ -246,7 +222,6 @@ const translations = {
         skills: "Habilidades",
         experience: "Experiência",
         projects: "Projetos",
-        opensource: "Open Source",
         education: "Formação",
         contact: "Contato",
         
@@ -264,7 +239,6 @@ const translations = {
         sendDirectEmail: "Enviar E-mail Direto",
         copyEmail: "Copiar E-mail",
         emailCopied: "E-mail copiado para a área de transferência",
-        contactSectionIndex: "06. CONTATO",
         resumeLabel: "Currículo",
         contactConnect: "Conectar",
         contactInspect: "Inspecionar Código",
@@ -291,60 +265,72 @@ const translations = {
         aboutText2: "Minha experiência se estende pelo desenvolvimento de APIs REST, implementação de sistemas de autenticação, criação de arquiteturas de microsserviços e trabalho com diversos bancos de dados. Sou guiado por práticas de código limpo e busco continuamente melhorar minhas habilidades e me manter atualizado com as mais recentes tecnologias.",
         aboutText3: "Quando não estou codificando, gosto de explorar novas tecnologias, contribuir para projetos open-source e compartilhar conhecimento com a comunidade de desenvolvedores.",
         
+        // Experience Section (01. EXPERIÊNCIA)
+        experienceSectionIndex: "01. EXPERIÊNCIA",
+        workExperience: "Trajetória Profissional & Escala Corporativa",
+        experienceSubtitle: "Arquiteturas JVM de alta vazão, liquidação financeira e sistemas distribuídos em larga escala.",
+        
+        // Trustly Experience
+        trustlyRole: "Engenheiro de Software",
+        trustlyCompany: "Trustly",
+        trustlySector: "• Líder Global em Pay-by-Bank & Open Banking",
+        trustlyPeriod: "Jan 2026 – Presente",
+        trustlyDesc: "Desenvolvimento de sistemas de faturamento B2B de missão crítica e relatórios financeiros em larga escala, processando volumes multibilionários e pipelines automatizados de liquidação.",
+        trustlyBullet1: "Engenharia e sustentação de pipelines de faturamento B2B e liquidação financeira processando volume multibilionário (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+$100B</strong>), garantindo a integridade dos dados contábeis por meio de conciliação automatizada e processamento batch resiliente.",
+        trustlyBullet2: "Arquitetura de pipelines batch em larga escala com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> e <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong> para extração, consolidação e conciliação contábil de milhões de registros transacionais diários.",
+        trustlyBullet3: "Implementação de streaming de arquivos com baixo consumo de memória para relatórios pesados (PDF, ZIP, CSV), integrando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong> e despacho seguro automatizado via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> para bancos parceiros.",
+
+        // Alelo Consolidated Experience
+        aleloRole: "Trajetória em Engenharia de Software (Estágio a Pleno)",
+        aleloCompany: "Alelo Brasil",
+        aleloSector: "• Benefícios Corporativos & Pagamentos (Bradesco & Banco do Brasil)",
+        aleloPeriod: "Mai 2021 – Jan 2026 (4 anos 9 meses)",
+        aleloDesc: "Mais de 4 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas corporativas.",
+        aleloBullet1: "Evolução da malha de microsserviços em Java/Kotlin (Spring Boot), implementando circuit breakers, cache distribuído (Redis) e pooling de conexões para sustentar <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% de disponibilidade</strong> sob picos de tráfego de fechamento de folha (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mês</strong> para 10M+ usuários).",
+        aleloBullet2: "Concepção de microsserviços desacoplados com mensageria assíncrona (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong>) e processamento em lote com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong>, refatorando chamadas síncronas para eliminar gargalos de throughput nos horários de pico comercial.",
+        aleloBullet3: "Implementação de fluxos de autenticação e autorização robustos (OAuth2, JWT, RBAC), garantindo estrita integridade transacional contra fraudes de identidade.",
+        aleloBullet4: "Refatoração e migração de esquemas sem indisponibilidade em bancos relacionais e não-relacionais (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Oracle</strong>, MongoDB) em tabelas com centenas de milhões de registros.",
+        aleloBullet5: "Liderança técnica em code reviews, disseminação de Clean Architecture e mentoria de desenvolvedores juniores, elevando expressivamente a cobertura de testes automatizados.",
+
+        // Legacy experience compatibility mappings
+        developer: "Engenheiro de Software",
+        developerCompany: "Trustly • Jan 2026 - Presente",
+        developerDesc: "Desenvolvimento de sistemas de faturamento B2B de missão crítica e relatórios financeiros processando volumes de +$100B, garantindo a integridade dos dados contábeis por meio de conciliação automatizada.",
+        juniorDeveloper: "Trajetória em Engenharia de Software (Estágio a Pleno)",
+        juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
+        juniorDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
+
         // Projects Section (02. PROJETOS)
         projectsSectionIndex: "02. PROJETOS",
-        featuredProjects: "Demonstrações Interativas de Engenharia",
-        projectsSubtitle: "Demonstrações interativas e ferramentas para desenvolvedores evidenciando arquitetura de sistemas backend, heurísticas de risco em tempo real e automação CLI.",
+        featuredProjects: "Projetos em Destaque",
+        projectsSubtitle: "Sistemas em produção, ferramentas para desenvolvedores e contribuições open-source evidenciando arquitetura backend e engenharia distribuída.",
         viewAllProjects: "Ver Todos os Repositórios no GitHub",
         viewOnGitHub: "Ver no GitHub",
 
-        // Antifraud Sandbox Widget
-        antifraudTitle: "Motor de Segurança Financeira Antifraude • Sandbox em Tempo Real",
-        antifraudSubtitle: "API REST em Spring Boot • Sandbox visual em tempo real de heurísticas de risco transacional e feedback adaptativo",
-        antifraudArchitectureNote: "<strong class=\"text-[#0F172A] dark:text-[#F9FAFB]\">Contexto Arquitetural:</strong> O projeto original é uma API REST de alto desempenho em Spring Boot com RBAC em 4 níveis (Anonymous, Merchant, Admin, Support), listas de bloqueio de IP/cartões roubados, correlação regional e loop de feedback adaptativo dinâmico (0.8 × limite ± 0.2 × valor). O widget abaixo é uma simulação visual em tempo real das heurísticas de avaliação de risco.",
-        antifraudAmountLabel: "Valor da Transação",
-        antifraudDeltaLabel: "Intervalo de Tempo da Anterior",
-        antifraudDistanceLabel: "Salto de Distância Física",
-        antifraudRiskIndex: "Índice de Risco Calibrado",
-        antifraudStatusApproved: "APROVADO",
-        antifraudStatusFlagged: "SINALIZADO",
-        antifraudStatusRejected: "REJEITADO",
-        antifraudTravelVelocity: "Velocidade de Deslocamento",
-        antifraudVelocityPenalty: "Penalidade de Velocidade (P_vel)",
-        antifraudGeoPenalty: "Penalidade Salto Geográfico (P_geo)",
-        antifraudAmountPenalty: "Penalidade de Valor (P_amount)",
-        antifraudDampingRatio: "Taxa de Amortecimento Aplicada",
-        antifraudDampingVal: "0.8 Heurísticas + 0.2 Base",
-        antifraudSupersonicAlert: "Salto Geográfico Supersônico",
-        antifraudImpossibleSpeedAlert: "Salto em Alta Velocidade",
-        antifraudNormalSpeed: "Trânsito Normal",
+        // Card 1: Antifraud System
+        antifraudRole: "Sistema em Produção",
+        antifraudCategory: "Segurança Backend",
+        antifraudTitle: "Sistema Antifraude",
+        antifraudDesc: "API REST em Spring Boot com modelo de RBAC em 4 níveis, listas de bloqueio de IP/cartões e loops de feedback dinâmico para calibração de limites de fraude.",
         antifraudRepoLink: "Ver Repositório",
 
-        // dotme CLI Project Card
-        dotmeTitle: "dotme • Gerenciador de Dotfiles Baseado em Git via CLI",
-        dotmeSubtitle: "Loop de Digitação Autônomo • Distribuição de Dotfiles por Padrões",
-        dotmeSrSummary: "Demonstração do dotme CLI: uma sessão autônoma de terminal executando git clone, filtragem por padrões com regras de inclusão e exclusão, e distribuição de dotfiles com métricas de resumo.",
-
-        // Open Source Section
-        opensourceSectionIndex: "03. CÓDIGO ABERTO",
-        opensourceTitle: "Ecossistema Open Source & Comunidade",
-        opensourceSubtitle: "Contribuições verificadas para bibliotecas open-source globais, ferramentas CLI de produtividade e frameworks de automação.",
+        // Card 2: MockK
         mockkRole: "Contribuidor",
         mockkCategory: "Biblioteca de Testes",
+        mockkTitle: "MockK",
         mockkDesc: "Biblioteca principal de testes unitários e mocking para Kotlin. Correção de vazamento de estado em verificações para isolamento hermético de testes.",
         mockkLinkText: "Ver Repositório",
         mockkReleaseText: "Notas de Release v1.14.0",
+
+        // Card 3: dotme
         dotmeRole: "Criador & Mantenedor",
         dotmeCategory: "Ferramenta CLI",
+        dotmeTitle: "dotme",
         dotmeDesc: "Ferramenta CLI declarativa para gestão de dotfiles com reconciliação atômica de symlinks, filtros de padrões e validação de sintaxe.",
         dotmeLinkText: "Ver Repositório",
-        n8nDocsRole: "Contribuidor",
-        n8nDocsCategory: "Documentação / Ecossistema",
-        n8nDocsDesc: "Documentação de automação de fluxos de trabalho e integrações técnicas para a plataforma open-source n8n.",
-        n8nDocsLinkText: "Ver Repositório",
 
-        // Skills Section (4-Layer Architectural Taxonomy)
-        skillsSectionIndex: "04. HABILIDADES",
+        // Skills Section (03. HABILIDADES)
+        skillsSectionIndex: "03. HABILIDADES",
         technicalSkills: "Competências Arquiteturais & Habilidades Técnicas",
         skillsSubtitle: "Competências de engenharia estruturadas em 4 camadas arquiteturais de sistemas modernos de software.",
         
@@ -385,7 +371,7 @@ const translations = {
         aiAugmentedAgentic: "Orquestração de Agentes",
         aiAugmentedTooling: "Ferramentas Modernas de Desenvolvimento",
 
-        // Legacy compatibility
+        // Legacy skills compatibility
         backendDev: "Desenvolvimento Backend",
         databases: "Bancos de Dados",
         devOpsTools: "DevOps & Ferramentas",
@@ -397,44 +383,9 @@ const translations = {
         softSkills3: "Metodologias Ágeis",
         softSkills4: "Gestão de Tempo",
         softSkills5: "Aprendizado Contínuo",
-        
-        // Experience Section
-        experienceSectionIndex: "01. EXPERIÊNCIA",
-        workExperience: "Trajetória Profissional & Escala Corporativa",
-        experienceSubtitle: "Arquiteturas JVM de alta vazão, liquidação financeira e sistemas distribuídos em larga escala.",
-        
-        // Trustly Experience
-        trustlyRole: "Engenheiro de Software",
-        trustlyCompany: "Trustly",
-        trustlySector: "• Líder Global em Pay-by-Bank & Open Banking",
-        trustlyPeriod: "Jan 2026 – Presente",
-        trustlyDesc: "Desenvolvimento de sistemas de faturamento B2B de missão crítica e relatórios financeiros em larga escala, processando volumes multibilionários e pipelines automatizados de liquidação.",
-        trustlyBullet1: "Engenharia e sustentação de pipelines de faturamento B2B e liquidação financeira processando volume multibilionário (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+$100B</strong>), garantindo a integridade dos dados contábeis por meio de conciliação automatizada e processamento batch resiliente.",
-        trustlyBullet2: "Arquitetura de pipelines batch em larga escala com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong> e <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Quartz Scheduler</strong> para extração, consolidação e conciliação contábil de milhões de registros transacionais diários.",
-        trustlyBullet3: "Implementação de streaming de arquivos com baixo consumo de memória para relatórios pesados (PDF, ZIP, CSV), integrando <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS S3</strong>, <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">AWS Lambda</strong> e despacho seguro automatizado via <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">SFTP</strong> para bancos parceiros.",
 
-        // Alelo Consolidated Experience
-        aleloRole: "Trajetória em Engenharia de Software (Estágio a Pleno)",
-        aleloCompany: "Alelo Brasil",
-        aleloSector: "• Benefícios Corporativos & Pagamentos (Bradesco & Banco do Brasil)",
-        aleloPeriod: "Mai 2021 – Jan 2026 (4 anos 9 meses)",
-        aleloDesc: "Mais de 4 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas corporativas.",
-        aleloBullet1: "Evolução da malha de microsserviços em Java/Kotlin (Spring Boot), implementando circuit breakers, cache distribuído (Redis) e pooling de conexões para sustentar <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">99.99% de disponibilidade</strong> sob picos de tráfego de fechamento de folha (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">+500M req/mês</strong> para 10M+ usuários).",
-        aleloBullet2: "Concepção de microsserviços desacoplados com mensageria assíncrona (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">ActiveMQ</strong>) e processamento em lote com <strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Spring Batch</strong>, refatorando chamadas síncronas para eliminar gargalos de throughput nos horários de pico comercial.",
-        aleloBullet3: "Implementação de fluxos de autenticação e autorização robustos (OAuth2, JWT, RBAC), garantindo estrita integridade transacional contra fraudes de identidade.",
-        aleloBullet4: "Refatoração e migração de esquemas sem indisponibilidade em bancos relacionais e não-relacionais (<strong class=\"font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]\">Oracle</strong>, MongoDB) em tabelas com centenas de milhões de registros.",
-        aleloBullet5: "Liderança técnica em code reviews, disseminação de Clean Architecture e mentoria de desenvolvedores juniores, elevando expressivamente a cobertura de testes automatizados.",
-
-        // Legacy compatibility mappings
-        developer: "Engenheiro de Software",
-        developerCompany: "Trustly • Jan 2026 - Presente",
-        developerDesc: "Desenvolvimento de sistemas de faturamento B2B de missão crítica e relatórios financeiros processando volumes de +$100B, garantindo a integridade dos dados contábeis por meio de conciliação automatizada.",
-        juniorDeveloper: "Trajetória em Engenharia de Software (Estágio a Pleno)",
-        juniorCompany: "Alelo Brasil • 2021 - Jan 2026",
-        juniorDesc: "~5 anos de trajetória consolidada sustentando microsserviços de alta escala, processamento transacional de cartões e contas digitais.",
-
-        // Education Section
-        educationSectionIndex: "05. FORMAÇÃO",
+        // Education Section (04. FORMAÇÃO)
+        educationSectionIndex: "04. FORMAÇÃO",
         education: "Formação",
         educationTitle: "Formação Acadêmica",
         educationSubtitle: "Formação acadêmica formal, pós-graduação concluída e diplomas verificados de engenharia.",
@@ -462,7 +413,8 @@ const translations = {
         certification3: "AWS Certified Developer - Associate",
         certification4: "Docker Certified Associate",
         
-        // Contact Section Form Keys
+        // Contact Section (05. CONTATO)
+        contactSectionIndex: "05. CONTATO",
         name: "Nome",
         email: "Email",
         message: "Mensagem",

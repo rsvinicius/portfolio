@@ -12,4 +12,6 @@
   evidence: Pre-existing unused template file from before executive portfolio modernization.
 - source_spec: `/home/vinicius/Documents/github/portfolio/_bmad-output/implementation-artifacts/spec-update-name-vinicius-rodrigues-silva.md`
   summary: Explicit filename on CV download attributes to reflect full name in downloaded file.
-  evidence: Currently hero.html and contact.html have bare download attributes relying on the underlying assets/Vinicius_Silva_Software_Engineer_CV.pdf filename.
+- source_spec: `/home/vinicius/Documents/github/portfolio/_bmad-output/implementation-artifacts/spec-portfolio-ui-anti-slop-refactoring.md`
+  summary: Clean up dormant initializeContactForm routine in script.js and unused form keys in translations.js.
+  evidence: Contact section uses mailto and copy-to-clipboard buttons rather than a submitted form, leaving form initialization and its localized string dictionary uncalled.

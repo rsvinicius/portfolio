@@ -1,220 +1,105 @@
 <!-- Projects Section -->
-<section id="projects" class="py-16 lg:py-24 bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F9FAFB] transition-colors duration-200">
+<section id="projects" class="scroll-mt-16 lg:scroll-mt-20 py-8 lg:py-12 bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F9FAFB] transition-colors duration-200">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         <!-- Section Header -->
         <div class="mb-12">
             <div class="flex items-center gap-2 mb-2">
                 <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]" data-i18n="projectsSectionIndex">02. PROJECTS</span>
             </div>
-            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="featuredProjects">Interactive Engineering Showcases</h2>
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="featuredProjects">Featured Projects</h2>
             <p class="text-base text-[#475569] dark:text-[#9CA3AF] mt-2 max-w-2xl" data-i18n="projectsSubtitle">
-                Interactive showcases and developer tooling demonstrating backend systems architecture, real-time risk heuristics, and command-line automation.
+                Production systems, developer tooling, and open-source contributions demonstrating backend architecture and distributed engineering.
             </p>
         </div>
 
-        <div class="space-y-8">
-            <!-- Project 1: Antifraud Sandbox Widget -->
-            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-xl p-6 sm:p-7 shadow-sm transition-colors">
-                <!-- Card Header -->
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6 pb-5 border-b border-[#E2E8F0] dark:border-[#1F2937]">
-                    <div>
-                        <div class="flex flex-wrap items-center gap-2 mb-1">
-                            <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="antifraudTitle">
-                                Antifraud Financial Security Engine • Real-Time Sandbox
-                            </h3>
-                        </div>
-                        <p class="text-xs sm:text-sm font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudSubtitle">
-                            Spring Boot REST API • Real-time visual sandbox of transaction risk heuristics & adaptive feedback
-                        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Card 1: Antifraud System -->
+            <div class="project-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[rgba(37,99,235,0.1)] dark:bg-[rgba(59,130,246,0.15)] border border-[#2563EB]/30 dark:border-[#3B82F6]/30 text-[#2563EB] dark:text-[#3B82F6]" data-i18n="antifraudRole">
+                            Production System
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudCategory">Backend Security</span>
                     </div>
-                    <div class="shrink-0 flex items-center">
-                        <div id="antifraud-status-badge" aria-live="polite" class="font-mono text-xs font-bold px-3.5 py-1.5 rounded-full tracking-wider border transition-colors bg-status-flagged-light/15 dark:bg-status-flagged/15 text-status-flagged-light dark:text-status-flagged border-status-flagged-border" data-i18n="antifraudStatusFlagged">
-                            FLAGGED / REVIEW
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Architecture Context Disclaimer / Full Feature Summary -->
-                <div class="mb-6 p-4 rounded-lg bg-[#F1F5F9] dark:bg-[#1E293B]/60 border border-[#E2E8F0] dark:border-[#334155] text-xs leading-relaxed text-[#475569] dark:text-[#94A3B8]">
-                    <div class="flex items-start gap-2.5">
-                        <i class="fas fa-info-circle text-[#2563EB] dark:text-[#3B82F6] text-sm mt-0.5 shrink-0" aria-hidden="true"></i>
-                        <div data-i18n="antifraudArchitectureNote">
-                            <strong class="text-[#0F172A] dark:text-[#F9FAFB]">Architecture Context:</strong> The underlying project is a production-grade Spring Boot REST API featuring a 4-tier RBAC role model (Anonymous, Merchant, Admin, Support), IP/stolen card blocklists, regional correlation rules, and a dynamic feedback loop that tunes fraud limits (0.8 × limit ± 0.2 × amount). The widget below provides a real-time visual demonstration of the core heuristic risk evaluation.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sandbox Interactive Layout -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <!-- Left Column: Controls (3 Sliders) -->
-                    <div class="space-y-5">
-                        <!-- Amount Slider -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center text-xs sm:text-sm">
-                                <label id="antifraud-amount-label" for="antifraud-amount" class="text-[#475569] dark:text-[#9CA3AF] font-medium" data-i18n="antifraudAmountLabel">Transaction Amount</label>
-                                <span id="antifraud-amount-val" class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">$450.00</span>
-                            </div>
-                            <input type="range" id="antifraud-amount" min="10" max="10000" step="10" value="450"
-                                aria-labelledby="antifraud-amount-label" aria-valuemin="10" aria-valuemax="10000" aria-valuenow="450" aria-valuetext="$450.00"
-                                class="w-full h-2 bg-[#F1F5F9] dark:bg-[#1F2937] rounded-lg appearance-none cursor-pointer accent-[#2563EB] dark:accent-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
-                            <div class="flex justify-between text-[11px] font-mono text-[#64748B] dark:text-[#6B7280]">
-                                <span>$10</span>
-                                <span>$10,000</span>
-                            </div>
-                        </div>
-
-                        <!-- Time Delta Slider -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center text-xs sm:text-sm">
-                                <label id="antifraud-delta-label" for="antifraud-delta" class="text-[#475569] dark:text-[#9CA3AF] font-medium" data-i18n="antifraudDeltaLabel">Time Delta Since Previous</label>
-                                <span id="antifraud-delta-val" class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">15 min</span>
-                            </div>
-                            <input type="range" id="antifraud-delta" min="1" max="300" step="1" value="15"
-                                aria-labelledby="antifraud-delta-label" aria-valuemin="1" aria-valuemax="300" aria-valuenow="15" aria-valuetext="15 min"
-                                class="w-full h-2 bg-[#F1F5F9] dark:bg-[#1F2937] rounded-lg appearance-none cursor-pointer accent-[#2563EB] dark:accent-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
-                            <div class="flex justify-between text-[11px] font-mono text-[#64748B] dark:text-[#6B7280]">
-                                <span>1 min</span>
-                                <span>300 min</span>
-                            </div>
-                        </div>
-
-                        <!-- Distance Slider -->
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center text-xs sm:text-sm">
-                                <label id="antifraud-distance-label" for="antifraud-distance" class="text-[#475569] dark:text-[#9CA3AF] font-medium" data-i18n="antifraudDistanceLabel">Physical Distance Jump</label>
-                                <span id="antifraud-distance-val" class="font-mono font-bold text-[#0F172A] dark:text-[#F9FAFB]">850 km</span>
-                            </div>
-                            <input type="range" id="antifraud-distance" min="0" max="3000" step="10" value="850"
-                                aria-labelledby="antifraud-distance-label" aria-valuemin="0" aria-valuemax="3000" aria-valuenow="850" aria-valuetext="850 km"
-                                class="w-full h-2 bg-[#F1F5F9] dark:bg-[#1F2937] rounded-lg appearance-none cursor-pointer accent-[#2563EB] dark:accent-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]">
-                            <div class="flex justify-between text-[11px] font-mono text-[#64748B] dark:text-[#6B7280]">
-                                <span>0 km</span>
-                                <span>3,000 km</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Diagnostics (Score Gauge & Metric Breakdown) -->
-                    <div id="antifraud-outcome-container" class="bg-[#F8FAFC] dark:bg-[#0B0F19] border border-[#E2E8F0] dark:border-[#1F2937] rounded-lg p-5 sm:p-6 flex flex-col justify-between">
-                        <div>
-                            <div class="text-xs font-mono font-semibold uppercase tracking-wider text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudRiskIndex">
-                                Calibrated Risk Index
-                            </div>
-                            <div class="flex items-baseline gap-2 my-2">
-                                <span id="antifraud-score-num" aria-live="polite" class="font-mono text-4xl sm:text-5xl font-bold text-status-flagged-light dark:text-status-flagged transition-colors">73.4</span>
-                                <span class="font-mono text-base text-[#64748B] dark:text-[#6B7280]">/ 100</span>
-                            </div>
-                            <!-- Progress Bar Meter -->
-                            <div class="w-full h-2.5 bg-[#E2E8F0] dark:bg-[#1F2937] rounded-full overflow-hidden mb-5">
-                                <div id="antifraud-score-bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="73.4" aria-valuetext="73.4 / 100" class="h-full rounded-full transition-all duration-150 bg-status-flagged-light dark:bg-status-flagged" style="width: 73.4%;"></div>
-                            </div>
-                        </div>
-
-                        <!-- Formula Breakdown Diagnostics -->
-                        <div class="border-t border-[#E2E8F0] dark:border-[#1F2937] pt-4 space-y-2.5 font-mono text-xs text-[#475569] dark:text-[#9CA3AF]">
-                            <div class="flex justify-between items-center gap-2">
-                                <span data-i18n="antifraudTravelVelocity">Travel Velocity</span>
-                                <span id="antifraud-velocity-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB] text-right">3,400 km/h (Supersonic Geo-Jump)</span>
-                            </div>
-                            <div class="flex justify-between items-center gap-2">
-                                <span data-i18n="antifraudVelocityPenalty">Velocity Penalty (P_vel)</span>
-                                <span id="antifraud-pvel-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB]">37.5 / 50</span>
-                            </div>
-                            <div class="flex justify-between items-center gap-2">
-                                <span data-i18n="antifraudGeoPenalty">Geo-Jump Penalty (P_geo)</span>
-                                <span id="antifraud-pgeo-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB]">50.0 / 50</span>
-                            </div>
-                            <div class="flex justify-between items-center gap-2">
-                                <span data-i18n="antifraudAmountPenalty">Amount Penalty (P_amount)</span>
-                                <span id="antifraud-pamount-val" class="font-semibold text-[#0F172A] dark:text-[#F9FAFB]">1.8 / 30</span>
-                            </div>
-                            <div class="flex justify-between items-center gap-2">
-                                <span data-i18n="antifraudDampingRatio">Damping Ratio Applied</span>
-                                <span id="antifraud-damping-val" class="font-semibold text-[#64748B] dark:text-[#6B7280]" data-i18n="antifraudDampingVal">0.8 Heuristics + 0.2 Base</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card Footer -->
-                <div class="mt-6 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-3">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java 11+ / Spring Boot</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Security (4-Tier RBAC)</span>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2 font-mono" data-i18n="antifraudTitle">Antifraud System</h3>
+                    <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="antifraudDesc">
+                        Production-grade Spring Boot REST API featuring a 4-tier RBAC role model, IP/card blocklists, and dynamic feedback loops that automatically tune fraud limits.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Java 11+</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Boot</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Spring Security</span>
                         <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">REST API</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Heuristic & Adaptive Feedback</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Interactive Sandbox</span>
                     </div>
-                    <a href="https://github.com/rsvinicius/antifraud-system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="Antifraud System repository on GitHub (opens in new tab)">
-                        <i class="fab fa-github text-sm" aria-hidden="true"></i>
+                </div>
+                <div class="pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <a href="https://github.com/rsvinicius/antifraud-system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="Antifraud System repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-base" aria-hidden="true"></i>
                         <span data-i18n="antifraudRepoLink">View Repository</span>
+                        <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: MockK -->
+            <div class="project-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[rgba(37,99,235,0.1)] dark:bg-[rgba(59,130,246,0.15)] border border-[#2563EB]/30 dark:border-[#3B82F6]/30 text-[#2563EB] dark:text-[#3B82F6]" data-i18n="mockkRole">
+                            Contributor
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="mockkCategory">Testing Library</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2 font-mono" data-i18n="mockkTitle">MockK</h3>
+                    <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="mockkDesc">
+                        Core unit testing and mocking library for Kotlin. Fixed state leak in verification mechanisms ensuring hermetic test isolation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Kotlin</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Mocking</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Testing</span>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-2">
+                    <a href="https://github.com/mockk/mockk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="MockK repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-base" aria-hidden="true"></i>
+                        <span data-i18n="mockkLinkText">View Repository</span>
+                        <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/mockk/mockk/releases/tag/1.14.0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-[#047857] dark:text-[#10B981] hover:underline" aria-label="MockK 1.14.0 Release Notes (opens in new tab)">
+                        <i class="fas fa-tag text-xs" aria-hidden="true"></i>
+                        <span data-i18n="mockkReleaseText">v1.14.0 Release Notes</span>
                         <i class="fas fa-external-link-alt text-[10px]" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Project 2: dotme Autonomous CLI Terminal -->
-            <div class="bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-xl p-6 sm:p-7 shadow-sm transition-colors">
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB]" data-i18n="dotmeTitle">
-                            dotme • Git-Based Dotfiles Manager CLI
-                        </h3>
-                        <p class="text-xs sm:text-sm font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="dotmeSubtitle">
-                            Autonomous Typewriter Loop • Pattern-Based Dotfile Distribution
-                        </p>
+            <!-- Card 3: dotme -->
+            <div class="project-card bg-white dark:bg-[#111827] border border-[#E2E8F0] dark:border-[#1F2937] hover:border-[#CBD5E1] dark:hover:border-[#374151] rounded-lg p-6 lg:p-8 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-[rgba(16,185,129,0.12)] dark:bg-[rgba(16,185,129,0.15)] border border-[#059669]/30 dark:border-[#10B981]/30 text-[#047857] dark:text-[#10B981]" data-i18n="dotmeRole">
+                            Creator & Maintainer
+                        </span>
+                        <span class="text-xs font-mono text-[#64748B] dark:text-[#6B7280]" data-i18n="dotmeCategory">Developer CLI</span>
                     </div>
-                </div>
-
-                <!-- Screen Reader Accessible Summary (ignores terminal animation) -->
-                <p class="sr-only" data-i18n="dotmeSrSummary">
-                    Demonstration of dotme CLI: an autonomous terminal session executing git clone, pattern-based filtering with include and exclude rules, and dotfile distribution with summary metrics.
-                </p>
-
-                <!-- Terminal Window -->
-                <div id="dotme-terminal" aria-hidden="true" class="bg-[#0D1117] border border-[#1F2937] rounded-lg overflow-hidden font-mono text-xs sm:text-sm">
-                    <div class="bg-[#161B22] px-3.5 py-2.5 flex items-center justify-between border-b border-white/5">
-                        <div class="flex items-center gap-1.5">
-                            <div class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
-                        </div>
-                        <div class="text-[11px] text-[#6B7280]">dotme — bash/zsh — 80x24</div>
-                        <div class="w-8"></div>
-                    </div>
-                    <div id="dotme-terminal-body" tabindex="0" aria-label="Terminal output scrollable area" class="p-4 sm:p-5 text-[#C9D1D9] leading-relaxed text-xs sm:text-[13px] overflow-x-auto min-h-[300px] focus:outline-none focus:ring-1 focus:ring-[#3B82F6]">
-                        <div class="text-[#F9FAFB] mb-2 whitespace-nowrap">
-                            <span class="text-[#58A6FF]">[vinicius@CachyOS ~]$ </span><span id="dotme-cmd">dotme --include=".config*" --exclude=".DS_Store" https://github.com/rsvinicius/dotfiles</span><span id="dotme-cursor" class="inline-block w-2 h-4 bg-[#58A6FF] align-middle ml-1 animate-pulse motion-reduce:animate-none"></span>
-                        </div>
-                        <div id="dotme-output" class="space-y-0.5 whitespace-pre-wrap">
-                            <div class="text-[#8B949E]">🔄 Cloning repository: https://github.com/rsvinicius/dotfiles</div>
-                            <div class="text-[#3FB950]">✅ Repository cloned, using branch: main</div>
-                            <div class="text-[#8B949E]">📋 Scanning for dotfiles...</div>
-                            <div class="mt-2 text-[#F9FAFB] font-semibold">📦 Summary:</div>
-                            <div class="text-[#3FB950]">✅ Copied 1 item:</div>
-                            <div class="text-[#8B949E] pl-4">- .config</div>
-                            <div class="mt-1 text-[#F85149]">❌ Ignored 7 items:</div>
-                            <div class="text-[#8B949E] pl-4">- disable_mouse_acceleration.sh, firewall.sh, fonts, install.sh (+3 scripts)</div>
-                            <div class="mt-2 text-[#F9FAFB] font-semibold">🔍 Active filters:</div>
-                            <div class="text-[#8B949E] pl-4">Include patterns: [.config*]</div>
-                            <div class="text-[#8B949E] pl-4">Exclude patterns: [.DS_Store]</div>
-                            <div class="mt-2 text-[#3FB950] font-medium">🎉 Done! Your dotfiles have been applied successfully.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Terminal Card Footer -->
-                <div class="mt-6 pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937] flex flex-wrap items-center justify-between gap-3">
-                    <div class="flex flex-wrap gap-2">
+                    <h3 class="text-xl font-bold text-[#0F172A] dark:text-[#F9FAFB] mb-2 font-mono" data-i18n="dotmeTitle">dotme</h3>
+                    <p class="text-sm sm:text-base text-[#475569] dark:text-[#9CA3AF] leading-relaxed mb-6" data-i18n="dotmeDesc">
+                        Declarative dotfiles management CLI tool featuring atomic symlink reconciliation, pattern filtering, and syntax validation.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Shell / POSIX</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">CLI Tool</span>
-                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Pattern-Based Filtering</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Dev Productivity</span>
+                        <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Symlinks</span>
                         <span class="px-2.5 py-1 text-xs font-mono rounded-md bg-[#F1F5F9] dark:bg-[#1F2937] text-[#475569] dark:text-[#9CA3AF] border border-[#E2E8F0] dark:border-[#374151]">Git Automation</span>
                     </div>
-                    <a href="https://github.com/rsvinicius/dotme" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="dotme repository on GitHub (opens in new tab)">
-                        <i class="fab fa-github text-sm" aria-hidden="true"></i>
+                </div>
+                <div class="pt-4 border-t border-[#E2E8F0] dark:border-[#1F2937]">
+                    <a href="https://github.com/rsvinicius/dotme" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-mono text-[#2563EB] dark:text-[#3B82F6] hover:underline" aria-label="dotme repository on GitHub (opens in new tab)">
+                        <i class="fab fa-github text-base" aria-hidden="true"></i>
                         <span data-i18n="dotmeLinkText">View Repository</span>
-                        <i class="fas fa-external-link-alt text-[10px]" aria-hidden="true"></i>
+                        <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -222,7 +107,7 @@
 
         <div class="mt-12 text-center">
             <a href="https://github.com/rsvinicius?tab=repositories" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center font-mono text-sm font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline transition-colors" aria-label="View all projects on GitHub (opens in new tab)">
+                class="inline-flex items-center font-mono text-sm font-semibold text-[#2563EB] dark:text-[#3B82F6] hover:underline transition-colors" aria-label="View all repositories on GitHub (opens in new tab)">
                 <span data-i18n="viewAllProjects">View All Repositories on GitHub</span>
                 <i class="fas fa-arrow-right ml-2 text-xs" aria-hidden="true"></i>
             </a>
