@@ -308,7 +308,7 @@ const translations = {
         viewOnGitHub: "Ver no GitHub",
 
         // Card 1: Antifraud System
-        antifraudRole: "Sistema em Produção",
+        antifraudRole: "Em Produção",
         antifraudCategory: "Segurança Backend",
         antifraudTitle: "Sistema Antifraude",
         antifraudDesc: "API REST em Spring Boot com modelo de RBAC em 4 níveis, listas de bloqueio de IP/cartões e loops de feedback dinâmico para calibração de limites de fraude.",

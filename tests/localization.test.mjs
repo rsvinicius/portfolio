@@ -441,7 +441,7 @@ test('Language Toggle to PT updates DOM in <50ms without page reload', () => {
     assert.equal(harness.elementsById['mockk-cat'].textContent, 'Biblioteca de Testes');
     assert.equal(harness.elementsById['dotme-cat'].textContent, 'Ferramenta CLI');
     assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Segurança Backend');
-    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Sistema em Produção');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Em Produção');
 
     // Verify both desktop and mobile buttons switch indicator to EN
     assert.equal(harness.elementsById['language-toggle'].textContent, 'EN');
@@ -557,7 +557,7 @@ test('Unified showcase cards localize cleanly between EN and PT', () => {
     // Switch to PT
     harness.elementsById['language-toggle'].dispatchEvent('click');
     assert.equal(harness.documentMock.documentElement.lang, 'pt');
-    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Sistema em Produção');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Em Produção');
     assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Segurança Backend');
     assert.equal(harness.elementsById['antifraud-title'].textContent, 'Sistema Antifraude');
     assert.equal(harness.elementsById['mockk-role'].textContent, 'Contribuidor');
