@@ -285,7 +285,7 @@ function createLocalizationHarness(initialLocalStorage = {}) {
     );
 
     // Unified Project showcase cards elements
-    addElement('antifraud-role', 'span', { 'data-i18n': 'antifraudRole' }, 'Production System');
+    addElement('antifraud-role', 'span', { 'data-i18n': 'antifraudRole' }, 'PoC');
     addElement('antifraud-cat', 'span', { 'data-i18n': 'antifraudCategory' }, 'Backend Security');
     addElement('antifraud-title', 'h3', { 'data-i18n': 'antifraudTitle' }, 'Antifraud System');
 
@@ -441,7 +441,7 @@ test('Language Toggle to PT updates DOM in <50ms without page reload', () => {
     assert.equal(harness.elementsById['mockk-cat'].textContent, 'Biblioteca de Testes');
     assert.equal(harness.elementsById['dotme-cat'].textContent, 'Ferramenta CLI');
     assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Segurança Backend');
-    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Em Produção');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'PoC');
 
     // Verify both desktop and mobile buttons switch indicator to EN
     assert.equal(harness.elementsById['language-toggle'].textContent, 'EN');
@@ -546,7 +546,7 @@ test('Unified showcase cards localize cleanly between EN and PT', () => {
     harness.fns.initializeLanguageToggle(translations);
 
     // Initial state is EN
-    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Production System');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'PoC');
     assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Backend Security');
     assert.equal(harness.elementsById['antifraud-title'].textContent, 'Antifraud System');
     assert.equal(harness.elementsById['mockk-role'].textContent, 'Contributor');
@@ -557,7 +557,7 @@ test('Unified showcase cards localize cleanly between EN and PT', () => {
     // Switch to PT
     harness.elementsById['language-toggle'].dispatchEvent('click');
     assert.equal(harness.documentMock.documentElement.lang, 'pt');
-    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Em Produção');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'PoC');
     assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Segurança Backend');
     assert.equal(harness.elementsById['antifraud-title'].textContent, 'Sistema Antifraude');
     assert.equal(harness.elementsById['mockk-role'].textContent, 'Contribuidor');
@@ -568,7 +568,7 @@ test('Unified showcase cards localize cleanly between EN and PT', () => {
     // Switch back to EN
     harness.elementsById['language-toggle'].dispatchEvent('click');
     assert.equal(harness.documentMock.documentElement.lang, 'en');
-    assert.equal(harness.elementsById['antifraud-role'].textContent, 'Production System');
+    assert.equal(harness.elementsById['antifraud-role'].textContent, 'PoC');
     assert.equal(harness.elementsById['antifraud-cat'].textContent, 'Backend Security');
     assert.equal(harness.elementsById['antifraud-title'].textContent, 'Antifraud System');
     assert.equal(harness.elementsById['mockk-title'].textContent, 'MockK');

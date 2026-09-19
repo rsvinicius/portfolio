@@ -91,10 +91,10 @@ const translations = {
         viewOnGitHub: "View on GitHub",
 
         // Card 1: Antifraud System
-        antifraudRole: "Production System",
+        antifraudRole: "PoC",
         antifraudCategory: "Backend Security",
         antifraudTitle: "Antifraud System",
-        antifraudDesc: "Production-grade Spring Boot REST API featuring a 4-tier RBAC role model, IP/card blocklists, and dynamic feedback loops that automatically tune fraud limits.",
+        antifraudDesc: "Spring Boot REST API featuring a 4-tier RBAC security model, IP/card blocklists, and dynamic feedback loops that automatically tune fraud limits.",
         antifraudRepoLink: "View Repository",
 
         // Card 2: MockK
@@ -308,10 +308,10 @@ const translations = {
         viewOnGitHub: "Ver no GitHub",
 
         // Card 1: Antifraud System
-        antifraudRole: "Em Produção",
+        antifraudRole: "PoC",
         antifraudCategory: "Segurança Backend",
         antifraudTitle: "Sistema Antifraude",
-        antifraudDesc: "API REST em Spring Boot com modelo de RBAC em 4 níveis, listas de bloqueio de IP/cartões e loops de feedback dinâmico para calibração de limites de fraude.",
+        antifraudDesc: "API REST em Spring Boot com modelo de segurança RBAC em 4 níveis, listas de bloqueio de IP/cartões e loops de feedback dinâmico para calibração de limites de fraude.",
         antifraudRepoLink: "Ver Repositório",
 
         // Card 2: MockK
